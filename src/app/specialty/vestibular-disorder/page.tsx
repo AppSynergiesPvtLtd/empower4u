@@ -30,31 +30,27 @@ const uniqueApproachData = {
 
 const whatWeCanHelpData = {
   title: "What we can help",
-  introText: "Here are some common MS-related challenges we address:",
+  introText: "Here are some common vestibular disorders:",
   items: [
     {
-      title: "Muscle weakness",
-      description: "MS can cause weakness in different muscle groups, affecting mobility, balance, and daily activities.",
+      title: "Benign Paroxysmal Positional Vertigo (BPPV)",
+      description: "A condition where small crystals in the inner ear become dislodged, causing brief episodes of dizziness with changes in head position.",
     },
     {
-      title: "Spasticity",
-      description: "Muscle stiffness and spasms are common in MS, limiting movement and range of motion.",
+      title: "Vestibular Neuritis",
+      description: "Inflammation of the vestibular nerve, leading to severe vertigo, balance issues, and nausea.",
     },
     {
-      title: "Respiratory issues",
-      description: "Breathing difficulties caused by weakened respiratory muscles, often seen with higher-level injuries.",
+      title: "Meniere’s Disease",
+      description: "A chronic condition characterized by episodes of vertigo, ringing in the ears (tinnitus), hearing loss, and a feeling of fullness in the ear.",
     },
     {
-      title: "Balance and coordination issues",
-      description: "MS affects coordination, making it difficult to walk or perform tasks that require stability.",
+      title: "Vestibular Migraine",
+      description: "Dizziness or vertigo that occurs with migraine headaches, often accompanied by light sensitivity and nausea.",
     },
     {
-      title: "Fatigue",
-      description: "Persistent tiredness is a major symptom of MS, often hindering physical activity and daily routines.",
-    },
-    {
-      title: "Cognitive impairments",
-      description: "Memory, attention, and problem-solving abilities can be affected, impacting daily functioning.",
+      title: "Unilateral Vestibular Hypofunction",
+      description: "Reduced function of one vestibular system, resulting in imbalance and dizziness.",
     },
   ],
   backgroundColor: "bg-[#f9f5f1]",
@@ -65,77 +61,60 @@ const treatmentMayIncludeData = {
   introText: "",
   items: [
     {
-      title: "Strength training",
-      description: "Exercises designed to increase muscle power and endurance, helping regain strength in weakened areas.",
+      title: "Vestibular rehabilitation exercises",
+      description: "Targeted exercises designed to improve balance, reduce dizziness, and promote compensation for vestibular deficits.",
     },
     {
-      title: "Balance and coordination exercises",
-      description: "Activities aimed at improving stability and reducing the risk of falls.",
+      title: "Canalith repositioning maneuvers",
+      description: "Specific techniques to reposition displaced crystals in the inner ear for conditions like BPPV.",
     },
     {
-      title: "Walking training",
-      description: "Gait exercises to help with movement and mobility, making walking safer and more efficient.",
+      title: "Balance training",
+      description: "Activities to enhance stability and coordination, reducing the risk of falls.",
     },
     {
-      title: "Fatigue management",
-      description: "Techniques and strategies to manage energy levels and improve stamina throughout the day.",
+      title: "Habituation exercises",
+      description: "Gradual exposure to movements and environments that provoke symptoms to decrease sensitivity.",
     },
     {
-      title: "Cognitive rehabilitation",
-      description: "Exercises to improve memory, attention, and other cognitive skills affected by MS.",
-    },
-    {
-      title: "Wheelchair assessment and recommendations",
-      description: "Ensuring the correct wheelchair setup to maximize comfort, mobility, and independence, tailored to the patient’s individual needs.",
-    },
-    {
-      title: "Functional training",
-      description: "Task-specific exercises to help patients regain independence in daily activities such as dressing, eating, and transferring between positions.",
-    },
-    {
-      title: "24-hour posture management",
-      description: "Strategies to maintain proper posture and comfort throughout the day, preventing complications from poor alignment.",
+      title: "Education and lifestyle modifications",
+      description: "Guidance on managing symptoms and making adjustments to daily activities to improve quality of life.",
     },
   ],
   backgroundColor: "bg-[#d4c0a9]",
 };
 
 const benefitsOfPhysiotherapyData = {
-  title: "Benefits of physiotherapy for MS include",
+  title: "Benefits of physiotherapy include",
   introText: "",
   items: [
     {
-      title: "Improved walking and mobility",
-      description: "Gait and strength training can help patients walk more safely and confidently.",
+      title: "Reduces dizziness and vertigo",
+      description: "Effective rehabilitation can significantly lessen the intensity and frequency of dizziness episodes.",
     },
     {
-      title: "Reduced muscle stiffness (spasticity)",
-      description: "Stretching, strengthening exercises, and other techniques help reduce stiffness and improve range of motion.",
+      title: "Improves balance and coordination",
+      description: "Targeted exercises enhance stability, helping to prevent falls and improve overall mobility.",
     },
     {
-      title: "Better balance and fall prevention",
-      description: "Balance exercises help improve stability and reduce the risk of falls.",
+      title: "Increases confidence",
+      description: "Reducing symptoms allows individuals to feel more secure in their movements and activities.",
     },
     {
-      title: "Increased strength and endurance",
-      description: "Regular strength training can help improve overall body strength and endurance.",
+      title: "Enhances daily function",
+      description: "Improved balance and reduced dizziness facilitate a return to everyday tasks and activities.",
     },
     {
-      title: "Enhanced independence",
-      description: "Physiotherapy focuses on helping patients perform daily activities with less assistance.",
+      title: "Prevents complications",
+      description: "Early intervention can prevent issues related to prolonged dizziness, such as anxiety and avoidance of physical activities.",
     },
     {
-      title: "Prevention of complications",
-      description: "Early intervention helps prevent issues like deconditioning, joint stiffness, and muscle wasting.",
-    },
-    {
-      title: "Boosts mental well-being",
-      description: "Setting goals and tracking progress fosters motivation and supports mental health throughout recovery.",
+      title: "Psychosocial benefits",
+      description: "Support and encouragement from physiotherapy promote a positive mindset and motivation throughout the recovery process.",
     },
   ],
   backgroundColor: "bg-[#f9f5f1]",
 };
-
 
 
 
@@ -147,17 +126,17 @@ const StrokeRehabilitationPage: React.FC = () => {
     <section className="py-16 px-4 text-maintext">
       <div className="container mx-auto max-w-4xl">
         <div className="flex justify-center mb-6"><Image src="/icons/top_border.svg" alt="Top Border" width={600} height={400} /></div>
-        <h1 className="text-4xl font-bold text-center uppercase font-inter my-4"> Multiple Sclerosis Rehabilitation  </h1>
+        <h1 className="text-4xl font-bold text-center uppercase font-inter my-4"> Vestibular Rehabilitation  </h1>
         <div className="flex justify-center mb-12"><Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} /></div>
 
         <p className="text-lg border-2 border-primary p-4 mb-8">
-          Multiple sclerosis (MS) is a chronic condition that affects the central nervous system, disrupting communication between the brain and the rest of the body. It can lead to a wide range of symptoms, such as muscle weakness, coordination problems, fatigue, and cognitive difficulties. These symptoms can vary in severity and progression, often impacting a person’s ability to carry out daily tasks independently. For those living with MS, this can lead to a significant loss of mobility and independence, creating a challenging emotional and physical burden on both patients and caregivers.
+          Vestibular disorders affect the inner ear and brain's ability to process balance-related sensory information, leading to symptoms like dizziness, vertigo, and imbalance, all of which can significantly impact daily life. Vestibular rehabilitation uses targeted exercises to alleviate symptoms, improve balance, and enhance stability, helping individuals regain confidence in their movements and restore functional independence.
         </p>
         
         <div className="flex justify-center mb-12">
           <Image
-            src="/images/specialty/multiple-sclerosis.jpg"
-            alt="multiple-sclerosis"
+            src="/images/specialty/vestibulardisorder.jpg"
+            alt="vestibulardisorder"
             width={500}
             height={400}
             className="rounded-lg shadow-md"
