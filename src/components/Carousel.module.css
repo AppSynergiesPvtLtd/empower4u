@@ -1,0 +1,9 @@
+/* Carousel.module.css */
+.swiperPaginationBullet {
+  background-color: hsl(31, 26%, 55%);
+  opacity: 1;
+}
+
+.swiperPaginationBulletActive {
+  background-color: hsl(31, 26%, 55%);
+}
