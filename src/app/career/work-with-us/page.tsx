@@ -4,22 +4,20 @@ import { FaCheckCircle } from 'react-icons/fa';
 
 const WorkWithUs: React.FC = () => {
   return (
-    <section className="py-16 px-4 bg-[#f9f5f1] text-maintext">
-      <div className="container mx-auto max-w-4xl">
-        <h1 className="text-4xl font-bold text-center uppercase mb-4 font-inter">Work with Us</h1>
-        <div className="flex justify-center mb-8">
-          <span className="text-primary text-xl mx-1">★</span>
-          <span className="text-primary text-xl mx-1">★</span>
-          <span className="text-primary text-xl mx-1">★</span>
-        </div>
+    <section className="py-16 bg-[#f9f5f1] text-maintext">
+      <div className="container ">
+        <div className="flex justify-center mb-6"><Image src="/icons/top_border.svg" alt="Top Border" width={600} height={400} /></div>
+        <h1 className="text-4xl font-bold text-center uppercase font-inter my-4"> Work with us  </h1>
+        <div className="flex justify-center mb-12"><Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} /></div>
 
-        <p className="text-lg border border-gray-400 p-4 mb-8">
+
+        <p className="text-lg border border-gray-400 p-4 mb-8 max-w-4xl mx-auto">
           At Empower4U, we are always looking for passionate and skilled professionals to join our growing team. If you’re a qualified physiotherapist or have experience in rehabilitation, we’d love to hear from you!
         </p>
 
         <div className="flex justify-center mb-12">
           <Image
-            src="/images/Career/Work with us page.jpg"
+            src="/images/Career/Work with us page.webp"
             alt="Teamwork"
             width={500}
             height={300}
@@ -27,14 +25,16 @@ const WorkWithUs: React.FC = () => {
           />
         </div>
 
-        <div className="bg-[#d4c0a9] p-8 mb-8 rounded-lg">
+        <div className="bg-[#d4c0a9] p-8 mb-8">
+        <div className='mx-auto max-w-5xl'>
           <h2 className="text-2xl font-bold mb-4 text-maintext text-center font-inter">Physiotherapists</h2>
           <p className="text-lg">
-            We are seeking qualified physiotherapists with experience in one or more of the specialties we cover. Whether you specialize in neurological rehabilitation, stroke recovery, balance and falls prevention, or any of our other services, we offer an opportunity to work in a dynamic, supportive environment. <a href="/specialties" className="text-primary underline">Explore our specialties here.</a>
+            We are seeking qualified physiotherapists with experience in one or more of the specialties we cover. Whether you specialize in neurological rehabilitation, stroke recovery, balance and falls prevention, or any of our other services, we offer an opportunity to work in a dynamic, supportive environment. <a href="/specialty/explore-all" className="text-primary underline">Explore our specialties here.</a>
           </p>
+          </div>
         </div>
 
-        <div className=" p-8 mb-8 rounded-lg">
+        <div className=" py-8 mb-8 rounded-lg mx-auto max-w-5xl">
           <h2 className="text-2xl font-bold mb-4 text-maintext text-center font-inter">Rehabilitation Assistants</h2>
           <p className="text-lg">
             We also welcome rehabilitation assistants with diverse backgrounds in healthcare and fitness. Whether you have a background in nursing, fitness, care, or you’re a therapy student or an internationally qualified therapist awaiting your HCPC registration, this is a great opportunity to gain UK healthcare experience while earning a competitive payment.
@@ -42,6 +42,7 @@ const WorkWithUs: React.FC = () => {
         </div>
 
         <div className="bg-[#d4c0a9] p-8 mb-8 rounded-lg">
+        <div className='mx-auto max-w-5xl'>
           <h2 className="text-2xl font-bold mb-4 text-maintext text-center font-inter">Why Work With Us?</h2>
           <p className="text-lg mb-6">
             At Empower4U, we look after our staff, ensuring they grow both professionally and personally. We provide:
@@ -66,12 +67,13 @@ const WorkWithUs: React.FC = () => {
               </span>
             </li>
           </ul>
+          </div>
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 mx-auto max-w-5xl">
           <h2 className="text-2xl font-bold text-maintext mb-4 font-inter">Get in Touch</h2>
           <p className="text-lg mb-6">
-            If you’re ready to join a team that values expertise, collaboration, and growth, we’d love to hear from you! <a href="/contact" className="text-primary underline">Contact us</a> today to discuss available opportunities.
+            If you’re ready to join a team that values expertise, collaboration, and growth, we’d love to hear from you! <a href="/enquiry" className="text-primary underline">Contact us</a> today to discuss available opportunities.
           </p>
         </div>
       </div>

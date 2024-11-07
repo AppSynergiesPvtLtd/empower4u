@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Toaster } from 'react-hot-toast';
 import "./globals.css";
+import 'react-phone-input-2/lib/style.css';
 import NavBar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 

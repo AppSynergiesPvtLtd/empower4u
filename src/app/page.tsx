@@ -1,5 +1,4 @@
-// app/page.tsx
-
+"use client";
 import React from 'react';
 import Carousel from '@/components/Carousel';
 import Services from '@/components/Services';
@@ -7,41 +6,42 @@ import Services from '@/components/Services';
 const HomePage: React.FC = () => {
   const slides = [
     {
+      heading: "Intensive Home-Based Therapy",
+      description: "Why our service is the best option for you",
+      buttonText: "View More",
+      buttonLink: "/for-professionals/evidence",
+      imageUrl: "/images/home-page/Intensive-home-based-therapy.webp",
+    },
+    {
+      heading: "Neurological Rehabilitation",
+      description: "We cover a wide range of conditions and presentations",
+      buttonText: "View More",
+      buttonLink: "/specialty/rare-neurological-conditions",
+      imageUrl: "/images/home-page/neurological-rehabilitation.webp",
+    },
+    {
       heading: "Falls and Balance",
-      description: "We cover a wide range of conditions and presentations",
+      description: "All-rounded assessment and Holistic programme",
       buttonText: "View More",
-      buttonLink: "/neurological-rehabilitation",
-      imageUrl: "/images/Home page/Falls and Balance.jpg",
+      buttonLink: "/specialty/falls-balance",
+      imageUrl: "/images/home-page/falls-and-balance.webp",
     },
     {
-      heading: "Fracture and Amputees",
-      description: "We cover a wide range of conditions and presentations",
+      heading: "Fracture and Joint Health",
+      description: "Intensive sessions and Fastest recovery",
       buttonText: "View More",
-      buttonLink: "/neurological-rehabilitation",
-      imageUrl: "/images/Home page/Fracture and Amputees.jpg",
+      buttonLink: "/specialty/fracture-joint-health",
+      imageUrl: "/images/home-page/Fracture-and-Amputees.webp",
     },
     {
-      heading: "NEUROLOGICAL REHABILITATION",
-      description: "We cover a wide range of conditions and presentations",
+      heading: "International Physiotherapist HCPC Support",
+      description: "We offer mentoring, clinical supervision and interview advice",
       buttonText: "View More",
-      buttonLink: "/neurological-rehabilitation",
-      imageUrl: "/images/Home page/Neurological rehabilitation.jpg",
-    },
-    {
-      heading: "NEUROLOGICAL REHABILITATION",
-      description: "We cover a wide range of conditions and presentations",
-      buttonText: "View More",
-      buttonLink: "/neurological-rehabilitation",
-      imageUrl: "/images/Home page/Neurological rehabilitation.jpg",
-    },
-    {
-      heading: "NEUROLOGICAL REHABILITATION",
-      description: "We cover a wide range of conditions and presentations",
-      buttonText: "View More",
-      buttonLink: "/neurological-rehabilitation",
-      imageUrl: "/images/Home page/Neurological rehabilitation.jpg",
+      buttonLink: "/for-professionals/hcpc-registration-support",
+      imageUrl: "/images/home-page/international-professional-HCPC-registration.webp",
     },
   ];
+
 
    return (
     <div className="flex flex-col min-h-screen">

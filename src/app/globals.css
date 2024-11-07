@@ -89,6 +89,27 @@ body, nav {
     --chart-5: 340 75% 55%;
   }
 }
+.swiper-slide {
+  opacity: 1;
+  visibility: hidden !important;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+  visibility: visible !important;
+}
+
+
+.swiper-pagination-bullet {
+  opacity: 0.5;
+  background-color: transparent !important;
+  border: 2px solid #ac8e6d !important; 
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #ac8e6d !important;
+}
 
 @layer base {
   * {

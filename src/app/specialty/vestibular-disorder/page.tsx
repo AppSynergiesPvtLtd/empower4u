@@ -143,7 +143,6 @@ const StrokeRehabilitationPage: React.FC = () => {
           />
         </div>
 
-        {/* Initial Sections */}
         <RehabSection
           title={uniqueApproachData.title}
           introText={uniqueApproachData.introText}
@@ -158,7 +157,6 @@ const StrokeRehabilitationPage: React.FC = () => {
           backgroundColor={whatWeCanHelpData.backgroundColor}
         />
 
-        {/* View More Button */}
         {!showMore && (
           <div className="text-center mt-6">
             <button
@@ -170,7 +168,6 @@ const StrokeRehabilitationPage: React.FC = () => {
           </div>
         )}
 
-        {/* Additional Sections (Hidden until "View More" is clicked) */}
         {showMore && (
           <>
             <RehabSection
@@ -189,7 +186,6 @@ const StrokeRehabilitationPage: React.FC = () => {
           </>
         )}
 
-        {/* Enquiry Section */}
         <section className="py-10 text-maintext text-center">
           <div className="container mx-auto px-4">
             <div className="p-8 border-t-4 border-primary bg-white max-w-2xl mx-auto">

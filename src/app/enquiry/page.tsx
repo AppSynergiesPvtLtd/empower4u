@@ -5,7 +5,6 @@ import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
 //import { useRouter } from 'next/router'; 
 import 'react-phone-input-2/lib/style.css';
-import { toast } from 'react-hot-toast';
 
 const PhoneInput = dynamic(() => import('react-phone-input-2'), { ssr: false });
 
@@ -31,13 +30,11 @@ const Enquiry: React.FC = () => {
         formData
       );
       if (response.status === 200) {
-        toast.success('Enquiry submitted successfully!');
         e.currentTarget.reset(); 
-        setPhone('');
         router.push('/success');
       }
     } catch (error) {
-      toast.error('Failed to submit enquiry. Please try again later.');
+      console.log(error)
     } finally {
       setLoading(false);
     }
@@ -75,7 +72,7 @@ const Enquiry: React.FC = () => {
                 Phone no.
               </label>
               <PhoneInput
-                country={'us'}
+                country={'in'}
                 value={phone}
                 onChange={setPhone}
                 inputProps={{

@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import RehabSection from '@/components/RehabSection';
+import CallToActionSection from '@/components/CallToActionSection';
 
 const uniqueApproachData = {
   title: "Our unique approach",
@@ -156,7 +157,7 @@ const StrokeRehabilitationPage: React.FC = () => {
           />
         </div>
 
-        {/* Initial Sections */}
+        
         <RehabSection
           title={uniqueApproachData.title}
           introText={uniqueApproachData.introText}
@@ -171,7 +172,7 @@ const StrokeRehabilitationPage: React.FC = () => {
           backgroundColor={whatWeCanHelpData.backgroundColor}
         />
 
-        {/* View More Button */}
+        
         {!showMore && (
           <div className="text-center mt-6">
             <button
@@ -183,7 +184,7 @@ const StrokeRehabilitationPage: React.FC = () => {
           </div>
         )}
 
-        {/* Additional Sections (Hidden until "View More" is clicked) */}
+        
         {showMore && (
           <>
             <RehabSection
@@ -203,18 +204,11 @@ const StrokeRehabilitationPage: React.FC = () => {
         )}
 
         {/* Enquiry Section */}
-        <section className="py-10 text-maintext text-center">
-          <div className="container mx-auto px-4">
-            <div className="p-8 border-t-4 border-primary bg-white max-w-2xl mx-auto">
-              <h2 className="text-3xl font-semibold mb-4 font-inter">We'd love to treat you</h2>
-              <Link href="/enquiry" passHref>
-                <button className="px-6 py-3 text-lg font-semibold text-white bg-maintext rounded-full hover:bg-primary">
-                  Make an Enquiry
-                </button>
-              </Link>
-            </div>
-          </div>
-        </section>
+        <CallToActionSection
+            title="We'd love to treat you"
+            link="/enquiry"
+            buttonText="Make an Enquiry"
+        />
       </div>
     </section>
   );

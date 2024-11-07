@@ -5,12 +5,10 @@ const PricingAndAvailability: React.FC = () => {
   return (
     <section className="py-16 px-4 text-maintext">
       <div className="container mx-auto max-w-4xl">
-        <h1 className="text-4xl font-bold text-center uppercase mb-4 font-inter my-10">Pricing and Availability</h1>
-        <div className="flex justify-center mb-8">
-          <span className="text-primary text-xl mx-1">★</span>
-          <span className="text-primary text-xl mx-1">★</span>
-          <span className="text-primary text-xl mx-1">★</span>
-        </div>
+        <div className="flex justify-center mb-6"><Image src="/icons/top_border.svg" alt="Top Border" width={600} height={400} /></div>
+        <h1 className="text-4xl font-bold text-center uppercase font-inter my-4"> Pricing and Availability  </h1>
+        <div className="flex justify-center mb-12"><Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} /></div>
+
 
         <p className="text-lg border-2 border-primary p-4 mb-8">
           We strive to offer value-driven services that fit the needs of each client. Our affordable, flexible pricing options ensure that you can access high-quality care without financial strain.
@@ -58,7 +56,7 @@ const PricingAndAvailability: React.FC = () => {
           <h2 className="text-2xl font-bold text-maintext mb-8 text-center font-inter">Areas we cover</h2>
           <div className="flex justify-center mb-8">
             <Image
-              src="/images/for-clients-families/map-icon.png"
+              src="/icons/pricing and availability/Areas_we_cover.svg"
               alt="Areas We Cover"
               width={300}
               height={300}

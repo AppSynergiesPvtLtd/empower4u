@@ -1,10 +1,14 @@
 import React from 'react';
+import Image from 'next/image';
 
 const Testimonials: React.FC = () => {
   return (
     <section className="py-16 px-4 bg-[#f9f5f1] text-maintext max-w-5xl mx-auto my-10">
 
-      <h1 className="text-4xl font-bold text-center uppercase mb-12 font-inter">Testimonials</h1>
+      <div className="flex justify-center mb-6"><Image src="/icons/top_border.svg" alt="Top Border" width={600} height={400} /></div>
+        <h1 className="text-4xl font-bold text-center uppercase font-inter my-4"> Testimonials  </h1>
+      <div className="flex justify-center mb-12"><Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} /></div>
+
 
 
       <div className='bg-maintext p-8 shadow-lg border-4 border-primary mb-8'>

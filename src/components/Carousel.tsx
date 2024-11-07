@@ -1,12 +1,11 @@
-// components/Carousel.tsx
 "use client";
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Slide from './Slide';
-import { EffectFade, Navigation, Pagination } from 'swiper/modules';
+import { EffectFade, Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import styles from './Carousel.module.css';
+import 'swiper/css/effect-fade';
 
 interface SlideData {
   heading: string;
@@ -20,37 +19,31 @@ interface CarouselProps {
   slides: SlideData[];
 }
 
-
-
 const Carousel: React.FC<CarouselProps> = ({ slides }) => {
   return (
     <div className='w-full max-w-5xl mx-auto'>
-    <Swiper 
-      spaceBetween={30}
-        effect={'fade'}
-        navigation={true}
-        pagination={{
-          clickable: true,
-          // bulletClass: styles.swiperPaginationBullet,
-          // bulletActiveClass: styles.swiperPaginationBulletActive,
-        }}
-        modules={[EffectFade, Navigation, Pagination]}
-        className="mySwiper"
-    >
-      {slides.map((slide, index) => (
-        <SwiperSlide key={index}>
-          <Slide 
-            heading={slide.heading}
-            description={slide.description}
-            buttonText={slide.buttonText}
-            buttonLink={slide.buttonLink}
-            imageUrl={slide.imageUrl}
-          />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+      <Swiper 
+        spaceBetween={30}
+        effect="fade"
+        navigation
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 5000 }}
+        modules={[EffectFade, Navigation, Pagination, Autoplay]}
+        
+      >
+        {slides.map((slide, index) => (
+          <SwiperSlide key={index}>
+            <Slide 
+              heading={slide.heading}
+              description={slide.description}
+              buttonText={slide.buttonText}
+              buttonLink={slide.buttonLink}
+              imageUrl={slide.imageUrl}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
-    
   );
 };
 

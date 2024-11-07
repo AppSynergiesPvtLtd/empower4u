@@ -1,108 +1,114 @@
 "use client";
 
-import * as React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
 import { navItems } from "@/config/navigationConfig";
-import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa"; // Icons for menu toggle and dropdown arrow
+import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
+import React, { useState } from 'react';
+import { usePathname } from 'next/navigation';
 
-export default function Navbar() {
+const Navbar: React.FC = () => {
+  const pathname = usePathname();
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
+  const handleMouseEnter = (title: string) => setOpenDropdown(title);
+  const handleMouseLeave = () => setOpenDropdown(null);
   const [isSidebarOpen, setSidebarOpen] = React.useState(false);
-  const [openDropdown, setOpenDropdown] = React.useState<string | null>(null); // Track which dropdown is open
 
   const handleDropdownToggle = (title: string) => {
-    setOpenDropdown((prev) => (prev === title ? null : title)); // Toggle open/close for the clicked dropdown
+    setOpenDropdown((prev) => (prev === title ? null : title));
   };
 
   return (
-    <nav className="text-navbar fixed inset-x-0 top-0 z-50 shadow-sm text-lg uppercase w-full bg-white">
-      <div className="px-4 flex justify-between items-center h-14">
-        {/* Toggle Button for Mobile */}
-        <button
-          className="md:hidden text-primary"
-          onClick={() => setSidebarOpen(true)}
-        >
-          <FaBars size={24} />
-        </button>
-
-        {/* Logo */}
-        <Link href="/" className="flex-1 flex justify-center" prefetch={false}>
+    <nav className="text-navbar fixed inset-x-0 top-0 z-50 shadow-sm text-sm uppercase w-full bg-[#f9f5f1]">
+      <div className="px-4 flex justify-between items-center h-16">
+        
+        <Link href="/" className="flex items-center" prefetch={false}>
           <Image src="/images/Logo/logo.svg" alt="Empower4U Logo" width={170} height={170} />
         </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex flex-1 justify-center">
-          <NavigationMenu>
-            <NavigationMenuList>
-              {navItems.map((item) => (
-                <NavigationMenuItem key={item.title} className="relative">
-                  {item.hasDropdown ? (
-                    <>
-                      <NavigationMenuTrigger className="uppercase">{item.title}</NavigationMenuTrigger>
-                      <NavigationMenuContent className="absolute left-0 mt-2">
-                        <ul className="grid gap-3 p-4 w-52">
-                          {item.options.map((option) => (
-                            <ListItem key={option.title} title={option.title} href={option.href} />
-                          ))}
-                        </ul>
-                      </NavigationMenuContent>
-                    </>
-                  ) : (
-                    <Link href={item.href} passHref legacyBehavior>
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>{item.title}</NavigationMenuLink>
-                    </Link>
-                  )}
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
+        <div className="hidden md:flex flex-1 justify-center space-x-6 font-semibold text-primary">
+          {navItems.map((item) => (
+  <div
+    key={item.title}
+    onMouseEnter={() => item.hasDropdown && handleMouseEnter(item.title)}
+    onMouseLeave={handleMouseLeave}
+    className="relative group"
+  >
+    <Link
+      href={item.href}
+      className={`px-4 py-2 text-xs flex items-center hover:border-b-2 hover:border-maintext ${
+        pathname === item.href ? 'text-primary border-b-2 border-maintext' : ''
+      } transition-colors duration-300`}
+    >
+      {item.title}
+      {item.hasDropdown && (
+        <FaChevronDown
+          className={`ml-2 transition-transform ${
+            openDropdown === item.title ? 'transform rotate-180' : ''
+          }`}
+          size={10}
+        />
+      )}
+    </Link>
+
+    {item.hasDropdown && openDropdown === item.title && (
+      <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg py-2 rounded-md">
+        {item.options?.map((option) => (
+          <Link
+            key={option.title}
+            href={option.href}
+            className="block px-4 py-2 text-xs text-primary hover:bg-primary hover:text-white"
+          >
+            {option.title}
+          </Link>
+        ))}
+      </div>
+    )}
+  </div>
+))}
+
         </div>
 
-        {/* Book Now Button for Desktop */}
-        <div className="hidden md:flex flex-1 justify-center">
+        <div className="hidden md:flex items-center">
           <Link
             href="https://calendly.com/appsynergies"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2 text-sm font-bold bg-primary text-white rounded-full hover:bg-maintext transition duration-200"
+            className="px-6 py-2 text-sm font-semibold bg-primary text-white rounded-full hover:bg-maintext transition duration-200"
           >
             Book Now
           </Link>
         </div>
+
+        <button
+          className="md:hidden text-white bg-primary p-2 rounded-sm"
+          onClick={() => setSidebarOpen(true)}
+        >
+          <FaBars size={24} />
+        </button>
       </div>
 
-      {/* Sidebar for Mobile */}
       {isSidebarOpen && (
         <div className="fixed inset-0 z-40 bg-black bg-opacity-50 md:hidden" onClick={() => setSidebarOpen(false)}>
           <div
             className="fixed inset-y-0 left-0 w-64 bg-white p-6 shadow-lg transform transition-transform"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Close Button */}
             <button
               className="text-primary mb-4"
               onClick={() => setSidebarOpen(false)}
             >
               <FaTimes size={24} />
             </button>
-
-            {/* Sidebar Navigation */}
+            
+            
             <nav>
               {navItems.map((item) => (
                 <div key={item.title} className="mb-4">
                   <div className="flex justify-between items-center">
-                    <Link href={item.href} className="block font-semibold text-lg uppercase">
+                    <Link href={item.href} className="block font-semibold text-sm uppercase">
                       {item.title}
                     </Link>
                     {item.hasDropdown && (
@@ -111,9 +117,8 @@ export default function Navbar() {
                         className="text-primary focus:outline-none"
                       >
                         <FaChevronDown
-                          className={`transition-transform ${
-                            openDropdown === item.title ? "transform rotate-180" : ""
-                          }`}
+                          className={`transition-transform ${openDropdown === item.title ? "transform rotate-180" : ""}`}
+                          size={11}
                         />
                       </button>
                     )}
@@ -143,25 +148,4 @@ export default function Navbar() {
   );
 }
 
-const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a">>(
-  ({ className, title, children, ...props }, ref) => {
-    return (
-      <li>
-        <NavigationMenuLink asChild>
-          <a
-            ref={ref}
-            className={cn(
-              "block select-none leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-              className
-            )}
-            {...props}
-          >
-            <div className="text-sm font-medium leading-none">{title}</div>
-            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{children}</p>
-          </a>
-        </NavigationMenuLink>
-      </li>
-    );
-  }
-);
-ListItem.displayName = "ListItem";
+export default Navbar;

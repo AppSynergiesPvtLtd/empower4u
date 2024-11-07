@@ -7,7 +7,9 @@ const ClientsWorkTogether: React.FC = () => {
     <div>
         <section className="py-16 px-4">
             <div className="container mx-auto">
-                <h1 className="text-4xl font-bold text-maintext font-inter text-center uppercase my-10">How we work together</h1>
+                <div className="flex justify-center mb-6"><Image src="/icons/top_border.svg" alt="Top Border" width={600} height={400} /></div>
+                    <h1 className="text-4xl text-maintext font-bold text-center uppercase font-inter my-4"> How we work together  </h1>
+                <div className="flex justify-center mb-12"><Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} /></div>
                 <div className="container mx-auto px-4 max-w-4xl border-2 border-primary p-8">
                     <p className="text-sm text-maintext  mb-8">
                     We believe in a collaborative approach to physiotherapy, ensuring that both clients and families are actively involved throughout the process. Our experienced team works closely with you to set realistic, achievable goals, offering guidance and support at every step.
@@ -29,7 +31,7 @@ const ClientsWorkTogether: React.FC = () => {
                         </div>
                         <div className="flex justify-center md:justify-end">
                             <Image
-                            src="/images/for-clients-families/How we work together page- At-Home Convenience.jpg"
+                            src="/images/for-clients-families/How-we-work-page-personalised-care-plan.webp"
                             alt="Personalized Care"
                             width={200}
                             height={150}
@@ -41,7 +43,7 @@ const ClientsWorkTogether: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8  my-8">
                         <div className="flex justify-center md:justify-start">
                             <Image
-                                src="/images/for-clients-families/How we work together page- At-Home Convenience.jpg"
+                                src="/images/for-clients-families/How-we-work-together-page-At-Home-Convenience.webp"
                                 alt="At-Home Convenience"
                                 width={200}
                                 height={150}
@@ -66,7 +68,7 @@ const ClientsWorkTogether: React.FC = () => {
                         </div>
                         <div className="flex justify-center md:justify-end">
                             <Image
-                                src="/images/for-clients-families/How we work page- ongoing communication.jpg"
+                                src="/images/for-clients-families/How-we-work-page-ongoing-communication.webp"
                                 alt="Ongoing Communication"
                                 width={200}
                                 height={150}
@@ -114,7 +116,7 @@ const ClientsWorkTogether: React.FC = () => {
 
                     <div className="flex justify-center">
                         <Image 
-                            src="/images/for-clients-families/Our unique approach page.jpg" 
+                            src="/images/for-clients-families/Our-unique-approach-page.webp" 
                             alt="Our Unique Approach" 
                             width={400} 
                             height={500} 
