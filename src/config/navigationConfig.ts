@@ -2,7 +2,7 @@ export const navItems = [
   { title: "About", href: "/about", hasDropdown: false },
   {
     title: "Specialty",
-    href: "/specialty",
+    href: "#",
     hasDropdown: true,
     options: [
       { title: "Explore All", href: "/specialty/explore-all" },
@@ -21,7 +21,7 @@ export const navItems = [
   },
   {
     title: "For Professionals",
-    href: "/for-professionals",
+    href: "#",
     hasDropdown: true,
     options: [
       { title: "Evidence", href: "/for-professionals/evidence" },
@@ -31,7 +31,7 @@ export const navItems = [
   },
   {
     title: "For Clients and Families",
-    href: "/for-clients-families",
+    href: "#",
     hasDropdown: true,
     options: [
       { title: "How we work together", href: "/for-clients-families/how-we-work-together" },
@@ -40,7 +40,7 @@ export const navItems = [
   },
   {
     title: "Career",
-    href: "/career",
+    href: "#",
     hasDropdown: true,
     options: [
       { title: "Work with us", href: "/career/work-with-us" },

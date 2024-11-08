@@ -135,7 +135,7 @@ const StrokeRehabilitationPage: React.FC = () => {
         
         <div className="flex justify-center mb-12">
           <Image
-            src="/images/specialty/vestibulardisorder.jpg"
+            src="/images/specialty/vestibulardisorder.webp"
             alt="vestibulardisorder"
             width={500}
             height={400}

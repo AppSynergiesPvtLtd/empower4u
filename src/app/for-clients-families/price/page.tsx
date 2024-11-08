@@ -16,8 +16,8 @@ const PricingAndAvailability: React.FC = () => {
 
         <div className="flex justify-center mb-12">
           <Image
-            src="/images/for-clients-families/Pricing page.jpg"
-            alt="Invoice"
+            src="/images/for-clients-families/Pricing-page.webp"
+            alt="Price"
             width={400}
             height={300}
             className="rounded-lg shadow-md"
@@ -73,7 +73,7 @@ const PricingAndAvailability: React.FC = () => {
           <p className="text-lg mb-6 text-left">
             If you or a loved one is in need of physiotherapy, let's talk! Whether you're managing a chronic condition or recovering from an injury, our team is here to help you regain your strength and independence. Get in touch with us today to schedule an initial consultation and take the first step towards a healthier future.
           </p>
-          <a href="/contact" className="inline-block px-6 py-3 bg-primary text-white rounded-full hover:bg-maintext">
+          <a href="/enquiry" className="inline-block px-6 py-3 bg-primary text-white rounded-full hover:bg-maintext">
             Contact Us
           </a>
         </div>

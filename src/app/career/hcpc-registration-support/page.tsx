@@ -75,22 +75,27 @@ interface FormData {
   return (
     <section className="py-16 text-maintext">
       <div className="container mx-auto max-w-full">
-        <div className="flex justify-center mb-6"><Image src="/icons/top_border.svg" alt="Top Border" width={600} height={400} /></div>
-        <h1 className="text-4xl font-bold text-center uppercase font-inter my-4"> HCPC/ Job interview/ Career support  </h1>
-        <div className="flex justify-center mb-12"><Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} /></div>
+        <div className="p-8 mb-8 mx-auto">
+          <div className='mx-auto max-w-5xl'>
+            <div className="flex justify-center mb-6"><Image src="/icons/top_border.svg" alt="Top Border" width={600} height={400} /></div>
+            <h1 className="text-4xl font-bold text-center uppercase font-inter my-4"> HCPC/ Job interview/ Career support  </h1>
+            <div className="flex justify-center mb-12"><Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} /></div>
 
-        
-        <div className="flex justify-center mb-12">
-          <Image
-            src="/images/for-professionals/HCPC-Job-interview-Career-support-page.webp"
-            alt="HCPC-Job-interview-Career-support-page"
-            width={500}
-            height={400}
-            className="rounded-lg shadow-md"
-          />
+            
+            <div className="flex justify-center mb-12">
+              <Image
+                src="/images/for-professionals/HCPC-Job-interview-Career-support-page.webp"
+                alt="HCPC-Job-interview-Career-support-page"
+                width={500}
+                height={400}
+                className="rounded-lg shadow-md"
+              />
+            </div>
+          </div>
         </div>
+        
 
-        <section className="p-16 bg-[#d4c0a9] text-maintext w-full">
+        <section className="px-8 py-16 bg-[#d4c0a9] text-maintext w-full">
           <div className="container mx-auto max-w-4xl">
             <h1 className="text-4xl font-bold text-center uppercase mb-10 font-inter">What We Offer</h1>
 

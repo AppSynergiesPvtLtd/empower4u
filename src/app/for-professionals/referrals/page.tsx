@@ -140,29 +140,24 @@ const ReferralsPage = () => {
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)}>
-          {/* Section 1 */}
           <div className="mb-6">
             <h2 className="text-xl font-bold font-inter">1. Reasons for Referrals <span className="text-red-700"> *</span></h2>
             <textarea {...register("reasonsForReferrals")} className="w-full p-2 border border-maintext rounded mt-2" placeholder="Write reasons for referrals" required />
           </div>
 
-          {/* Section 2 */}
           <div className="mb-6">
             <h2 className="text-xl font-bold font-inter">2. Summary of Therapy Inputs <span className="text-red-700"> *</span></h2>
             <textarea {...register("therapyInputs")} className="w-full p-2 border border-maintext rounded mt-2" placeholder="Write summary of therapy inputs" required />
           </div>
 
-          {/* Section 3 */}
           <div className="mb-6">
             <h2 className="text-xl font-bold font-inter">3. Goals <span className="text-red-700"> *</span></h2>
             <textarea {...register("goals")} className="w-full p-2 border border-maintext rounded mt-2" placeholder="Write your goals" required />
           </div>
 
-          {/* Specialty Section */}
           <div className="mb-6">
             <h2 className="text-xl font-bold font-inter">4. Specialty You Refer To <span className="text-red-700"> *</span></h2>
 
-            {/* Neuro Options */}
             <h3 className="text-lg font-semibold mt-4 mb-2"><span className="font-bold mr-2">A.</span> Neuro</h3>
             <div className="ml-4">
               <div className="space-y-2">
@@ -176,31 +171,25 @@ const ReferralsPage = () => {
               <LabeledInput label="Enter specialty you refer to neuro" placeholder="Enter specialty you refer to neuro" labelPrefix="" name="specialtyNeuro" {...register("specialtyNeuro")} />
             </div>
 
-            {/* Falls/Balance */}
             <h3 className="text-lg font-semibold mt-4 mb-2"><span className="font-bold mr-2">B.</span> Falls/Balance</h3>
             <LabeledInput label="Number of Falls in the Last 3 Months" placeholder="Enter no. of falls" labelPrefix="" name="fallsBalance" type="number" {...register("fallsBalance")} />
 
-            {/* Surgery Prehab/Rehab */}
             <h3 className="text-lg font-semibold mt-4 mb-2"><span className="font-bold mr-2">C.</span> Surgery Prehab/Rehab</h3>
             <LabeledInput label="Specify the (Planned) Surgery" placeholder="Specify the (Planned) Surgery" labelPrefix="" name="surgeryDetails" {...register("surgeryDetails")} />
 
-            {/* Fracture/Joint Health/Amputee */}
             <h3 className="text-lg font-semibold mt-4 mb-2"><span className="font-bold mr-2">D.</span> Fracture/Joint Health/Amputee</h3>
             <LabeledInput label="Specify Involved Joint(s)" placeholder="Specify Involved Joint(s)" labelPrefix="" name="fractureJointHealth" {...register("fractureJointHealth")} />
 
-            {/* Mental Health */}
             <h3 className="text-lg font-semibold mt-4 mb-2"><span className="font-bold mr-2">E.</span> Mental Health</h3>
             <LabeledInput label="Specify diagnosed condition" placeholder="Specify diagnosed condition" labelPrefix="" name="mentalHealthCondition" {...register("mentalHealthCondition")} />
           </div>
 
-          {/* Functional Status */}
           <div className="mb-6">
             <h2 className="text-xl font-bold font-inter">5. Functional Status <span className="text-red-700"> *</span></h2>
             <LabeledInput label="Mobility:" placeholder="Enter Mobility" labelPrefix="" name="functionalStatus.mobility" {...register("functionalStatus.mobility")} />
             <LabeledInput label="ADLs:" placeholder="Enter ADLs" labelPrefix="" name="functionalStatus.ADLs" {...register("functionalStatus.ADLs")} />
           </div>
 
-          {/* Medical History */}
           <div className="mb-6">
             <h2 className="text-xl font-bold font-inter">6. Medical History and Current Condition</h2>
             <LabeledInput label="Specify Diagnosed Condition:" placeholder="Specify diagnosed condition" labelPrefix="A." name="medicalHistory.diagnosedCondition" {...register("medicalHistory.diagnosedCondition")} />
@@ -208,7 +197,6 @@ const ReferralsPage = () => {
             <LabeledInput label="Current Medications:" placeholder="Specify current medications" labelPrefix="C." name="currentMedications" {...register("currentMedications")} />
           </div>
 
-          {/* Client Information */}
           <div className="mb-6">
             <h2 className="text-xl font-bold font-inter">7. Client Information</h2>
             <LabeledInput label="Patient Full Name" placeholder="Patient Full Name" labelPrefix="" name="clientInfo.name" {...register("clientInfo.name")} />
@@ -220,7 +208,6 @@ const ReferralsPage = () => {
             <LabeledInput label="Emergency Contact Phone" placeholder="Emergency Contact Phone" labelPrefix="" name="clientInfo.emergencyContactNumber" {...register("clientInfo.emergencyContactNumber")} />
           </div>
 
-          {/* Additional Information */}
           <div className="mb-6">
             <h2 className="text-xl font-bold font-inter">8. Additional Information</h2>
             <LabeledInput label="Does the Patient Have A Caregiver?" placeholder="Yes or No" labelPrefix="A." name="additionalInfo.hasCaregiver" {...register("additionalInfo.hasCaregiver")} />
@@ -228,7 +215,6 @@ const ReferralsPage = () => {
             <LabeledInput label="Other Notes/Additional Information:" placeholder="Other additional information" labelPrefix="C." name="additionalInfo.otherNotes" {...register("additionalInfo.otherNotes")} />
           </div>
 
-          {/* Consent and Privacy */}
           <div className="mb-8">
             <h2 className="text-xl font-bold font-inter">9. Consent and Privacy <span className="text-red-700"> *</span></h2>
             <label className="flex items-start space-x-2 mt-4">
@@ -239,7 +225,6 @@ const ReferralsPage = () => {
             <LabeledInput label="Date:" placeholder="Date" labelPrefix="" name="referringHealthProfessionalDetails.consentDate" type="date" {...register("referringHealthProfessionalDetails.consentDate")} />
           </div>
 
-          {/* Referring Health Professional Details */}
           <div className="mb-6">
             <h2 className="text-xl font-bold font-inter">10. Referring Health Professional Details</h2>
             <LabeledInput label="Health Professional Name" placeholder="Enter health professional name" labelPrefix="A." name="referringHealthProfessionalDetails.name" {...register("referringHealthProfessionalDetails.name")} />
@@ -250,7 +235,6 @@ const ReferralsPage = () => {
             <LabeledInput label="Date Of Referral:" placeholder="Date" labelPrefix="E." name="referringHealthProfessionalDetails.dateOfReferral" type="date" {...register("referringHealthProfessionalDetails.dateOfReferral")} />
           </div>
 
-          {/* Submission */}
           <div className="text-center">
             <button type="submit" className="px-8 py-3 bg-maintext text-white rounded-md hover:bg-maintext-700">
               Submit
