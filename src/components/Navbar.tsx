@@ -44,49 +44,49 @@ const Navbar: React.FC = () => {
           <FaBars size={24} />
         </button>
         <Link href="/" className="flex items-center mx-auto" prefetch={false}>
-          <Image src="/images/Logo/logo.svg" alt="Empower4U Logo" width={170} height={170} />
+          <Image src="/images/Logo/logo.svg" alt="Empower4U Logo" width={170} height={170} priority />
         </Link>
 
         <div className="hidden md:flex flex-1 justify-center space-x-6 font-semibold text-primary">
           {navItems.map((item) => (
-  <div
-    key={item.title}
-    onMouseEnter={() => item.hasDropdown && handleMouseEnter(item.title)}
-    onMouseLeave={handleMouseLeave}
-    className="relative group"
-  >
-    <Link
-      href={item.href}
-      className={`px-4 py-2 text-xs flex items-center hover:border-b-2 hover:border-maintext ${
-        pathname === item.href ? 'text-primary border-b-2 border-maintext' : ''
-      } transition-colors duration-300`}
-    >
-      {item.title}
-      {item.hasDropdown && (
-        <FaChevronDown
-          className={`ml-2 transition-transform ${
-            openDropdown === item.title ? 'transform rotate-180' : ''
-          }`}
-          size={10}
-        />
-      )}
-    </Link>
-
-    {item.hasDropdown && openDropdown === item.title && (
-      <div className="absolute left-0 mt-1 w-48 bg-white shadow-lg py-1 rounded-md">
-        {item.options?.map((option) => (
+        <div
+          key={item.title}
+          onMouseEnter={() => item.hasDropdown && handleMouseEnter(item.title)}
+          onMouseLeave={handleMouseLeave}
+          className="relative group"
+        >
           <Link
-            key={option.title}
-            href={option.href}
-            className="block px-4 py-2 text-xs text-primary hover:bg-primary hover:text-white"
+            href={item.href}
+            className={`px-4 py-2 text-xs flex items-center hover:border-b-2 hover:border-maintext ${
+              pathname === item.href ? 'text-primary border-b-2 border-maintext' : ''
+            } transition-colors duration-300`}
           >
-            {option.title}
+            {item.title}
+            {item.hasDropdown && (
+              <FaChevronDown
+                className={`ml-2 transition-transform ${
+                  openDropdown === item.title ? 'transform rotate-180' : ''
+                }`}
+                size={10}
+              />
+            )}
           </Link>
-        ))}
-      </div>
-    )}
-  </div>
-))}
+
+          {item.hasDropdown && openDropdown === item.title && (
+            <div className="absolute left-0 mt-1 w-48 bg-white shadow-lg py-1 rounded-md">
+              {item.options?.map((option) => (
+                <Link
+                  key={option.title}
+                  href={option.href}
+                  className="block px-4 py-2 text-xs text-primary hover:bg-primary hover:text-white"
+                >
+                  {option.title}
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
 
         </div>
 

@@ -2,6 +2,7 @@
 import React, {useState} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Toaster, toast } from 'react-hot-toast';
 import RehabSection from '@/components/RehabSection';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
@@ -68,34 +69,29 @@ interface FormData {
       router.push('/success');
     } catch (error) {
       console.error("Form submission error:", error);
-      alert("An error occurred while submitting the form.");
+      toast.error('Failed to send request. Please try again.');
     }
   };
 
   return (
     <section className="py-16 text-maintext">
       <div className="container mx-auto max-w-full">
-        <div className="p-8 mb-8 mx-auto">
-          <div className='mx-auto max-w-5xl'>
-            <div className="flex justify-center mb-6"><Image src="/icons/top_border.svg" alt="Top Border" width={600} height={400} /></div>
-            <h1 className="text-4xl font-bold text-center uppercase font-inter my-4"> HCPC/ Job interview/ Career support  </h1>
-            <div className="flex justify-center mb-12"><Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} /></div>
+        <div className="flex justify-center mb-6"><Image src="/icons/top_border.svg" alt="Top Border" width={600} height={400} /></div>
+        <h1 className="text-4xl font-bold text-center uppercase font-inter my-4"> HCPC/ Job interview/ Career support  </h1>
+        <div className="flex justify-center mb-12"><Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} /></div>
 
-            
-            <div className="flex justify-center mb-12">
-              <Image
-                src="/images/for-professionals/HCPC-Job-interview-Career-support-page.webp"
-                alt="HCPC-Job-interview-Career-support-page"
-                width={500}
-                height={400}
-                className="rounded-lg shadow-md"
-              />
-            </div>
-          </div>
-        </div>
         
+        <div className="flex justify-center mb-12">
+          <Image
+            src="/images/for-professionals/HCPC-Job-interview-Career-support-page.webp"
+            alt="HCPC-Job-interview-Career-support-page"
+            width={500}
+            height={400}
+            className="rounded-lg shadow-md"
+          />
+        </div>
 
-        <section className="px-8 py-16 bg-[#d4c0a9] text-maintext w-full">
+        <section className="p-16 bg-[#d4c0a9] text-maintext w-full">
           <div className="container mx-auto max-w-4xl">
             <h1 className="text-4xl font-bold text-center uppercase mb-10 font-inter">What We Offer</h1>
 
@@ -226,7 +222,7 @@ interface FormData {
               <div className="text-center mt-6">
                 <button
                   type="submit"
-                  className="w-2/6 py-3 mt-4 bg-maintext text-white font-bold rounded-md hover:bg-maintext-700"
+                  className="w-2/6 py-3 mt-4 bg-maintext text-white font-bold rounded-md hover:text-primary"
                 >
                   Get Started
                 </button>

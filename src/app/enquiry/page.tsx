@@ -1,9 +1,9 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
-//import { useRouter } from 'next/router'; 
+import { Toaster, toast } from 'react-hot-toast';
 import 'react-phone-input-2/lib/style.css';
 
 const PhoneInput = dynamic(() => import('react-phone-input-2'), { ssr: false });
@@ -11,17 +11,26 @@ const PhoneInput = dynamic(() => import('react-phone-input-2'), { ssr: false });
 const Enquiry: React.FC = () => {
   const router = useRouter();
   const [phone, setPhone] = useState('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [enquiry, setEnquiry] = useState('');
   const [loading, setLoading] = useState(false);
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  useEffect(() => {
+    setIsFormValid(name.trim() !== '' && email.trim() !== '' && phone.trim() !== '' && enquiry.trim() !== '');
+  }, [name, email, phone, enquiry]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!isFormValid) return;
     setLoading(true);
 
     const formData = {
-      name: (e.currentTarget.elements.namedItem('name') as HTMLInputElement)?.value || '',
-      email: (e.currentTarget.elements.namedItem('email') as HTMLInputElement)?.value || '',
+      name,
+      email,
       phoneNumber: phone,
-      enquiry: (e.currentTarget.elements.namedItem('enquiry') as HTMLTextAreaElement)?.value || '',
+      enquiry,
     };
 
     try {
@@ -30,18 +39,23 @@ const Enquiry: React.FC = () => {
         formData
       );
       if (response.status === 200) {
-        e.currentTarget.reset(); 
+        setName('');
+        setEmail('');
+        setPhone('');
+        setEnquiry('');
         router.push('/success');
       }
     } catch (error) {
-      console.log(error)
+      toast.error('Failed to send enquiry. Please try again.');
+      console.error(error);
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <section className="py-16 px-4 text-maintext max-w-5xl mx-auto my-10 bg-white">
+    <section className="py-16 px-4 text-maintext max-w-5xl mx-auto my-10 bg-white w-5/6">
+      <Toaster position="top-right" reverseOrder={false} />
       <div className="container">
         <h1 className="text-3xl font-semibold text-maintext text-left mb-2">
           Love to hear from you,
@@ -51,7 +65,6 @@ const Enquiry: React.FC = () => {
         </h1>
 
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-        
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-maintext mb-1">
               Name
@@ -60,6 +73,8 @@ const Enquiry: React.FC = () => {
               type="text"
               id="name"
               name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               placeholder="Enter name"
               className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
               required
@@ -78,10 +93,11 @@ const Enquiry: React.FC = () => {
                 inputProps={{
                   name: 'phone',
                   required: true,
-                  className: 'w-full border border-gray-300 p-3 rounded-md focus:outline-none'
+                  className: 'ml-8 w-full p-3 border border-gray-300 rounded-md focus:outline-none'
                 }}
-                containerClass="w-full"
-                inputClass="w-full"
+                containerClass="phone-input-container w-full flex"
+                inputClass="ml-12 w-full pl-12"
+                buttonClass="phone-input-button"
               />
             </div>
 
@@ -93,6 +109,8 @@ const Enquiry: React.FC = () => {
                 type="email"
                 id="email"
                 name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter email"
                 className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                 required
@@ -107,6 +125,8 @@ const Enquiry: React.FC = () => {
             <textarea
               id="enquiry"
               name="enquiry"
+              value={enquiry}
+              onChange={(e) => setEnquiry(e.target.value)}
               placeholder="Enter enquiry"
               className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-primary h-32 resize-none"
               required
@@ -116,8 +136,10 @@ const Enquiry: React.FC = () => {
           <div className="flex justify-center mt-6">
             <button
               type="submit"
-              className="px-8 py-3 bg-gray-300 text-white rounded-full hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400"
-              disabled={loading}
+              className={`px-8 py-3 rounded-full text-white focus:outline-none focus:ring-2 ${
+                isFormValid && !loading ? 'bg-maintext hover:bg-maintext-dark' : 'bg-gray-300 cursor-not-allowed'
+              }`}
+              disabled={!isFormValid || loading}
             >
               {loading ? 'Sending...' : 'Send Enquiry'}
             </button>

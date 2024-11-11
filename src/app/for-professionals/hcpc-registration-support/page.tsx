@@ -2,6 +2,7 @@
 import React, {useState} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Toaster, toast } from 'react-hot-toast';
 import RehabSection from '@/components/RehabSection';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
@@ -68,7 +69,7 @@ interface FormData {
       router.push('/success');
     } catch (error) {
       console.error("Form submission error:", error);
-      alert("An error occurred while submitting the form.");
+      toast.error('Failed to send request. Please try again.');
     }
   };
 
@@ -221,7 +222,7 @@ interface FormData {
               <div className="text-center mt-6">
                 <button
                   type="submit"
-                  className="w-2/6 py-3 mt-4 bg-maintext text-white font-bold rounded-md hover:bg-maintext-700"
+                  className="w-2/6 py-3 mt-4 bg-maintext text-white font-bold rounded-md hover:text-primary"
                 >
                   Get Started
                 </button>

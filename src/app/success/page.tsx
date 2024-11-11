@@ -1,9 +1,18 @@
+"use client";
+
+import React, { useEffect } from 'react';
+import { Toaster, toast } from 'react-hot-toast';
 import Link from 'next/link';
 import Image from 'next/image';
 
 const SuccessPage: React.FC = () => {
+  useEffect(() => {
+    // toast.success('Your request was sent successfully!');
+  }, []);
+
   return (
     <section className="flex flex-col items-center justify-center pt-16 pb-6 px-4 text-center text-maintext bg-white">
+    {/* <Toaster position="top-right" reverseOrder={false} /> */}
       <div className="container mx-auto max-w-md">
         <Image
           src="/icons/success_image.svg"
@@ -11,6 +20,7 @@ const SuccessPage: React.FC = () => {
           width={700}
           height={700}
           className="mb-8"
+          priority
         />
         <p className="text-lg font-semibold mb-10 text-maintext">
           Thank you for reaching out! We have received your message and will be in touch with you shortly.

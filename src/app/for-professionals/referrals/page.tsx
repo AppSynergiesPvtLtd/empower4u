@@ -3,12 +3,12 @@ import React from 'react';
 import Image from 'next/image';
 import { useForm, Controller  } from 'react-hook-form';
 import axios from 'axios';
-import { FaUpload } from 'react-icons/fa';
+import { useRouter } from 'next/navigation';
 import LabeledInput from '@/components/LabeledInput';
+import LabeledInputInline from '@/components/LabeledInputInline';
 import dynamic from 'next/dynamic';
 import 'react-phone-input-2/lib/style.css';
-
-const PhoneInput = dynamic(() => import('react-phone-input-2'), { ssr: false });
+import { Toaster, toast } from 'react-hot-toast';
 
 interface FormData {
   reasonsForReferrals: string;
@@ -57,7 +57,10 @@ interface FormData {
 }
 
 const ReferralsPage = () => {
-  const { register, handleSubmit } = useForm<FormData>();
+  const router = useRouter();
+  const { register, handleSubmit, formState: { errors, isValid } } = useForm<FormData>({
+    mode: 'onChange'
+  });
 
   const onSubmit = async (data: FormData) => {
     const payload = {
@@ -115,6 +118,7 @@ const ReferralsPage = () => {
       console.log('Form submitted successfully:', response.data);
     } catch (error) {
       console.error('Error submitting form:', error);
+      toast.error('Failed to send enquiry. Please try again.');
     }
   };
 
@@ -142,17 +146,17 @@ const ReferralsPage = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-6">
             <h2 className="text-xl font-bold font-inter">1. Reasons for Referrals <span className="text-red-700"> *</span></h2>
-            <textarea {...register("reasonsForReferrals")} className="w-full p-2 border border-maintext rounded mt-2" placeholder="Write reasons for referrals" required />
+            <textarea {...register("reasonsForReferrals")} className="w-full p-2 bg-transparent border border-gray-300 rounded mt-2" placeholder="Write reasons for referrals" required />
           </div>
 
           <div className="mb-6">
             <h2 className="text-xl font-bold font-inter">2. Summary of Therapy Inputs <span className="text-red-700"> *</span></h2>
-            <textarea {...register("therapyInputs")} className="w-full p-2 border border-maintext rounded mt-2" placeholder="Write summary of therapy inputs" required />
+            <textarea {...register("therapyInputs")} className="w-full p-2 border bg-transparent border-gray-300 rounded mt-2" placeholder="Write summary of therapy inputs" required />
           </div>
 
           <div className="mb-6">
             <h2 className="text-xl font-bold font-inter">3. Goals <span className="text-red-700"> *</span></h2>
-            <textarea {...register("goals")} className="w-full p-2 border border-maintext rounded mt-2" placeholder="Write your goals" required />
+            <textarea {...register("goals")} className="w-full p-2 border bg-transparent border-gray-300 rounded mt-2" placeholder="Write your goals" required />
           </div>
 
           <div className="mb-6">
@@ -163,31 +167,33 @@ const ReferralsPage = () => {
               <div className="space-y-2">
                 {['Stroke Vestibular Disorder', "Parkinson's Disease", 'Spinal Cord Injury', 'Multiple Sclerosis', 'Guillain-Barre Syndrome', 'Rare Neurological Conditions', 'Others'].map((option) => (
                   <div key={option} className="flex items-center space-x-2">
-                    <input type="radio" value={option} {...register("specialtyNeuro")} className="mt-1" />
+                    <input type="radio" value={option} {...register("specialtyNeuro")} className="mt-1" required />
                     <label htmlFor={option} className="text-base font-medium text-maintext">{option}</label>
                   </div>
                 ))}
               </div>
-              <LabeledInput label="Enter specialty you refer to neuro" placeholder="Enter specialty you refer to neuro" labelPrefix="" name="specialtyNeuro" {...register("specialtyNeuro")} />
+              
+              <LabeledInput label="Enter specialty you refer to neuro" placeholder="Enter specialty you refer to neuro" labelPrefix="" name="specialtyNeuro" {...register("specialtyNeuro")}/>
             </div>
 
             <h3 className="text-lg font-semibold mt-4 mb-2"><span className="font-bold mr-2">B.</span> Falls/Balance</h3>
-            <LabeledInput label="Number of Falls in the Last 3 Months" placeholder="Enter no. of falls" labelPrefix="" name="fallsBalance" type="number" {...register("fallsBalance")} />
+            <LabeledInputInline label="Number of Falls in the Last 3 Months" placeholder="Enter no. of falls" labelPrefix="" name="fallsBalance" type="number" {...register("fallsBalance")} required={true} />
 
             <h3 className="text-lg font-semibold mt-4 mb-2"><span className="font-bold mr-2">C.</span> Surgery Prehab/Rehab</h3>
-            <LabeledInput label="Specify the (Planned) Surgery" placeholder="Specify the (Planned) Surgery" labelPrefix="" name="surgeryDetails" {...register("surgeryDetails")} />
+            <LabeledInput label="Specify the (Planned) Surgery" placeholder="Specify the (Planned) Surgery" labelPrefix="" name="surgeryDetails" {...register("surgeryDetails")} required={true} />
 
             <h3 className="text-lg font-semibold mt-4 mb-2"><span className="font-bold mr-2">D.</span> Fracture/Joint Health/Amputee</h3>
-            <LabeledInput label="Specify Involved Joint(s)" placeholder="Specify Involved Joint(s)" labelPrefix="" name="fractureJointHealth" {...register("fractureJointHealth")} />
+            <LabeledInput label="Specify Involved Joint(s)" placeholder="Specify Involved Joint(s)" labelPrefix="" name="fractureJointHealth" {...register("fractureJointHealth")} required={true} />
 
             <h3 className="text-lg font-semibold mt-4 mb-2"><span className="font-bold mr-2">E.</span> Mental Health</h3>
-            <LabeledInput label="Specify diagnosed condition" placeholder="Specify diagnosed condition" labelPrefix="" name="mentalHealthCondition" {...register("mentalHealthCondition")} />
+            <LabeledInput label="Specify diagnosed condition" placeholder="Specify diagnosed condition" labelPrefix="" name="mentalHealthCondition" {...register("mentalHealthCondition")} required={true} />
           </div>
 
           <div className="mb-6">
             <h2 className="text-xl font-bold font-inter">5. Functional Status <span className="text-red-700"> *</span></h2>
-            <LabeledInput label="Mobility:" placeholder="Enter Mobility" labelPrefix="" name="functionalStatus.mobility" {...register("functionalStatus.mobility")} />
-            <LabeledInput label="ADLs:" placeholder="Enter ADLs" labelPrefix="" name="functionalStatus.ADLs" {...register("functionalStatus.ADLs")} />
+            <label className="text-base font-medium text-maintext block mt-1 ml-5"> Please provide information about the patient's current functional abilities:</label>
+            <LabeledInput label="Mobility:" placeholder="Enter Mobility" labelPrefix="" name="functionalStatus.mobility" {...register("functionalStatus.mobility")} required={true} />
+            <LabeledInput label="ADLs:" placeholder="Enter ADLs" labelPrefix="" name="functionalStatus.ADLs" {...register("functionalStatus.ADLs")} required={true} />
           </div>
 
           <div className="mb-6">
@@ -199,44 +205,66 @@ const ReferralsPage = () => {
 
           <div className="mb-6">
             <h2 className="text-xl font-bold font-inter">7. Client Information</h2>
-            <LabeledInput label="Patient Full Name" placeholder="Patient Full Name" labelPrefix="" name="clientInfo.name" {...register("clientInfo.name")} />
-            <LabeledInput label="Date of Birth" placeholder="Date of Birth" labelPrefix="" name="clientInfo.dob" type="date" {...register("clientInfo.dob")} />
-            <LabeledInput label="Phone Number" placeholder="Phone Number" labelPrefix="" name="clientInfo.phoneNumber" type="tel" {...register("clientInfo.phoneNumber")} />
-            <LabeledInput label="Email Address" placeholder="Email Address" labelPrefix="" name="clientInfo.email" type="email" {...register("clientInfo.email")} />
-            <LabeledInput label="Address" placeholder="Address" labelPrefix="" name="clientInfo.address" {...register("clientInfo.address")} />
-            <LabeledInput label="Emergency Contact Name" placeholder="Emergency Contact Name" labelPrefix="" name="clientInfo.emergencyContactName" {...register("clientInfo.emergencyContactName")} />
-            <LabeledInput label="Emergency Contact Phone" placeholder="Emergency Contact Phone" labelPrefix="" name="clientInfo.emergencyContactNumber" {...register("clientInfo.emergencyContactNumber")} />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <LabeledInput label="Patient Full Name" placeholder="Patient Full Name" labelPrefix="A." name="clientInfo.name" {...register("clientInfo.name")} />
+              <LabeledInput label="Date of Birth" placeholder="Date of Birth" labelPrefix="B." name="clientInfo.dob" type="date" {...register("clientInfo.dob")} />
+              <LabeledInput label="Phone Number" placeholder="Phone Number" labelPrefix="C." name="clientInfo.phoneNumber" type="tel" {...register("clientInfo.phoneNumber")} />
+              <LabeledInput label="Email Address" placeholder="Email Address" labelPrefix="D." name="clientInfo.email" type="email" {...register("clientInfo.email")} />
+            </div>
+              <LabeledInput label="Address" placeholder="Address" labelPrefix="E." name="clientInfo.address" {...register("clientInfo.address")} />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <LabeledInput label="Emergency Contact Name" placeholder="Emergency Contact Name" labelPrefix="E." name="clientInfo.emergencyContactName" {...register("clientInfo.emergencyContactName")} />
+              <LabeledInput label="Emergency Contact Phone" placeholder="Emergency Contact Phone" labelPrefix="F." name="clientInfo.emergencyContactNumber" type="tel" {...register("clientInfo.emergencyContactNumber")} />
+            </div>
           </div>
+
 
           <div className="mb-6">
             <h2 className="text-xl font-bold font-inter">8. Additional Information</h2>
-            <LabeledInput label="Does the Patient Have A Caregiver?" placeholder="Yes or No" labelPrefix="A." name="additionalInfo.hasCaregiver" {...register("additionalInfo.hasCaregiver")} />
+            <LabeledInputInline
+              label="Does the Patient Have A Caregiver?"
+              placeholder="Yes or No"
+              labelPrefix="A."
+              name="additionalInfo.hasCaregiver"
+              type="radio"
+              required
+              options={["Yes", "No"]}
+              {...register("additionalInfo.hasCaregiver")}
+            />
             <LabeledInput label="Any Special Home Considerations?" placeholder="Specify any special home considerations" labelPrefix="B." name="additionalInfo.specialHomeConsiderations" {...register("additionalInfo.specialHomeConsiderations")} />
             <LabeledInput label="Other Notes/Additional Information:" placeholder="Other additional information" labelPrefix="C." name="additionalInfo.otherNotes" {...register("additionalInfo.otherNotes")} />
           </div>
 
           <div className="mb-8">
             <h2 className="text-xl font-bold font-inter">9. Consent and Privacy <span className="text-red-700"> *</span></h2>
-            <label className="flex items-start space-x-2 mt-4">
+            <label className="flex items-start space-x-2 my-4">
               <input type="checkbox" {...register("consentProvided")} className="mt-1" required />
-              <span>I confirm that I have discussed this referral with the patient and obtained their consent.</span>
+              <span>I confirm that I have discussed this referral with the patient and obtained their consent to share their personal health information for the purpose of arranging home-based physiotherapy services with Empower4U.</span>
             </label>
-            <LabeledInput label="Referring Health Professional Signature:" placeholder="Upload Signature" labelPrefix="" name="referringHealthProfessionalDetails.signature" type="file" {...register("referringHealthProfessionalDetails.signature")} />
-            <LabeledInput label="Date:" placeholder="Date" labelPrefix="" name="referringHealthProfessionalDetails.consentDate" type="date" {...register("referringHealthProfessionalDetails.consentDate")} />
+            <LabeledInputInline label="Referring Health Professional Signature:" placeholder="Upload Signature" labelPrefix="" name="referringHealthProfessionalDetails.signature" type="file" {...register("referringHealthProfessionalDetails.signature")} required={true} />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <LabeledInput label="Date:" placeholder="Select Date" labelPrefix="" name="referringHealthProfessionalDetails.consentDate" type="date" {...register("referringHealthProfessionalDetails.consentDate")} required={true} />
+            </div>
           </div>
 
           <div className="mb-6">
             <h2 className="text-xl font-bold font-inter">10. Referring Health Professional Details</h2>
-            <LabeledInput label="Health Professional Name" placeholder="Enter health professional name" labelPrefix="A." name="referringHealthProfessionalDetails.name" {...register("referringHealthProfessionalDetails.name")} />
+            <LabeledInput label="Health Professional Name" placeholder="Enter health professional name" labelPrefix="A." name="referringHealthProfessionalDetails.name" {...register("referringHealthProfessionalDetails.name")} required={true} />
             <LabeledInput label="Profession/Title" placeholder="Enter profession/title" labelPrefix="B." name="referringHealthProfessionalDetails.profession" {...register("referringHealthProfessionalDetails.profession")} />
             <LabeledInput label="Organization/Practice Name" placeholder="Enter organization/practice name" labelPrefix="C." name="referringHealthProfessionalDetails.organizationName" {...register("referringHealthProfessionalDetails.organizationName")} />
-            <LabeledInput label="Preferred Contact Method (Phone)" placeholder="Phone" labelPrefix="D." name="referringHealthProfessionalDetails.phoneNumber" type="tel" {...register("referringHealthProfessionalDetails.phoneNumber")} />
-            <LabeledInput label="Preferred Contact Method (Email)" placeholder="Email" labelPrefix="" name="referringHealthProfessionalDetails.email" type="email" {...register("referringHealthProfessionalDetails.email")} />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <LabeledInput label="Preferred Contact Method (Phone)" placeholder="Phone" labelPrefix="D." name="referringHealthProfessionalDetails.phoneNumber" type="tel" {...register("referringHealthProfessionalDetails.phoneNumber")} required={true} />
+              <LabeledInput label="Preferred Contact Method (Email)" placeholder="Email" labelPrefix="" name="referringHealthProfessionalDetails.email" type="email" {...register("referringHealthProfessionalDetails.email")} required={true} />
+            </div>
             <LabeledInput label="Date Of Referral:" placeholder="Date" labelPrefix="E." name="referringHealthProfessionalDetails.dateOfReferral" type="date" {...register("referringHealthProfessionalDetails.dateOfReferral")} />
           </div>
 
           <div className="text-center">
-            <button type="submit" className="px-8 py-3 bg-maintext text-white rounded-md hover:bg-maintext-700">
+            <button
+              type="submit"
+              className={`px-8 py-3 rounded-md ${isValid ? 'bg-maintext text-white' : 'bg-gray-400 cursor-not-allowed'}`}
+              disabled={!isValid}
+            >
               Submit
             </button>
           </div>

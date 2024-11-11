@@ -8,7 +8,37 @@
 body {
   background: #fbf3f3 !important;
 }
+/* .react-datepicker__navigation
+{
+  background-color: #ac8e6d !important;
+  color: white !important;
+  border-radius: 100% !important;
+  height: 25px !important;
+  width: 25px !important;
+} */
+.react-datepicker__current-month
+{
+  color: #4f296b !important;
+}
+.react-datepicker__day-names
+{
+  color: #af9fbd;
+}
+.react-datepicker__header
+{
+  background-color: #fff !important;
+}
+.react-datepicker__day
+{
+  color: #4f296b !important;
+}
+.react-datepicker__day--selected
+{
+  background-color: #4f296b !important;
+  color: white !important;
+  border-radius: 100% !important;
 
+}
 .font-inter {
   font-family: "Inter" !important;
   font-optical-sizing: auto;
