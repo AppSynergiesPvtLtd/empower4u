@@ -1,12 +1,11 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
-import { useForm, Controller  } from 'react-hook-form';
+import { useForm  } from 'react-hook-form';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import LabeledInput from '@/components/LabeledInput';
 import LabeledInputInline from '@/components/LabeledInputInline';
-import dynamic from 'next/dynamic';
 import 'react-phone-input-2/lib/style.css';
 import { Toaster, toast } from 'react-hot-toast';
 
@@ -262,7 +261,8 @@ const ReferralsPage = () => {
           <div className="text-center">
             <button
               type="submit"
-              className={`px-8 py-3 rounded-md ${isValid ? 'bg-maintext text-white' : 'bg-gray-400 cursor-not-allowed'}`}
+              // className={`px-8 py-3 rounded-md ${isValid ? 'bg-maintext text-white' : 'bg-gray-400 cursor-not-allowed'}`}
+              className={`px-10 py-3 rounded-3xl hover:bg-maintext hover:text-white bg-gray-400 text-black font-bold`}
               disabled={!isValid}
             >
               Submit
