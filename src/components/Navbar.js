@@ -116,7 +116,14 @@ const Navbar = () => {
             className="fixed inset-y-0 right-0 w-60 bg-white p-6 shadow-2xl transform transition-transform"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex justify-end">
+            <div className="flex justify-between">
+              <Image
+                src="/images/Logo/logo2.svg"
+                alt="Empower4U Logo"
+                width={70}
+                height={70}
+                priority
+              />
               <button
                 className="text-black font-thin mb-4"
                 onClick={() => setSidebarOpen(false)}
