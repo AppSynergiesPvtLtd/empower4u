@@ -9,7 +9,6 @@ import { Toaster, toast } from 'react-hot-toast';
 import 'react-phone-input-2/lib/style.css';
 import PhoneInput from 'react-phone-input-2';
 import React, { useRef, useState, useEffect } from 'react';
-import { FaUpload } from 'react-icons/fa';
 import { Checkbox, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel } from '@mui/material';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
@@ -136,7 +135,6 @@ const FormRadioGroup = ({ label, options, registerName, register, required = fal
             value={option}
             control={
               <Radio
-                required={required}
                 sx={{
                   color: '#4f296b',
                   '&.Mui-checked': {
@@ -160,7 +158,7 @@ const FormPhoneInput = ({ label, registerName, setValue, required = false }) => 
     <PhoneInput
       country="in"
       onChange={(value) => {
-        setValue(registerName, value); // Set value only for this field
+        setValue(registerName, value);
       }}
       inputProps={{
         required: required,
@@ -413,14 +411,6 @@ const ReferralsPage = () => {
               control={control}
               required={true}
             />
-{/*               
-              <FormTextInput
-                label="B. Date Of Birth"
-                registerName="clientInfo.dob"
-                register={register}
-                placeholder="Date of Birth"
-                type="date"
-              /> */}
 
               <FormPhoneInput
                 label="C. Phone Number"
@@ -514,14 +504,6 @@ const ReferralsPage = () => {
             />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* <FormTextInput
-                label="Date:"
-                registerName="referringHealthProfessionalDetails.consentDate"
-                register={register}
-                placeholder="Select Date"
-                type="date"
-                required
-              /> */}
               <FormDatePicker
               label="Date: "
               registerName="referringHealthProfessionalDetails.consentDate"
