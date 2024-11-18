@@ -8,56 +8,105 @@
 body {
   background: #fbf3f3 !important;
 }
-/* .react-datepicker__navigation
-{
-  background-color: #ac8e6d !important;
-  color: white !important;
-  border-radius: 100% !important;
-  height: 25px !important;
-  width: 25px !important;
-} */
-.react-datepicker__current-month
-{
-  color: #4f296b !important;
-}
-.react-datepicker__day-names
-{
-  color: #af9fbd;
-}
-.react-datepicker__header
-{
-  background-color: #fff !important;
-}
-.react-datepicker__day
-{
-  color: #4f296b !important;
-}
-.react-datepicker__day--selected
-{
-  background-color: #4f296b !important;
-  color: white !important;
-  border-radius: 100% !important;
+
+.css-nwsdb5-MuiFormLabel-root {
+    color: #4f296b !important;
+    font-weight: 600 !important;
 
 }
+
+.css-1abvrni-MuiButtonBase-root-MuiButton-root {
+  background-color: #fff !important;
+  color: #4f296b !important;
+  border: #4f296b 1px dashed !important;
+  box-shadow: none !important;
+}
+
+.css-1dune0f-MuiInputBase-input-MuiOutlinedInput-input {
+  color: #4f296b !important;
+}
+
+.css-1b1fjlj-MuiFormControl-root-MuiTextField-root {
+  color: #4f296b !important;
+  width: 100%;
+}
+
+.css-oeq6yz-MuiButtonBase-root-MuiIconButton-root
+{
+  color: #4f296b !important;
+}
+
+.css-4k4mmf-MuiButtonBase-root-MuiPickersDay-root
+{
+  color: #4f296b !important;
+}
+
+.css-4k4mmf-MuiButtonBase-root-MuiPickersDay-root.Mui-selected
+{
+  background-color: #4f296b !important;
+  color: #fff !important;
+}
+
+.css-17f9e7e-MuiTypography-root-MuiDayCalendar-weekDayLabel
+{
+  color: #af9fbd !important;
+
+}
+
+.css-1ckov0h-MuiSvgIcon-root
+{
+  background-color: #ac8e6d;
+  border-radius: 100%;
+  color: #fff;
+}
+
+.css-1chuxo2-MuiPickersCalendarHeader-label
+{
+  color: #4f296b !important;
+}
+
 .font-inter {
   font-family: "Inter" !important;
   font-optical-sizing: auto;
   font-style: normal;
 
 }
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes splitX {
+  0% {
+    width: 0;
+    transform: translate(-50%, 0);
+  }
+  33% {
+    width: 100%;
+    transform: translate(-50%, 0);
+  }
+  66% {
+    width: 100%;
+    transform: translate(-50%, 24px);
+  }
+  100% {
+    width: 0;
+    transform: translate(-50%, 24px);
+  }
 }
 
-.loader {
-  width: 16px;
-  height: 16px;
-  border: 2px solid #fff;
-  border-top-color: transparent;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
+@keyframes moveY {
+  0%,
+  33% {
+    transform: translateY(0);
+  }
+  66%,
+  100% {
+    transform: translateY(-24px);
+  }
+}
+
+.animate-splitX {
+  animation: splitX 1s linear infinite alternate;
+}
+
+.animate-moveY {
+  animation: moveY 1s linear infinite alternate;
 }
 
 
@@ -143,7 +192,7 @@ body {
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border !important;
   }
   body {
     @apply bg-background text-foreground;
