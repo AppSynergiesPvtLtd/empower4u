@@ -191,7 +191,7 @@ body {
 }
 
 @layer base {
-  * {
+  input {
     @apply border-border !important;
   }
   body {
@@ -199,4 +199,9 @@ body {
     
   }
   
+}
+
+
+.css-jupps9-MuiInputBase-root-MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {
+  border-color: hsl(0 3% 90% / 1) !important;
 }

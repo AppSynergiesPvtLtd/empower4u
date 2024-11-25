@@ -14,12 +14,12 @@ const Footer = () => {
           </p>
         </div>
         <div className="flex space-x-4 text-primary">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-maintext">
+          {/* <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-maintext">
             <FaFacebookF />
           </a>
           <a href="tel:+123456789" className="hover:text-primary">
             <FaPhoneAlt />
-          </a>
+          </a> */}
           <a href="info@empower4u.org" className="hover:text-maintext">
             <FaEnvelope />
           </a>

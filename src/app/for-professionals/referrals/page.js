@@ -1,6 +1,5 @@
 "use client";
 
-import Loader from "@/components/Loader";
 import Image from 'next/image';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
@@ -26,7 +25,7 @@ const FormDatePicker = ({ label, registerName, control, required = false }) => (
         name={registerName}
         control={control}
         rules={{ required }}
-        render={({ field }) => (
+        render={({ field, fieldState: { error } }) => (
           <DatePicker
             {...field}
             onChange={(date) => field.onChange(date)}
@@ -37,7 +36,9 @@ const FormDatePicker = ({ label, registerName, control, required = false }) => (
                 fullWidth
                 variant="outlined"
                 placeholder="Enter Date"
-
+                error={!!error}
+                helperText={error ? 'This field is required' : null} 
+                aria-invalid={!!error}
               />
             )}
           />
@@ -46,6 +47,7 @@ const FormDatePicker = ({ label, registerName, control, required = false }) => (
     </LocalizationProvider>
   </div>
 );
+
 
 const FormTextInput = ({ label, registerName, register, placeholder, type = 'text', required = false }) => (
   <div className="mb-4 ml-5">

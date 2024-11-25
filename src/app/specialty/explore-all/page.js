@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import SpecialtyCircle from '@/components/SpecialtyCircle';
 import { specialtiesData } from '@/config/specialityData';
+import { specialtiesData2 } from '@/config/specialityData2';
 import CallToActionSection from '@/components/CallToActionSection';
 
 const SpecialtyPage = () => {
@@ -40,6 +41,11 @@ const SpecialtyPage = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto justify-items-center">
           {specialtiesData.map((item, index) => (
+            <SpecialtyCircle key={index} title={item.title} link={item.link} />
+          ))}
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 max-w-6xl mx-auto md:mx-80 justify-items-center">
+          {specialtiesData2.map((item, index) => (
             <SpecialtyCircle key={index} title={item.title} link={item.link} />
           ))}
         </div>
