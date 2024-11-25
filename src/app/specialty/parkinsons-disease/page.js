@@ -153,23 +153,23 @@ const StrokeRehabilitationPage = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
 
   return (
     <section className="py-16 px-4 text-maintext">
       <div className="container mx-auto max-w-4xl">
         <div className="flex justify-center mb-6"><Image src="/icons/top_border.svg" alt="Top Border" width={600} height={400} /></div>
-        <h1 className="text-4xl font-bold text-center uppercase font-inter my-4"> Parkinson's Disease Rehabilitation  </h1>
+        <h1 className="text-4xl font-bold text-center uppercase font-inter my-4"> Parkinson&#39;s Disease Rehabilitation  </h1>
         <div className="flex justify-center mb-12"><Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} /></div>
 
-        <p className="text-lg border-2 border-primary p-4 mb-8">
-          Parkinson's disease is a progressive neurological disorder that affects movement, muscle control, and balance due to the loss of dopamine-producing cells in the brain. Common symptoms include tremors, rigidity, bradykinesia (slowness of movement), and postural instability, all of which can significantly impact a person’s ability to carry out daily tasks independently. Over time, the challenges of living with Parkinson's can also place a strain on caregivers, who may need to assist with activities such as walking, dressing, and mobility, leading to emotional and physical exhaustion.
+        <p className="text-lg !border-2 !border-primary p-4 mb-8">
+          Parkinson&#39;s disease is a progressive neurological disorder that affects movement, muscle control, and balance due to the loss of dopamine-producing cells in the brain. Common symptoms include tremors, rigidity, bradykinesia (slowness of movement), and postural instability, all of which can significantly impact a person&#39;s ability to carry out daily tasks independently. Over time, the challenges of living with Parkinson&#39;s can also place a strain on caregivers, who may need to assist with activities such as walking, dressing, and mobility, leading to emotional and physical exhaustion.
         </p>
         
         <div className="flex justify-center mb-12">
-          <Image
+          <img
             src="/images/specialty/Parkinson-disease.webp"
             alt="Parkinson-disease"
             width={500}

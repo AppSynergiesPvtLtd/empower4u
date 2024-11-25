@@ -18,9 +18,9 @@ const SpecialtyPage = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
   return (
     <section className="bg-[#f9f5f1] py-16 px-4 text-maintext">
       <div className="container mx-auto text-center">

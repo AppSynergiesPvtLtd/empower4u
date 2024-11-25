@@ -15,7 +15,7 @@ const whyChooseEmpower4UData = {
   items: [
     {
       title: "Industry Expertise",
-      description: "With years of experience in the physiotherapy job market, we understand the industry’s needs and requirements. Our consultants have insider knowledge of what employers are looking for and how to get you noticed.",
+      description: "With years of experience in the physiotherapy job market, we understand the industry&#39;s needs and requirements. Our consultants have insider knowledge of what employers are looking for and how to get you noticed.",
     },
     {
       title: "Personalized Service",
@@ -39,7 +39,7 @@ const whoWeHelpData = {
     },
     {
       title: "Experienced Professionals",
-      description: "If you’re looking to advance your career or transition into a new specialty, we provide guidance on securing higher-level positions or exploring different fields of physiotherapy.",
+      description: "If you are looking to advance your career or transition into a new specialty, we provide guidance on securing higher-level positions or exploring different fields of physiotherapy.",
     },
     {
       title: "International Physiotherapists",
@@ -63,9 +63,9 @@ const StrokeRehabilitationPage = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
@@ -99,7 +99,7 @@ const StrokeRehabilitationPage = () => {
         </div>
 
         <div className="flex justify-center mb-12">
-          <Image
+          <img
             src="/images/for-professionals/HCPC-Job-interview-Career-support-page.webp"
             alt="HCPC-Job-interview-Career-support-page"
             width={500}
@@ -129,6 +129,61 @@ const StrokeRehabilitationPage = () => {
               </ul>
             </div>
 
+            <div className="mb-8">
+              <h2 className="text-base font-bold mb-2">2. Job Application Writing</h2>
+              <p className="text-base mb-4">
+                A strong CV and cover letter are crucial for making a great impression with potential employers. Our experts will help you craft a professional, compelling application that highlights your qualifications and sets you apart from other candidates.
+              </p>
+              <ul className="list-disc list-inside space-y-2 ml-6 text-base">
+                <li>
+                  <strong>Preparing Supporting Information in the Application:</strong> We assist you in crafting the crucial supporting information section of your application, ensuring it highlights your strengths and directly matches the job’s specification. This tailored approach helps you stand out and demonstrate your suitability for the role.
+                </li>
+              </ul>
+            </div>
+
+            <div className="mb-8">
+              <h2 className="text-base font-bold mb-2">3. Interview Preparation</h2>
+              <p className="text-base mb-4">
+                Our team of consultants will fully prepare you for interviews with mock sessions, industry-specific questions, and expert advice on how to present your skills with confidence. This is definitely our strength—our specialists have risen through the ranks from Band 5 to Band 8 and now work in staff recruitment. With our insider knowledge, we know exactly how to help you maximize your performance and stand out in interviews.
+              </p>
+              <ul className="list-disc list-inside space-y-2 ml-6 text-base">
+                <li>
+                  <strong>Mock Interviews:</strong> Practice common interview scenarios to build confidence and refine your responses.
+                </li>
+                <li>
+                  <strong>Feedback and Improvement:</strong> We provide constructive feedback and tips to enhance your communication and presentation skills, ensuring you&#39;re interview-ready.
+                </li>
+              </ul>
+            </div>
+
+            <div className="mb-8">
+              <h2 className="text-base font-bold mb-2">4. Registration and Licensing Guidance</h2>
+              <p className="text-base mb-4">
+                If you&#39;re an international physiotherapist or new to the UK job market, you&#39;ll need to navigate the registration process with the Health and Care Professions Council (HCPC). We simplify this process by providing you with step-by-step guidance on the requirements, documentation, and timelines.
+              </p>
+              <ul className="list-disc list-inside space-y-2 ml-6 text-base">
+                <li>
+                  <strong>HCPC Registration Support:</strong> We assist you in gathering the necessary documentation, completing the registration, and understanding how to meet UK standards for physiotherapy practice.
+                </li>
+              </ul>
+            </div>
+
+            <div className="mb-8">
+              <h2 className="text-base font-bold mb-2">5. Career Development Advice</h2>
+              <p className="text-base mb-4">
+                Beyond job placement, we offer career development advice and training to help you advance in your physiotherapy career. Whether you&#39;re aiming for senior roles, looking to specialize in a particular area of practice, or moving towards research or management, we can support your long-term goals.
+              </p>
+              <ul className="list-disc list-inside space-y-2 ml-6 text-base">
+                <li>
+                  <strong>Personalized Career Analysis:</strong> We gather your personal experiences, passions, and life plans, combining them with our knowledge of industry developments and potential opportunities. By analyzing current government policies and market trends, we provide tailored advice on various career options to help you navigate your physiotherapy journey effectively.
+                </li>
+                <li>
+                  <strong>Specialization Pathways:</strong> If you’re looking to specialize in areas like sports physiotherapy, neurological rehabilitation, or paediatrics, we can advise on relevant training programs and certifications.
+                </li>
+              </ul>
+            </div>
+
+
             {/* Additional sections omitted for brevity */}
           </div>
         </section>
@@ -148,7 +203,7 @@ const StrokeRehabilitationPage = () => {
         />
 
         <section className="py-16 px-4 bg-[#f9f5f1] text-maintext">
-          <div className="container mx-auto max-w-2xl">
+          <div className="container mx-auto max-w-5xl">
             <h1 className="text-3xl font-bold text-center uppercase mb-6 font-inter">
               How to Get Started
             </h1>
@@ -162,7 +217,7 @@ const StrokeRehabilitationPage = () => {
                   <label className="block font-semibold mb-1 text-[#4f366d]">Name</label>
                   <input
                     {...register('name', { required: true })}
-                    className="w-full border border-[#4f366d] p-3 rounded-md"
+                    className="w-full !border !border-[#4f366d] bg-transparent p-3 "
                     placeholder="Enter name"
                   />
                   {errors.name && (
@@ -177,7 +232,7 @@ const StrokeRehabilitationPage = () => {
                       required: true,
                       pattern: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
                     })}
-                    className="w-full border border-[#4f366d] p-3 rounded-md"
+                    className="w-full !border !border-[#4f366d] bg-transparent p-3 "
                     placeholder="Enter email"
                   />
                   {errors.email && (
@@ -190,7 +245,7 @@ const StrokeRehabilitationPage = () => {
                 <label className="block font-semibold">Location</label>
                 <input
                   {...register('location', { required: true })}
-                  className="w-full border border-[#4f366d] p-3 rounded-md"
+                  className="w-full !border !border-[#4f366d] bg-transparent p-3 "
                   placeholder="Enter location"
                 />
                 {errors.location && (
@@ -200,13 +255,19 @@ const StrokeRehabilitationPage = () => {
               <div className="text-center mt-6">
                 <button
                   type="submit"
-                  className="w-2/6 py-3 mt-4 bg-maintext text-white font-bold rounded-md hover:text-primary"
+                  className="w-1/6 py-3 mt-4 bg-maintext text-white font-bold rounded-md hover:text-primary hover:border-2 hover:bg-[#FEF7F7]"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Sending Request...' : 'Get Started'}
                 </button>
               </div>
             </form>
+            <div className="text-center mt-10">
+              <p className='font-bold'>OR</p>
+              <p className="mt-4">
+                Or, simply fill out our <a href="/enquiry" className="text-maintext font-semibold underline">online consultation request form</a>, and a member of our team will be in touch to discuss how we can support your job search.
+              </p>
+            </div>
           </div>
         </section>
       </div>

@@ -140,9 +140,9 @@ const StrokeRehabilitationPage = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
 
   return (
     <section className="py-16 px-4 text-maintext">
@@ -151,13 +151,13 @@ const StrokeRehabilitationPage = () => {
         <h1 className="text-4xl font-bold text-center uppercase font-inter my-4"> Spinal Cord Injury Rehabilitation  </h1>
         <div className="flex justify-center mb-12"><Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} /></div>
 
-        <p className="text-lg border-2 border-primary p-4 mb-8">
+        <p className="text-lg !border-2 !border-primary p-4 mb-8">
           A spinal cord injury (SCI) can significantly impact a person’s ability to move, feel, and function independently, depending on the level and severity of the injury. SCI can result from trauma or disease and often leads to partial or complete loss of motor and sensory function below the site of injury. This loss of function can affect mobility, bladder and bowel control, and the ability to perform everyday tasks, placing both physical and emotional burdens on the individual and their caregivers. These challenges can be overwhelming, often requiring significant support and rehabilitation to improve quality of life.
 
         </p>
         
         <div className="flex justify-center mb-12">
-          <Image
+          <img
             src="/images/specialty/spinal-cord-injury.webp"
             alt="spinal-cord-injury.jpg"
             width={500}

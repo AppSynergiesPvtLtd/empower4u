@@ -133,9 +133,9 @@ const StrokeRehabilitationPage = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
 
   return (
     <section className="py-16 px-4 text-maintext">
@@ -144,12 +144,12 @@ const StrokeRehabilitationPage = () => {
         <h1 className="text-4xl font-bold text-center uppercase font-inter my-4"> Vestibular Rehabilitation  </h1>
         <div className="flex justify-center mb-12"><Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} /></div>
 
-        <p className="text-lg border-2 border-primary p-4 mb-8">
-          Vestibular disorders affect the inner ear and brain's ability to process balance-related sensory information, leading to symptoms like dizziness, vertigo, and imbalance, all of which can significantly impact daily life. Vestibular rehabilitation uses targeted exercises to alleviate symptoms, improve balance, and enhance stability, helping individuals regain confidence in their movements and restore functional independence.
+        <p className="text-lg !border-2 !border-primary p-4 mb-8">
+          Vestibular disorders affect the inner ear and brain&#39;s ability to process balance-related sensory information, leading to symptoms like dizziness, vertigo, and imbalance, all of which can significantly impact daily life. Vestibular rehabilitation uses targeted exercises to alleviate symptoms, improve balance, and enhance stability, helping individuals regain confidence in their movements and restore functional independence.
         </p>
         
         <div className="flex justify-center mb-12">
-          <Image
+          <img
             src="/images/specialty/vestibulardisorder.webp"
             alt="vestibulardisorder"
             width={500}
@@ -204,7 +204,7 @@ const StrokeRehabilitationPage = () => {
         <section className="py-10 text-maintext text-center">
           <div className="container mx-auto px-4">
             <div className="p-8 border-t-4 border-primary bg-white max-w-2xl mx-auto">
-              <h2 className="text-3xl font-semibold mb-4 font-inter">We'd love to treat you</h2>
+              <h2 className="text-3xl font-semibold mb-4 font-inter">We&#39;d love to treat you</h2>
               <Link href="/enquiry" passHref>
                 <button className="px-6 py-3 text-lg font-semibold text-white bg-maintext rounded-full hover:bg-primary">
                   Make an Enquiry

@@ -5,50 +5,46 @@ import axios from 'axios';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
 import { Toaster, toast } from 'react-hot-toast';
+import { useForm } from 'react-hook-form';
 import 'react-phone-input-2/lib/style.css';
 
 const PhoneInput = dynamic(() => import('react-phone-input-2'), { ssr: false });
 
 const Enquiry = () => {
-  
   const router = useRouter();
-  const [phone, setPhone] = useState('');
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [enquiry, setEnquiry] = useState('');
   const [loading, setLoading] = useState(false);
-  const [isFormValid, setIsFormValid] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-
-
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors, isValid },
+  } = useForm({ mode: "onChange" });
 
   useEffect(() => {
-    setIsFormValid(name.trim() !== '' && email.trim() !== '' && phone.trim() !== '' && enquiry.trim() !== '');
-  }, [name, email, phone, enquiry]);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!isFormValid) return;
+    return () => clearTimeout(timer);
+  }, []);
+
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
+
+  const onSubmit = async (data) => {
     setLoading(true);
-
-    const formData = {
-      name,
-      email,
-      phoneNumber: phone,
-      enquiry,
-    };
 
     try {
       const response = await axios.post(
         'https://us-central1-empower4u-31c1a.cloudfunctions.net/EnquiryFormApi/create-enquiry',
-        formData
+        data
       );
+
       if (response.status === 200) {
-        setName('');
-        setEmail('');
-        setPhone('');
-        setEnquiry('');
+        toast.success("Enquiry sent successfully!");
         router.push('/success');
       }
     } catch (error) {
@@ -57,22 +53,10 @@ const Enquiry = () => {
     } finally {
       setLoading(false);
     }
-
-    useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (isLoading) {
-    return <Loader />;
-  }
   };
 
   return (
-    <section className="py-16 px-4 text-maintext max-w-5xl mx-auto my-10 bg-white w-5/6">
+    <section className="py-16 px-4 text-maintext max-w-5xl mx-auto my-10 w-5/6">
       <Toaster position="top-right" reverseOrder={false} />
       <div className="container">
         <h1 className="text-3xl font-semibold text-maintext text-left mb-2">
@@ -82,7 +66,7 @@ const Enquiry = () => {
           Get in touch <span role="img" aria-label="wave">👋</span>
         </h1>
 
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+        <form className="mt-8 space-y-6" onSubmit={handleSubmit(onSubmit)}>
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-maintext mb-1">
               Name
@@ -90,13 +74,11 @@ const Enquiry = () => {
             <input
               type="text"
               id="name"
-              name="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
               placeholder="Enter name"
-              className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-              required
+              className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:outline-none"
+              {...register("name", { required: "Name is required" })}
             />
+            {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -106,17 +88,13 @@ const Enquiry = () => {
               </label>
               <PhoneInput
                 country={'in'}
-                value={phone}
-                onChange={setPhone}
+                onChange={(value) => setValue("phoneNumber", value, { shouldValidate: true })}
                 inputProps={{
-                  name: 'phone',
                   required: true,
-                  className: 'ml-8 w-full p-3 border border-gray-300 rounded-md focus:outline-none'
+                  className: 'ml-8 w-5/6 p-3 border border-gray-300 rounded-md focus:outline-none'
                 }}
-                containerClass="phone-input-container w-full flex"
-                inputClass="ml-12 w-full pl-12"
-                buttonClass="phone-input-button"
               />
+              {errors.phoneNumber && <p className="text-red-500 text-sm">Phone number is required</p>}
             </div>
 
             <div>
@@ -126,13 +104,17 @@ const Enquiry = () => {
               <input
                 type="email"
                 id="email"
-                name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter email"
-                className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                required
+                className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:outline-none"
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+                    message: "Invalid email address",
+                  },
+                })}
               />
+              {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
             </div>
           </div>
 
@@ -142,22 +124,20 @@ const Enquiry = () => {
             </label>
             <textarea
               id="enquiry"
-              name="enquiry"
-              value={enquiry}
-              onChange={(e) => setEnquiry(e.target.value)}
               placeholder="Enter enquiry"
-              className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-primary h-32 resize-none"
-              required
+              className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:outline-none h-32 resize-none"
+              {...register("enquiry", { required: "Enquiry is required" })}
             ></textarea>
+            {errors.enquiry && <p className="text-red-500 text-sm">{errors.enquiry.message}</p>}
           </div>
 
           <div className="flex justify-center mt-6">
             <button
               type="submit"
               className={`px-8 py-3 rounded-full text-white focus:outline-none focus:ring-2 ${
-                isFormValid && !loading ? 'bg-maintext hover:bg-maintext-dark' : 'bg-gray-300 cursor-not-allowed'
+                isValid && !loading ? 'bg-maintext hover:bg-maintext-dark' : 'bg-gray-300 cursor-not-allowed'
               }`}
-              disabled={!isFormValid || loading}
+              disabled={!isValid || loading}
             >
               {loading ? 'Sending...' : 'Send Enquiry'}
             </button>

@@ -14,9 +14,9 @@ const PricingAndAvailability = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
   return (
     <section className="py-16 px-4 text-maintext">
       <div className="container mx-auto max-w-4xl">
@@ -25,12 +25,12 @@ const PricingAndAvailability = () => {
         <div className="flex justify-center mb-12"><Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} /></div>
 
 
-        <p className="text-lg border-2 border-primary p-4 mb-8">
+        <p className="text-lg !border-2 !border-primary p-4 mb-8">
           We strive to offer value-driven services that fit the needs of each client. Our affordable, flexible pricing options ensure that you can access high-quality care without financial strain.
         </p>
 
         <div className="flex justify-center mb-12">
-          <Image
+          <img
             src="/images/for-clients-families/Pricing-page.webp"
             alt="Price"
             width={400}
@@ -63,7 +63,7 @@ const PricingAndAvailability = () => {
             When you experience the value of our services and refer someone to us, you will receive 15% off one course of treatment. This discount applies once the new client successfully completes their treatment program, as a thank you for trusting us and spreading the word about our care.
           </p>
           <p className="text-lg mt-4">
-            For more detailed pricing information and availability, please <a href="/contact" className="text-primary underline">Contact Us</a> directly, and we'll be happy to assist you.
+            For more detailed pricing information and availability, please <a href="/enquiry" className="underline">Contact Us</a> directly, and we&#39;ll be happy to assist you.
           </p>
         </div>
 
@@ -73,12 +73,12 @@ const PricingAndAvailability = () => {
             <Image
               src="/icons/pricing and availability/Areas_we_cover.svg"
               alt="Areas We Cover"
-              width={300}
-              height={300}
+              width={200}
+              height={200}
               className="rounded-full"
             />
           </div>
-          <p className="text-lg border-2 border-primary p-4">
+          <p className="text-lg !border-2 !border-primary p-4">
             We currently offer home visits for clients located within a 10-15 minute walk from public transport stations in North, Northwest, East, Central, and parts of South London. Please feel free to reach out to discuss your location with us.
           </p>
         </div>
@@ -86,7 +86,7 @@ const PricingAndAvailability = () => {
         <div className="text-center mt-12">
           <h2 className="text-2xl font-bold text-maintext mb-8 font-inter">Ready to Start Your Journey to Better Health?</h2>
           <p className="text-lg mb-6 text-left">
-            If you or a loved one is in need of physiotherapy, let's talk! Whether you're managing a chronic condition or recovering from an injury, our team is here to help you regain your strength and independence. Get in touch with us today to schedule an initial consultation and take the first step towards a healthier future.
+            If you or a loved one is in need of physiotherapy, let&#39;s talk! Whether you&#39;re managing a chronic condition or recovering from an injury, our team is here to help you regain your strength and independence. Get in touch with us today to schedule an initial consultation and take the first step towards a healthier future.
           </p>
           <a href="/enquiry" className="inline-block px-6 py-3 bg-primary text-white rounded-full hover:bg-maintext">
             Contact Us

@@ -154,9 +154,9 @@ const StrokeRehabilitationPage = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
 
   return (
     <section className="py-16 px-4 text-maintext">
@@ -165,12 +165,12 @@ const StrokeRehabilitationPage = () => {
         <h1 className="text-4xl font-bold text-center uppercase font-inter my-4"> Multiple Sclerosis Rehabilitation  </h1>
         <div className="flex justify-center mb-12"><Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} /></div>
 
-        <p className="text-lg border-2 border-primary p-4 mb-8">
+        <p className="text-lg !border-2 !border-primary p-4 mb-8">
           Multiple sclerosis (MS) is a chronic condition that affects the central nervous system, disrupting communication between the brain and the rest of the body. It can lead to a wide range of symptoms, such as muscle weakness, coordination problems, fatigue, and cognitive difficulties. These symptoms can vary in severity and progression, often impacting a person’s ability to carry out daily tasks independently. For those living with MS, this can lead to a significant loss of mobility and independence, creating a challenging emotional and physical burden on both patients and caregivers.
         </p>
         
         <div className="flex justify-center mb-12">
-          <Image
+          <img
             src="/images/specialty/multiple-sclerosis.webp"
             alt="multiple-sclerosis"
             width={500}

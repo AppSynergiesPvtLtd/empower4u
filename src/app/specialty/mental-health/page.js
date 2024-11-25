@@ -121,9 +121,9 @@ const StrokeRehabilitationPage = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
 
   return (
     <section className="py-16 px-4 text-maintext">
@@ -132,12 +132,12 @@ const StrokeRehabilitationPage = () => {
         <h1 className="text-4xl font-bold text-center uppercase font-inter my-4"> Mental Health  </h1>
         <div className="flex justify-center mb-12"><Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} /></div>
 
-        <p className="text-lg border-2 border-primary p-4 mb-8">
+        <p className="text-lg !border-2 !border-primary p-4 mb-8">
           Good mental health is essential for overall well-being, but poor mental health is linked to disability, reduced quality of life, and chronic pain. Physical activity has been proven to improve mental health, alleviate psychiatric symptoms, and enhance quality of life. Aerobic and strength exercises, such as walking, jogging, and swimming, can reduce anxiety and depression. Given the strong link between mental health issues and conditions like chronic pain, a holistic, multidisciplinary approach is crucial for effective treatment and prevention. Physiotherapy interventions play a key role in supporting both physical and mental health.
         </p>
         
         <div className="flex justify-center mb-12">
-          <Image
+          <img
             src="/images/specialty/mental-health.webp"
             alt="mental-health"
             width={500}

@@ -148,9 +148,9 @@ const StrokeRehabilitationPage = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
 
   return (
     <section className="py-16 px-4 text-maintext">
@@ -159,12 +159,12 @@ const StrokeRehabilitationPage = () => {
         <h1 className="text-4xl font-bold text-center uppercase font-inter my-4"> Stroke Rehabilitation  </h1>
         <div className="flex justify-center mb-12"><Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} /></div>
         
-        <p className="text-lg border-2 border-primary p-4 mb-8">
+        <p className="text-lg !border-2 !border-primary p-4 mb-8">
           There are two main types of stroke: ischemic and hemorrhagic. Both types result in damage to brain cells, leading to various impairments depending on the area affected. A stroke can significantly impair a patient’s mobility, speech, and cognitive abilities, impacting their ability to perform daily tasks independently. This often places a heavy emotional and physical burden on caregivers, as they may need to provide constant support and assistance with basic activities, leading to stress and fatigue.
         </p>
         
         <div className="flex justify-center mb-12">
-          <Image
+          <img
             src="/images/specialty/stroke-rehabilitation.webp"
             alt="stroke-rehabilitation"
             width={500}

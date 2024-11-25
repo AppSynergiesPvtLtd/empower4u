@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import Loader from "@/components/Loader";
 
 const RehabSection = ({ title, introText, items, backgroundColor }) => {
   return (
@@ -17,7 +16,7 @@ const RehabSection = ({ title, introText, items, backgroundColor }) => {
                 className="w-4 max-w-full h-auto text-maintext mr-4 mt-2"
               />
               <span>
-                <strong>{item.title}:</strong> {item.description}
+                <strong>{item.title}{item.description ? ':' : ''}</strong> {item.description}
               </span>
             </li>
           ))}

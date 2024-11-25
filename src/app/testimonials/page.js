@@ -14,9 +14,9 @@ const Testimonials = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
   return (
     <section className="py-16 px-4 bg-[#f9f5f1] text-maintext max-w-5xl mx-auto my-10">
       <div className="flex justify-center mb-6">
@@ -38,7 +38,7 @@ const Testimonials = () => {
           <h2 className="text-center text-2xl font-bold mb-2">Mina</h2>
           <hr className="border-t border-primary mb-6" />
           <p className="text-center text-sm leading-relaxed mb-6 px-4">
-            When Shu first met my dad after his stroke, he could only transfer to a wheelchair and was living downstairs due to limited mobility. From the start, Shu's professionalism, empathy, and positive approach gave our family confidence. In just three weeks, she had my dad practicing walking on stairs, something we never thought possible so soon. By the time Shu discharged him, my dad was walking outside and even cycling at home! We are incredibly grateful for her dedication and expertise. Shu truly made a remarkable difference in my dad’s recovery, and we can’t recommend her enough.
+            When Shu first met my dad after his stroke, he could only transfer to a wheelchair and was living downstairs due to limited mobility. From the start, Shu&#39;s professionalism, empathy, and positive approach gave our family confidence. In just three weeks, she had my dad practicing walking on stairs, something we never thought possible so soon. By the time Shu discharged him, my dad was walking outside and even cycling at home! We are incredibly grateful for her dedication and expertise. Shu truly made a remarkable difference in my dad’s recovery, and we can’t recommend her enough.
           </p>
 
           <div className="flex justify-center mb-4">

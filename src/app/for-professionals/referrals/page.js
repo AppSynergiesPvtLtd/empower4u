@@ -62,7 +62,7 @@ const FormTextInput = ({ label, registerName, register, placeholder, type = 'tex
 
 const options = [
     'Stroke Vestibular Disorder',
-    "Parkinson's Disease",
+    "Parkinson&#39;s Disease",
     'Spinal Cord Injury',
     'Multiple Sclerosis',
     'Guillain-Barre Syndrome',
@@ -175,6 +175,8 @@ const ReferralsPage = () => {
   const router = useRouter();
   const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showOtherInput, setShowOtherInput] = useState(false);
+  const [otherInputValue, setOtherInputValue] = useState('');
   const { register, watch, handleSubmit, formState: { isValid }, setValue, control } = useForm({
     mode: 'onChange',
     defaultValues: {
@@ -200,6 +202,7 @@ const ReferralsPage = () => {
 
 
   const onSubmit = async (data) => {
+    console.log(data);
     setLoading(true);
     try {
       const response = await axios.post(
@@ -227,9 +230,9 @@ const ReferralsPage = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
 
   return (
     <section className="py-16 px-4 bg-[#f9f5f1] text-maintext">
@@ -244,7 +247,7 @@ const ReferralsPage = () => {
         </div>
 
         <div className="flex justify-center mb-12">
-          <Image src="/images/for-professionals/referral-page.webp" alt="referral-page" width={400} height={300} className="rounded-lg shadow-md" />
+          <img src="/images/for-professionals/referral-page.webp" alt="referral-page" width={400} height={300} className="rounded-lg shadow-md" />
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -287,7 +290,15 @@ const ReferralsPage = () => {
             <div className="ml-4">
               <div className="space-y-2">
                 <FormControl component="fieldset">
-                  <RadioGroup {...register("specialtyNeuro")} aria-label="specialtyNeuro">
+                  <RadioGroup
+                    {...register("specialtyNeuro")}
+                    aria-label="specialtyNeuro"
+                    onChange={(e) => {
+                      const selectedValue = e.target.value;
+                      setShowOtherInput(selectedValue === "Others");
+                      setValue("specialtyNeuro", selectedValue === "Others" ? otherInputValue : selectedValue); // Update form value
+                    }}
+                  >
                     {options.map((option) => (
                       <FormControlLabel
                         key={option}
@@ -308,12 +319,18 @@ const ReferralsPage = () => {
                   </RadioGroup>
                 </FormControl>
               </div>
-              <FormTextInput
-              label=""
-              registerName="specialtyNeuro"
-              register={register}
-              placeholder="Enter specialty you refer to neuro"
-            />
+              {showOtherInput && (
+                <FormTextInput
+                  label=""
+                  registerName="specialtyNeuro"
+                  placeholder="Enter specialty you refer to neuro"
+                  register={register}
+                  onChange={(e) => {
+                    setOtherInputValue(e.target.value);
+                    setValue("specialtyNeuro", e.target.value); // Dynamically update the form value
+                  }}
+                />
+              )}
             </div>
           </div>
 
@@ -355,7 +372,7 @@ const ReferralsPage = () => {
           
           <div className="mb-6">
             <h2 className="text-xl font-bold font-inter">5. Functional Status <span className="text-red-700"> *</span></h2>
-            <label className="text-base font-medium text-maintext block my-1 ml-5"> Please provide information about the patient's current functional abilities:</label>
+            <label className="text-base font-medium text-maintext block my-1 ml-5"> Please provide information about the patient&#39;s current functional abilities:</label>
             <FormTextInput
             label="Mobility"
             registerName="functionalStatus.mobility"

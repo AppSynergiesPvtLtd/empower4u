@@ -20,7 +20,7 @@ const Footer = () => {
           <a href="tel:+123456789" className="hover:text-primary">
             <FaPhoneAlt />
           </a>
-          <a href="mailto:info@empower4u.com" className="hover:text-maintext">
+          <a href="info@empower4u.org" className="hover:text-maintext">
             <FaEnvelope />
           </a>
         </div>

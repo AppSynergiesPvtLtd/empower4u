@@ -16,9 +16,9 @@ const AboutPage = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
   return (
     <div className=" text-maintext ">
       <section className="py-16 px-4 max-w-6xl mx-auto">

@@ -62,7 +62,7 @@ const treatmentMayIncludeData = {
     },
     {
       title: "Balance therapy",
-      description: "Activities to enhance coordination and the body's ability to sense and respond to changes in the environment.",
+      description: "Activities to enhance coordination and the body&#39;s ability to sense and respond to changes in the environment.",
     },
     {
       title: "Sensory rehabilitation",
@@ -113,9 +113,9 @@ const StrokeRehabilitationPage = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
 
   return (
     <section className="py-16 px-4 text-maintext">
@@ -124,13 +124,13 @@ const StrokeRehabilitationPage = () => {
         <h1 className="text-4xl font-bold text-center uppercase font-inter my-4"> Falls and Balance  </h1>
         <div className="flex justify-center mb-12"><Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} /></div>
         
-        <p className="text-lg border-2 border-primary p-4 mb-8">
-          Falls and balance issues are significant concerns. Impaired balance can lead to an increased risk of falls, which can result in serious injuries, loss of independence, and a decline in overall quality of life. Factors such as muscle weakness, neurological conditions, and environmental hazards contribute to these challenges, affecting an individual's ability to move safely and confidently. Moreover, the fear of falling can create a cycle of reduced activity, further diminishing strength and balance. Addressing falls and balance is essential not only for physical health but also for emotional well-being, as maintaining independence and mobility plays a crucial role in overall life satisfaction.
+        <p className="text-lg !border-2 !border-primary p-4 mb-8">
+          Falls and balance issues are significant concerns. Impaired balance can lead to an increased risk of falls, which can result in serious injuries, loss of independence, and a decline in overall quality of life. Factors such as muscle weakness, neurological conditions, and environmental hazards contribute to these challenges, affecting an individual&#39;s ability to move safely and confidently. Moreover, the fear of falling can create a cycle of reduced activity, further diminishing strength and balance. Addressing falls and balance is essential not only for physical health but also for emotional well-being, as maintaining independence and mobility plays a crucial role in overall life satisfaction.
           </p>
         
         <div className="flex justify-center mb-12">
-          <Image
-            src="/images/specialty/falls and balance.webp"
+          <img
+            src="/images/specialty/falls-and-balance.webp"
             alt="falls and balance"
             width={500}
             height={400}
@@ -153,7 +153,7 @@ const StrokeRehabilitationPage = () => {
           backgroundColor={whatWeCanHelpData.backgroundColor}
         />
 
-        <div className="flex justify-center mb-12"><Image src="/images/specialty/fall.png" alt="Bottom Border" width={600} height={400} /></div>
+        <div className="flex justify-center mb-12"><img src="/images/specialty/fall.png" alt="Bottom Border" width={600} height={400} /></div>
 
         
         {!showMore && (

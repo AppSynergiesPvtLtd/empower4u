@@ -16,13 +16,19 @@ const SuccessPage = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  useEffect(() => {
+    if (!isLoading) {
+      toast.success('Form Submitted Successfully.');
+    }
+  }, [isLoading]);
+
+  // if (isLoading) {
+  //   return <Loader /> ;
+  // }
 
   return (
-    <section className="flex flex-col items-center justify-center pt-16 pb-6 px-4 text-center text-maintext bg-white">
-      {/* <Toaster position="top-right" reverseOrder={false} /> */}
+    
+    <section className="flex flex-col items-center justify-center pt-16 pb-6 px-4 text-center text-maintext">
       <div className="container mx-auto max-w-md py-5">
         <Image
           src="/icons/success_image.svg"

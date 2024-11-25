@@ -1,0 +1,212 @@
+[debug] [2024-11-25T12:18:10.216Z] ----------------------------------------------------------------------
+[debug] [2024-11-25T12:18:10.218Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Maham Mubasher\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2024-11-25T12:18:10.219Z] CLI Version:   13.27.0
+[debug] [2024-11-25T12:18:10.219Z] Platform:      win32
+[debug] [2024-11-25T12:18:10.219Z] Node Version:  v21.3.0
+[debug] [2024-11-25T12:18:10.219Z] Time:          Mon Nov 25 2024 17:18:10 GMT+0500 (Pakistan Standard Time)
+[debug] [2024-11-25T12:18:10.219Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-11-25T12:18:10.276Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-11-25T12:18:10.277Z] > authorizing via signed-in user (mahammubasher4@gmail.com)
+[debug] [2024-11-25T12:18:10.277Z] [iam] checking project empower4u-31c1a for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2024-11-25T12:18:10.278Z] Checked if tokens are valid: true, expires at: 1732538708980
+[debug] [2024-11-25T12:18:10.278Z] Checked if tokens are valid: true, expires at: 1732538708980
+[debug] [2024-11-25T12:18:10.279Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/empower4u-31c1a:testIamPermissions [none]
+[debug] [2024-11-25T12:18:10.279Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/empower4u-31c1a:testIamPermissions x-goog-quota-user=projects/empower4u-31c1a
+[debug] [2024-11-25T12:18:10.279Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/empower4u-31c1a:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-11-25T12:18:11.745Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/empower4u-31c1a:testIamPermissions 200
+[debug] [2024-11-25T12:18:11.745Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/empower4u-31c1a:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2024-11-25T12:18:11.745Z] Checked if tokens are valid: true, expires at: 1732538708980
+[debug] [2024-11-25T12:18:11.746Z] Checked if tokens are valid: true, expires at: 1732538708980
+[debug] [2024-11-25T12:18:11.746Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/empower4u-31c1a [none]
+[debug] [2024-11-25T12:18:12.293Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/empower4u-31c1a 200
+[debug] [2024-11-25T12:18:12.293Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/empower4u-31c1a {"projectId":"empower4u-31c1a","projectNumber":"108838167172","displayName":"Empower4U","name":"projects/empower4u-31c1a","resources":{"hostingSite":"empower4u-31c1a"},"state":"ACTIVE","etag":"1_7992a625-91b6-4495-ad56-9ebd6257a0b1"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2024-11-25T12:18:22.447Z] Checked if tokens are valid: true, expires at: 1732538708980
+[debug] [2024-11-25T12:18:22.447Z] Checked if tokens are valid: true, expires at: 1732538708980
+[debug] [2024-11-25T12:18:22.447Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/empower4u-31c1a/sites/empower4u-31c1a [none]
+[debug] [2024-11-25T12:18:24.363Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/empower4u-31c1a/sites/empower4u-31c1a 200
+[debug] [2024-11-25T12:18:24.363Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/empower4u-31c1a/sites/empower4u-31c1a {"name":"projects/empower4u-31c1a/sites/empower4u-31c1a","defaultUrl":"https://empower4u-31c1a.web.app","type":"DEFAULT_SITE"}
+[info]    ▲ Next.js 15.0.3
+
+[info] 
+
+[info]    Creating an optimized production build ...
+
+[info]  ✓ Compiled successfully
+
+[info]    Linting and checking validity of types ...
+
+[info] 
+./src/app/about/page.js
+48:17  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+55:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+63:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+71:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+95:19  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+103:19  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+111:19  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+121:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+134:17  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+140:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+148:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+156:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+178:19  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+186:19  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+194:19  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+204:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/career/hcpc-registration-support/page.js
+102:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/career/work-with-us/page.js
+38:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+79:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+89:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+99:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/for-clients-families/how-we-work-together/page.js
+48:29  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+60:29  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+85:29  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+120:33  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+128:33  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+136:33  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+147:25  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+170:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+180:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+190:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+200:21  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+232:25  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+242:25  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+252:25  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/for-clients-families/price/page.js
+33:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/for-professionals/evidence/page.js
+288:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/for-professionals/hcpc-registration-support/page.js
+102:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/for-professionals/referrals/page.js
+250:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/specialty/falls-balance/page.js
+132:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+156:52  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/specialty/fracture-joint-health/page.js
+196:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/specialty/guillain-barrie-syndrome/page.js
+166:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/specialty/mental-health/page.js
+140:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/specialty/multiple-sclerosis/page.js
+173:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/specialty/parkinsons-disease/page.js
+172:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/specialty/rare-neurological-conditions/page.js
+156:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/specialty/spinal-cord-injury/page.js
+160:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/specialty/stroke-rehab/page.js
+167:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/specialty/surgery-rehab/page.js
+163:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/specialty/vestibular-disorder/page.js
+152:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/components/Navbar.js
+44:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+123:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/components/RehabListSection.js
+21:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+36:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/components/RehabSection.js
+13:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/components/Services.js
+35:17  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/components/Slide.js
+47:9  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/building-your-application/configuring/eslint#disabling-rules
+
+[info]    Collecting page data ...
+
+[info]    Generating static pages (0/29) ...
+
+[info]    Generating static pages (7/29) 
+
+[info]    Generating static pages (14/29) 
+
+[info]    Generating static pages (21/29) 
+
+[info]  ✓ Generating static pages (29/29)
+
+[info]    Finalizing page optimization ...
+
+[info]    Collecting build traces ...
+
+[info] 
+
+[info] Route (app)                                       Size     First Load JS
+┌ ○ /                                             30.9 kB         145 kB
+├ ○ /_not-found                                   896 B           101 kB
+├ ○ /about                                        2.23 kB         117 kB
+├ ○ /career/hcpc-registration-support             4.16 kB         143 kB
+├ ○ /career/work-with-us                          1.79 kB         107 kB
+├ ○ /enquiry                                      2.47 kB         136 kB
+├ ○ /for-clients-families/how-we-work-together    3.47 kB         109 kB
+├ ○ /for-clients-families/price                   1.79 kB         107 kB
+├ ○ /for-professionals/evidence                   4.04 kB         109 kB
+├ ○ /for-professionals/hcpc-registration-support  4.17 kB         143 kB
+├ ○ /for-professionals/referrals                  152 kB          290 kB
+├ ○ /policy                                       2.47 kB         109 kB
+├ ○ /specialty/explore-all                        1.4 kB          116 kB
+├ ○ /specialty/falls-balance                      2.74 kB         117 kB
+├ ○ /specialty/fracture-joint-health              4.17 kB         119 kB
+├ ○ /specialty/guillain-barrie-syndrome           2.88 kB         117 kB
+├ ○ /specialty/mental-health                      2.55 kB         117 kB
+├ ○ /specialty/multiple-sclerosis                 3.09 kB         117 kB
+├ ○ /specialty/parkinsons-disease                 2.99 kB         117 kB
+├ ○ /specialty/rare-neurological-conditions       3 kB            117 kB
+├ ○ /specialty/spinal-cord-injury                 2.96 kB         117 kB
+├ ○ /specialty/stroke-rehab                       2.96 kB         117 kB
+├ ○ /specialty/surgery-rehab                      2.61 kB         117 kB
+├ ○ /specialty/vestibular-disorder                2.75 kB         117 kB
+├ ○ /success                                      741 B           120 kB
+└ ○ /testimonials                                 1.41 kB         107 kB
++ First Load JS shared by all                     100 kB
+  ├ chunks/4bd1b696-1f7d3a6907e5d284.js           52.5 kB
+  ├ chunks/517-85e0247648671fc1.js                45.5 kB
+  └ other shared chunks (total)                   1.96 kB
+
+
+
+[info] ○  (Static)  prerendered as static content
+
+

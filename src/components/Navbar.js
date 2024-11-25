@@ -41,7 +41,7 @@ const Navbar = () => {
           <FaBars size={24} />
         </button>
         <Link href="/" className="flex items-center mx-auto" prefetch={false}>
-          <Image
+          <img
             src="/images/Logo/logo.svg"
             alt="Empower4U Logo"
             width={170}
@@ -60,10 +60,10 @@ const Navbar = () => {
             >
               <Link
                 href={item.href}
-                className={`px-1 py-2 text-xs flex items-center hover:border-b-2 hover:border-maintext ${
+                className={`px-1 py-2 text-xs flex items-center !border-b-2 !border-[#fbf3f3] hover:!border-maintext ${
                   pathname === item.href ||
                   item.options?.some((option) => pathname === option.href)
-                    ? "text-primary border-b-2 border-maintext"
+                    ? "text-primary !border-b-2 !border-maintext"
                     : ""
                 } transition-colors duration-300`}
               >
@@ -84,7 +84,9 @@ const Navbar = () => {
                     <Link
                       key={option.title}
                       href={option.href}
-                      className="block px-4 py-2 text-xs text-primary hover:bg-primary hover:text-white"
+                      className={`block px-4 py-2 text-xs text-primary hover:bg-primary hover:text-white ${
+                        pathname === option.href ? "bg-primary text-white" : ""
+                      }`}
                     >
                       {option.title}
                     </Link>
@@ -95,9 +97,10 @@ const Navbar = () => {
           ))}
         </div>
 
+
         <div className="hidden md:flex items-center">
           <Link
-            href="https://calendly.com/appsynergies"
+            href="https://calendly.com/shu-empower4u"
             target="_blank"
             rel="noopener noreferrer"
             className="md:mr-4 px-6 py-2 text-sm font-semibold bg-primary text-white rounded-full hover:bg-maintext transition duration-200"
@@ -117,7 +120,7 @@ const Navbar = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-between">
-              <Image
+              <img
                 src="/images/Logo/logo2.svg"
                 alt="Empower4U Logo"
                 width={70}
@@ -141,7 +144,7 @@ const Navbar = () => {
                 return (
                   <div
                     key={item.title}
-                    className="mb-4 mt-10 justify-between flex items-center justify-between text-primary font-normal text-xs uppercase tracking-wider"
+                    className="mb-4 mt-10 justify-between items-center text-primary font-normal text-xs uppercase tracking-wider"
                   >
                     <div className="flex items-center">
                       <div
@@ -157,7 +160,7 @@ const Navbar = () => {
                           href={item.href}
                           className={`block text-primary font-normal uppercase ${
                             isActive
-                              ? "border-b-2 pb-1 border-maintext"
+                              ? "!border-b-2 pb-1 !border-maintext"
                               : ""
                           }`}
                         >
@@ -193,7 +196,7 @@ const Navbar = () => {
                               href={option.href}
                               className={`text-xs m-1 text-maintext capitalize ${
                                 pathname === option.href
-                                  ? "border-b-2 border-maintext"
+                                  ? "!border-b-2 !border-maintext"
                                   : ""
                               }`}
                             >

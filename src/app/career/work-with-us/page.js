@@ -17,12 +17,12 @@ const WorkWithUs = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
   return (
-    <section className="py-16 bg-[#f9f5f1] text-maintext">
-      <div className="container ">
+    <section className="py-16 bg-[#f9f5f1] text-maintext ">
+      <div className="container  mx-auto max-w-full">
         <div className="p-8 mb-8 mx-auto">
           <div className='mx-auto max-w-5xl'>
             <div className="flex justify-center mb-6"><Image src="/icons/top_border.svg" alt="Top Border" width={600} height={400} /></div>
@@ -31,11 +31,11 @@ const WorkWithUs = () => {
 
 
             <p className="text-lg border border-gray-400 p-4 mb-8 max-w-4xl mx-auto">
-              At Empower4U, we are always looking for passionate and skilled professionals to join our growing team. If you’re a qualified physiotherapist or have experience in rehabilitation, we’d love to hear from you!
+              At Empower4U, we are always looking for passionate and skilled professionals to join our growing team. If you are a qualified physiotherapist or have experience in rehabilitation, we’d love to hear from you!
             </p>
 
             <div className="flex justify-center mb-12">
-              <Image
+              <img
                 src="/images/Career/Work with us page.webp"
                 alt="Teamwork"
                 width={500}
@@ -60,7 +60,7 @@ const WorkWithUs = () => {
             <div className=" py-8 mb-8 rounded-lg">
               <h2 className="text-2xl font-bold mb-4 text-maintext text-center font-inter">Rehabilitation Assistants</h2>
               <p className="text-lg">
-                We also welcome rehabilitation assistants with diverse backgrounds in healthcare and fitness. Whether you have a background in nursing, fitness, care, or you’re a therapy student or an internationally qualified therapist awaiting your HCPC registration, this is a great opportunity to gain UK healthcare experience while earning a competitive payment.
+                We also welcome rehabilitation assistants with diverse backgrounds in healthcare and fitness. Whether you have a background in nursing, fitness, care, or you are a therapy student or an internationally qualified therapist awaiting your HCPC registration, this is a great opportunity to gain UK healthcare experience while earning a competitive payment.
               </p>
             </div>
           </div>
@@ -114,7 +114,7 @@ const WorkWithUs = () => {
             <div className="text-center mt-12 ">
               <h2 className="text-2xl font-bold text-maintext mb-4 font-inter">Get in Touch</h2>
               <p className="text-lg mb-6">
-                If you’re ready to join a team that values expertise, collaboration, and growth, we’d love to hear from you! <a href="/enquiry" className="text-primary underline">Contact us</a> today to discuss available opportunities.
+                If you are ready to join a team that values expertise, collaboration, and growth, we’d love to hear from you! <a href="/enquiry" className="underline">Contact us</a> today to discuss available opportunities.
               </p>
             </div>
           </div>

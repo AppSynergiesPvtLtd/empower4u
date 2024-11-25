@@ -14,9 +14,9 @@ const ClientsWorkTogether = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
   return (
     <div>
         <section className="py-16 px-4">
@@ -45,7 +45,7 @@ const ClientsWorkTogether = () => {
                             </p>
                         </div>
                         <div className="flex justify-center md:justify-end">
-                            <Image
+                            <img
                             src="/images/for-clients-families/How-we-work-page-personalised-care-plan.webp"
                             alt="Personalized Care"
                             width={250}
@@ -57,7 +57,7 @@ const ClientsWorkTogether = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8  my-8">
                         <div className="flex justify-center md:justify-start">
-                            <Image
+                            <img
                                 src="/images/for-clients-families/How-we-work-together-page-At-Home-Convenience.webp"
                                 alt="At-Home Convenience"
                                 width={250}
@@ -82,7 +82,7 @@ const ClientsWorkTogether = () => {
                             </p>
                         </div>
                         <div className="flex justify-center md:justify-end">
-                            <Image
+                            <img
                                 src="/images/for-clients-families/How-we-work-page-ongoing-communication.webp"
                                 alt="Ongoing Communication"
                                 width={250}
@@ -144,7 +144,7 @@ const ClientsWorkTogether = () => {
                     </div>
 
                     <div className="flex justify-center">
-                        <Image 
+                        <img 
                             src="/images/for-clients-families/Our-unique-approach-page.webp" 
                             alt="Our Unique Approach" 
                             width={400} 
@@ -173,7 +173,7 @@ const ClientsWorkTogether = () => {
                 className="w-4 max-w-full h-auto text-maintext mr-4 pt-2"
               />
                     <span>
-                    <strong>An Emphasis on Collaboration:</strong> We involve family members in the treatment process when appropriate, ensuring they understand their role in supporting the client's recovery. We provide clear, easy-to-understand explanations about the reasons behind each selected treatment and the principles guiding our approach. By offering this information in plain language, we empower clients and their families, helping them feel more motivated and in control of the rehabilitation process.
+                    <strong>An Emphasis on Collaboration:</strong> We involve family members in the treatment process when appropriate, ensuring they understand their role in supporting the client&#39;s recovery. We provide clear, easy-to-understand explanations about the reasons behind each selected treatment and the principles guiding our approach. By offering this information in plain language, we empower clients and their families, helping them feel more motivated and in control of the rehabilitation process.
                     </span>
                 </li>
                 <li className="flex items-start">
@@ -214,7 +214,7 @@ const ClientsWorkTogether = () => {
                 </ul>
 
                 <p className="text-lg mt-8">
-                By delivering 2-5 intensive sessions per week, tailored to the client's needs and condition, we maximize recovery potential, helping clients achieve their rehabilitation goals faster and more efficiently. This evidence-backed approach ensures that our clients receive the best possible care for optimal outcomes.
+                By delivering 2-5 intensive sessions per week, tailored to the client&#39;s needs and condition, we maximize recovery potential, helping clients achieve their rehabilitation goals faster and more efficiently. This evidence-backed approach ensures that our clients receive the best possible care for optimal outcomes.
                 </p>
             </div>
         </section>
@@ -235,7 +235,7 @@ const ClientsWorkTogether = () => {
                 className="w-4 max-w-full h-auto text-maintext mr-4 pt-2"
               />
                         <span>
-                        <strong>Neurological Conditions:</strong> We provide expert rehabilitation for stroke, Parkinson's disease, multiple sclerosis, and other neurological disorders.
+                        <strong>Neurological Conditions:</strong> We provide expert rehabilitation for stroke, Parkinson&#39;s disease, multiple sclerosis, and other neurological disorders.
                         </span>
                     </li>
                     <li className="flex items-start">

@@ -176,7 +176,7 @@ const feasibilityAccessibilityData = {
 const goalAchievementData = {
   title: "Better Goal Achievement",
   introText:
-    "Home-based physiotherapy allows for more personalized care, often leading to better achievement of client goals. Personalized programs tailored to the client's environment enable more effective rehabilitation.",
+    "Home-based physiotherapy allows for more personalized care, often leading to better achievement of client goals. Personalized programs tailored to the client&#39;s environment enable more effective rehabilitation.",
   items: [],
   backgroundColor: "bg-[#d4c0a9]",
   subSections: [
@@ -216,7 +216,7 @@ const goalAchievementData = {
 const holisticPersonalizedCareData = {
   title: "Holistic and Personalized Care",
   introText:
-    "Home-based physiotherapy allows for a holistic approach, where therapists can make real-time adjustments to the home environment and customize interventions to better suit the client's everyday activities.",
+    "Home-based physiotherapy allows for a holistic approach, where therapists can make real-time adjustments to the home environment and customize interventions to better suit the client&#39;s everyday activities.",
   items: [],
   backgroundColor: "bg-[#f9f5f1]",
   subSections: [
@@ -269,9 +269,9 @@ const StrokeRehabilitationPage = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
 
   return (
     <section className="py-16 px-4 text-maintext">
@@ -280,12 +280,12 @@ const StrokeRehabilitationPage = () => {
         <h1 className="text-4xl font-bold text-center uppercase font-inter my-4"> EVIDENCE FOR INTENSIVE HOME-BASED PHYSIOTHERAPY INTERVENTIONS  </h1>
         <div className="flex justify-center mb-12"><Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} /></div>
 
-        <p className="text-lg border-2 border-primary p-4 mb-8">
+        <p className="text-lg !border-2 !border-primary p-4 mb-8">
           At Empower4U, we are committed to delivering effective, evidence-based physiotherapy services in the comfort of your home. Intensive home-based physiotherapy has gained significant attention due to its ability to improve outcomes, reduce costs, and enhance client convenience. Below, we summarize the scientific evidence supporting the benefits of this approach, with references to published studies.
         </p>
         
         <div className="flex justify-center mb-12">
-          <Image
+          <img
             src="/images/for-professionals/Evidence-page.webp"
             alt="Evidence-page"
             width={500}

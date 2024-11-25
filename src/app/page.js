@@ -1,4 +1,4 @@
-"use client";
+
 "use client";
 import React, { useEffect, useState } from 'react';
 import Loader from "@/components/Loader";
@@ -19,14 +19,14 @@ const HomePage = () => {
       description: "We cover a wide range of conditions and presentations",
       buttonText: "View More",
       buttonLink: "/specialty/rare-neurological-conditions",
-      imageUrl: "/images/home-page/neurological-rehabilitation.webp",
+      imageUrl: "/images/home-page/Neurological-rehabilitation.webp",
     },
     {
       heading: "Falls and Balance",
       description: "All-rounded assessment and Holistic programme",
       buttonText: "View More",
       buttonLink: "/specialty/falls-balance",
-      imageUrl: "/images/home-page/falls-and-balance.webp",
+      imageUrl: "/images/home-page/Falls-and-Balance.webp",
     },
     {
       heading: "Fracture and Joint Health",
@@ -40,7 +40,7 @@ const HomePage = () => {
       description: "We offer mentoring, clinical supervision and interview advice",
       buttonText: "View More",
       buttonLink: "/for-professionals/hcpc-registration-support",
-      imageUrl: "/images/home-page/international-professional-HCPC-registration.webp",
+      imageUrl: "/images/home-page/International-professional-HCPC-registration.webp",
     },
   ];
 

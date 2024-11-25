@@ -144,9 +144,9 @@ const StrokeRehabilitationPage = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
 
   return (
     <section className="py-16 px-4 text-maintext">
@@ -156,14 +156,14 @@ const StrokeRehabilitationPage = () => {
         <div className="flex justify-center mb-12"><Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} /></div>
 
 
-        <p className="text-lg border-2 border-primary p-4 mb-8">
-          Guillain-Barré Syndrome (GBS) is a rare neurological disorder where the body's immune system mistakenly attacks the peripheral nerves, leading to muscle weakness and, in severe cases, paralysis. GBS can progress rapidly, affecting mobility, respiratory function, and overall independence. Although many individuals recover fully, the rehabilitation process can be long and challenging, requiring a specialized approach to regain strength, coordination, and functional independence. The impact of GBS extends beyond the patient, often placing emotional and physical demands on caregivers as they provide necessary support throughout recovery.
+        <p className="text-lg !border-2 !border-primary p-4 mb-8">
+          Guillain-Barré Syndrome (GBS) is a rare neurological disorder where the body&#39;s immune system mistakenly attacks the peripheral nerves, leading to muscle weakness and, in severe cases, paralysis. GBS can progress rapidly, affecting mobility, respiratory function, and overall independence. Although many individuals recover fully, the rehabilitation process can be long and challenging, requiring a specialized approach to regain strength, coordination, and functional independence. The impact of GBS extends beyond the patient, often placing emotional and physical demands on caregivers as they provide necessary support throughout recovery.
         
         
         </p>
         
         <div className="flex justify-center mb-12">
-          <Image
+          <img
             src="/images/specialty/guillain.webp"
             alt="guillain"
             width={500}

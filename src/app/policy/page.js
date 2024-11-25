@@ -15,9 +15,9 @@ const Policy = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
-    return <Loader />;
-  }
+  // if (isLoading) {
+  //   return <Loader />;
+  // }
   return (
     <section className="py-16 px-4 bg-[#f9f5f1] text-maintext">
       <div className="container mx-auto max-w-4xl">
