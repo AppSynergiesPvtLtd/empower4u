@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
 import Loader from "@/components/Loader";
 import Image from 'next/image';
 import RehabSection from '@/components/RehabListSection';
@@ -275,7 +276,20 @@ const StrokeRehabilitationPage = () => {
 
   return (
     <section className="py-16 px-4 text-maintext">
-      <div className="container mx-auto max-w-4xl">
+      <div className="container mx-auto max-w-6xl">
+      <motion.div initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.2,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }}>
         <div className="flex justify-center mb-6"><Image src="/icons/top_border.svg" alt="Top Border" width={600} height={400} /></div>
         <h1 className="text-4xl font-bold text-center uppercase font-inter my-4"> EVIDENCE FOR INTENSIVE HOME-BASED PHYSIOTHERAPY INTERVENTIONS  </h1>
         <div className="flex justify-center mb-12"><Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} /></div>
@@ -283,6 +297,22 @@ const StrokeRehabilitationPage = () => {
         <p className="text-lg !border-2 !border-primary p-4 mb-8">
           At Empower4U, we are committed to delivering effective, evidence-based physiotherapy services in the comfort of your home. Intensive home-based physiotherapy has gained significant attention due to its ability to improve outcomes, reduce costs, and enhance client convenience. Below, we summarize the scientific evidence supporting the benefits of this approach, with references to published studies.
         </p>
+        </motion.div>
+        <motion.div
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 60 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.3,
+              scale: {
+                type: "spring",
+                damping: 14,
+                stiffness: 200,
+                restDelta: 0.001,
+              },
+            }}
+          >
         
         <div className="flex justify-center mb-12">
           <img
@@ -293,7 +323,7 @@ const StrokeRehabilitationPage = () => {
             className="rounded-lg shadow-md"
           />
         </div>
-
+        </motion.div>
         
         <RehabSection
             title={effectivenessData.title}

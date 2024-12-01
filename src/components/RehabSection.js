@@ -1,11 +1,41 @@
 "use client";
 import React, { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
 
-const RehabSection = ({ title, introText, items, backgroundColor }) => {
+const RehabSection = ({ title, introText, endingText='', items, backgroundColor }) => {
   return (
     <section className={`${backgroundColor} py-10`}>
       <div className="max-w-5xl mx-auto p-8">
-        <h2 className="text-4xl font-bold mb-6 text-maintext text-center font-inter">{title}</h2>
+        <motion.h2 className="text-4xl font-bold mb-6 text-maintext text-center font-inter"
+          initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.2,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }}
+        >{title}</motion.h2>
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: 60 }}
+        transition={{
+          duration: 0.5,
+          delay: 0.2,
+          scale: {
+            type: "spring",
+            damping: 14,
+            stiffness: 200,
+            restDelta: 0.001,
+          },
+        }}
+          >
         <p className="text-lg mb-6 font-bold">{introText}</p>
         <ul className="space-y-4 text-lg">
           {items.map((item, index) => (
@@ -21,6 +51,8 @@ const RehabSection = ({ title, introText, items, backgroundColor }) => {
             </li>
           ))}
         </ul>
+        <p className="text-lg mb-6 mt-1">{endingText}</p>
+        </motion.div>
       </div>
     </section>
   );

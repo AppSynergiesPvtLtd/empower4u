@@ -8,4 +8,6 @@ export const specialtiesData = [
   { title: "Rare Neurological Conditions", link: "/specialty/rare-neurological-conditions" },
   { title: "Falls & Balance", link: "/specialty/falls-balance" },
   { title: "Fracture/Joint Health", link: "/specialty/fracture-joint-health" },
+  { title: "Surgery Rehab", link: "/specialty/surgery-rehab" },
+  { title: "Mental Health", link: "/specialty/mental-health" },
 ];

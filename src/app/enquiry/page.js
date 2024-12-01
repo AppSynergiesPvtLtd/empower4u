@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
 import Loader from "@/components/Loader";
 import axios from 'axios';
 import dynamic from 'next/dynamic';
@@ -67,7 +68,17 @@ const Enquiry = () => {
         </h1>
 
         <form className="mt-8 space-y-6" onSubmit={handleSubmit(onSubmit)}>
-          <div>
+          <motion.div initial={{ opacity: 0, scale: 1.4 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.3,
+                    scale: {
+                      type: "spring",
+                      damping: 15,
+                      stiffness: 200,
+                      restDelta: 0.001,
+                    },
+                  }}>
             <label htmlFor="name" className="block text-sm font-medium text-maintext mb-1">
               Name
             </label>
@@ -79,10 +90,20 @@ const Enquiry = () => {
               {...register("name", { required: "Name is required" })}
             />
             {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
+            <motion.div initial={{ opacity: 0, scale: 1.4 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.3,
+                    scale: {
+                      type: "spring",
+                      damping: 15,
+                      stiffness: 200,
+                      restDelta: 0.001,
+                    },
+                  }}>
               <label htmlFor="phone" className="block text-sm font-medium text-maintext mb-1">
                 Phone no.
               </label>
@@ -95,9 +116,19 @@ const Enquiry = () => {
                 }}
               />
               {errors.phoneNumber && <p className="text-red-500 text-sm">Phone number is required</p>}
-            </div>
+            </motion.div>
 
-            <div>
+            <motion.div initial={{ opacity: 0, scale: 1.4 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.3,
+                    scale: {
+                      type: "spring",
+                      damping: 15,
+                      stiffness: 200,
+                      restDelta: 0.001,
+                    },
+                  }}>
               <label htmlFor="email" className="block text-sm font-medium text-maintext mb-1">
                 Email
               </label>
@@ -115,10 +146,20 @@ const Enquiry = () => {
                 })}
               />
               {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
-            </div>
+            </motion.div>
           </div>
 
-          <div>
+          <motion.div initial={{ opacity: 0, scale: 1.4 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.3,
+                    scale: {
+                      type: "spring",
+                      damping: 15,
+                      stiffness: 200,
+                      restDelta: 0.001,
+                    },
+                  }}>
             <label htmlFor="enquiry" className="block text-sm font-medium text-maintext mb-1">
               Enquiry
             </label>
@@ -129,7 +170,7 @@ const Enquiry = () => {
               {...register("enquiry", { required: "Enquiry is required" })}
             ></textarea>
             {errors.enquiry && <p className="text-red-500 text-sm">{errors.enquiry.message}</p>}
-          </div>
+          </motion.div>
 
           <div className="flex justify-center mt-6">
             <button

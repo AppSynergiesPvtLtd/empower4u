@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
 import Loader from "@/components/Loader";
 import { FaFacebookF, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 
@@ -20,7 +21,7 @@ const Footer = () => {
           <a href="tel:+123456789" className="hover:text-primary">
             <FaPhoneAlt />
           </a> */}
-          <a href="info@empower4u.org" className="hover:text-maintext">
+          <a href="mailto:info@empower4u.org" className="hover:text-maintext">
             <FaEnvelope />
           </a>
         </div>

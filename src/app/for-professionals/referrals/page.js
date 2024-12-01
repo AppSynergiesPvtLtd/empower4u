@@ -2,12 +2,13 @@
 
 import Image from 'next/image';
 import { useForm } from 'react-hook-form';
+import { motion } from "framer-motion";
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import { Toaster, toast } from 'react-hot-toast';
 import 'react-phone-input-2/lib/style.css';
 import PhoneInput from 'react-phone-input-2';
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Checkbox, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel } from '@mui/material';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
@@ -16,9 +17,21 @@ import { Controller } from 'react-hook-form';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFnsV3'
 import { Button } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import { ref, uploadBytes } from "firebase/storage";
+import { storage } from "@/lib/firebase";
 
 const FormDatePicker = ({ label, registerName, control, required = false }) => (
-  <div className="mb-4 ml-5">
+  <motion.div className="mb-4 ml-5" initial={{ opacity: 0, scale: 1.4 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.3,
+                    scale: {
+                      type: "spring",
+                      damping: 15,
+                      stiffness: 200,
+                      restDelta: 0.001,
+                    },
+                  }}>
     <label className="block font-medium text-maintext mb-2">{label}</label>
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <Controller
@@ -45,13 +58,23 @@ const FormDatePicker = ({ label, registerName, control, required = false }) => (
         )}
       />
     </LocalizationProvider>
-  </div>
+  </motion.div>
 );
 
 
-const FormTextInput = ({ label, registerName, register, placeholder, type = 'text', required = false }) => (
-  <div className="mb-4 ml-5">
-    <label className="block font-medium text-maintext">{label}</label>
+const FormTextInput = ({ label, registerName, register, placeholder, type = 'text', required = false, req_star = false }) => (
+  <motion.div className="mb-4 ml-5" initial={{ opacity: 0, scale: 1.4 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.3,
+                    scale: {
+                      type: "spring",
+                      damping: 15,
+                      stiffness: 200,
+                      restDelta: 0.001,
+                    },
+                  }}>
+    <label className="block font-medium text-maintext">{label} {req_star && <span className="text-red-500">*</span>}</label>
     <input
       type={type}
       {...register(registerName)}
@@ -59,7 +82,7 @@ const FormTextInput = ({ label, registerName, register, placeholder, type = 'tex
       required={required}
       className="w-full p-2 border border-gray-300 rounded mt-2 bg-transparent"
     />
-  </div>
+  </motion.div>
 );
 
 const options = [
@@ -72,18 +95,29 @@ const options = [
     'Others',
   ];
 
-const FormFileInput = ({ label, registerName, register, required = false }) => {
+const FormFileInput = ({ label, registerName, register, required = false, setValue }) => {
   const [fileName, setFileName] = useState("");
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
       setFileName(file.name);
+      setValue("referringHealthProfessionalDetails.signature", file);
     }
   };
 
   return (
-    <div className="flex items-center space-x-4 mb-6">
+    <motion.div className="flex items-center space-x-4 mb-6" initial={{ opacity: 0, scale: 1.4 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.3,
+                    scale: {
+                      type: "spring",
+                      damping: 15,
+                      stiffness: 200,
+                      restDelta: 0.001,
+                    },
+                  }}>
       <label className="block font-medium text-maintext mb-2">{label}</label>
       <Button
         component="label"
@@ -102,13 +136,23 @@ const FormFileInput = ({ label, registerName, register, required = false }) => {
       {fileName && (
         <p className="text-sm mt-2 text-gray-600">Selected File: {fileName}</p>
       )}
-    </div>
+    </motion.div>
   );
 };
 
 
 const FormTextArea = ({ label, registerName, register, placeholder, required = false }) => (
-  <div className="mb-6">
+  <motion.div className="mb-6" initial={{ opacity: 0, scale: 1.4 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.3,
+                    scale: {
+                      type: "spring",
+                      damping: 15,
+                      stiffness: 200,
+                      restDelta: 0.001,
+                    },
+                  }}>
     <label className="text-xl font-bold font-inter">{label}</label>
     <textarea
       {...register(registerName)}
@@ -117,19 +161,29 @@ const FormTextArea = ({ label, registerName, register, placeholder, required = f
       className="w-full p-2 bg-transparent border border-gray-300 rounded mt-2"
       rows={3}
     />
-  </div>
+  </motion.div>
 );
 
 const FormRadioGroup = ({ label, options, registerName, register, required = false }) => (
-  <FormControl component="fieldset" className="mb-6 ml-5">
-    <div className="flex items-center">
+  <FormControl component="fieldset" className="mb-2">
+    <motion.div className=" items-center" initial={{ opacity: 0, scale: 1.4 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.3,
+                    scale: {
+                      type: "spring",
+                      damping: 15,
+                      stiffness: 200,
+                      restDelta: 0.001,
+                    },
+                  }}>
       <FormLabel component="legend" className="block text-maintext mr-4 ml-5">
         {label}
       </FormLabel>
       <RadioGroup
         row
         {...register(registerName)} 
-        className="flex items-center space-x-1"
+        className="ml-5 flex items-center space-x-1"
       >
         {options.map((option, index) => (
           <FormControlLabel
@@ -150,13 +204,23 @@ const FormRadioGroup = ({ label, options, registerName, register, required = fal
           />
         ))}
       </RadioGroup>
-    </div>
+    </motion.div>
   </FormControl>
 );
 
-const FormPhoneInput = ({ label, registerName, setValue, required = false }) => (
-  <div className="mb-4 ml-5">
-    <label className="block font-medium text-maintext mb-2">{label}</label>
+const FormPhoneInput = ({ label, registerName, setValue, required = false, req_star= false }) => (
+  <motion.div className="mb-4 ml-5" initial={{ opacity: 0, scale: 1.4 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.3,
+                    scale: {
+                      type: "spring",
+                      damping: 15,
+                      stiffness: 200,
+                      restDelta: 0.001,
+                    },
+                  }}>
+    <label className="block font-medium text-maintext mb-2">{label} {req_star && <span className="text-red-500">*</span>}</label>
     <PhoneInput
       country="in"
       onChange={(value) => {
@@ -170,7 +234,7 @@ const FormPhoneInput = ({ label, registerName, setValue, required = false }) => 
       inputClass="ml-12 w-full pl-12 bg-transparent"
       buttonClass="phone-input-button"
     />
-  </div>
+  </motion.div>
 );
 
 const ReferralsPage = () => {
@@ -179,6 +243,7 @@ const ReferralsPage = () => {
   const [loading, setLoading] = useState(false);
   const [showOtherInput, setShowOtherInput] = useState(false);
   const [otherInputValue, setOtherInputValue] = useState('');
+  
   const { register, watch, handleSubmit, formState: { isValid }, setValue, control } = useForm({
     mode: 'onChange',
     defaultValues: {
@@ -196,16 +261,35 @@ const ReferralsPage = () => {
       clientInfo: { name: "", dob: "", address: "", phoneNumber: "", email: "", emergencyContactName: "", emergencyContactNumber: "" },
       additionalInfo: { hasCaregiver: "", specialHomeConsiderations: "", otherNotes: "" },
       consentProvided: false,
-      referringHealthProfessionalDetails: { name: "", profession: "", organizationName: "", preferredCommunicationMode: "", phoneNumber: "", email: "", signature: "", consentDate: "", dateOfReferral: "" },
+      referringHealthProfessionalDetails: { name: "", profession: "", organizationName: "", phoneNumber: "", email: "", signature: "", consentDate: "", dateOfReferral: "" },
     },
+    
   });
 
-  const signatureFile = watch("referringHealthProfessionalDetails.signature");
-
-
+  //const signatureFile = watch("referringHealthProfessionalDetails.signature");
   const onSubmit = async (data) => {
     console.log(data);
     setLoading(true);
+
+    const file = data.referringHealthProfessionalDetails?.signature;
+
+    if (file) {
+      try {
+        const storageRef = ref(storage, `uploads/${file.name}`);
+        const uploadTask = await uploadBytes(storageRef, file);
+        const fileURL = `https://firebasestorage.googleapis.com/v0/b/${storage.bucket}/o/${encodeURIComponent(uploadTask.metadata.fullPath)}?alt=media`;
+
+        data.referringHealthProfessionalDetails.signatureUrl = fileURL;
+
+        console.log('File uploaded successfully:', fileURL);
+      } catch (error) {
+        console.error('Error uploading file:', error);
+        toast.error('File upload failed. Please try again.');
+        setLoading(false);
+        return;
+      }
+    }
+
     try {
       const response = await axios.post(
         'https://us-central1-empower4u-31c1a.cloudfunctions.net/RefferalFormApi/create-referral',
@@ -221,6 +305,8 @@ const ReferralsPage = () => {
       setLoading(false);
     }
   };
+
+
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -238,8 +324,20 @@ const ReferralsPage = () => {
 
   return (
     <section className="py-16 px-4 bg-[#f9f5f1] text-maintext">
-      <div className="container mx-auto max-w-4xl">
+      <div className="container mx-auto max-w-6xl">
         <Toaster />
+        <motion.div initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.3,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }}>
         <div className="flex justify-center mb-6">
           <Image src="/icons/top_border.svg" alt="Top Border" width={600} height={400} />
         </div>
@@ -247,14 +345,37 @@ const ReferralsPage = () => {
         <div className="flex justify-center mb-12">
           <Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} />
         </div>
-
-        <div className="flex justify-center mb-12">
+        </motion.div>
+        <motion.div className="flex justify-center mb-12" initial={{ opacity: 0, x: -60 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 60 }}
+                        transition={{
+                        duration: 0.5,
+                        delay: 0.3,
+                        scale: {
+                            type: "spring",
+                            damping: 14,
+                            stiffness: 200,
+                            restDelta: 0.001,
+                        },
+                        }}>
           <img src="/images/for-professionals/referral-page.webp" alt="referral-page" width={400} height={300} className="rounded-lg shadow-md" />
-        </div>
+        </motion.div>
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-6">
-            <h2 className="text-xl font-bold font-inter">1. Reasons for Referrals <span className="text-red-700"> *</span></h2>
+            <motion.h2 initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.3,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }} className="text-xl font-bold font-inter">1. Reasons for Referrals <span className="text-red-700"> *</span></motion.h2>
             <FormTextArea
                         label=""
                         registerName="reasonsForReferrals"
@@ -265,7 +386,18 @@ const ReferralsPage = () => {
           </div>
 
           <div className="mb-6">
-            <h2 className="text-xl font-bold font-inter">2. Summary of Therapy Inputs <span className="text-red-700"> *</span></h2>
+            <motion.h2 initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.3,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }} className="text-xl font-bold font-inter">2. Summary of Therapy Inputs <span className="text-red-700"> *</span></motion.h2>
             <FormTextArea
             label=""
             registerName="therapyInputs"
@@ -276,7 +408,18 @@ const ReferralsPage = () => {
           </div>
 
           <div className="mb-6">
-            <h2 className="text-xl font-bold font-inter">3. Goals <span className="text-red-700"> *</span></h2>
+            <motion.h2 initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.3,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }} className="text-xl font-bold font-inter">3. Goals <span className="text-red-700"> *</span></motion.h2>
             <FormTextArea
             label=""
             registerName="goals"
@@ -286,10 +429,42 @@ const ReferralsPage = () => {
           />
           </div>
           <div className="mb-6">
-            <h2 className="text-xl font-bold font-inter">4. Specialty You Refer To <span className="text-red-700"> *</span></h2>
+            <motion.h2 initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.3,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }} className="text-xl font-bold font-inter">4. Specialty You Refer To <span className="text-red-700"> *</span></motion.h2>
 
-            <h3 className="text-lg font-semibold mt-4 mb-2"><span className="font-bold mr-2">A.</span> Neuro</h3>
-            <div className="ml-4">
+            <motion.h3 initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.3,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }} className="text-lg font-semibold mt-4 mb-2"><span className="font-bold mr-2">A.</span> Neuro</motion.h3>
+            <motion.div className="ml-4" initial={{ opacity: 0, scale: 1.4 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.3,
+                    scale: {
+                      type: "spring",
+                      damping: 15,
+                      stiffness: 200,
+                      restDelta: 0.001,
+                    },
+                  }}>
               <div className="space-y-2">
                 <FormControl component="fieldset">
                   <RadioGroup
@@ -298,7 +473,7 @@ const ReferralsPage = () => {
                     onChange={(e) => {
                       const selectedValue = e.target.value;
                       setShowOtherInput(selectedValue === "Others");
-                      setValue("specialtyNeuro", selectedValue === "Others" ? otherInputValue : selectedValue); // Update form value
+                      setValue("specialtyNeuro", selectedValue === "Others" ? otherInputValue : selectedValue);
                     }}
                   >
                     {options.map((option) => (
@@ -329,14 +504,25 @@ const ReferralsPage = () => {
                   register={register}
                   onChange={(e) => {
                     setOtherInputValue(e.target.value);
-                    setValue("specialtyNeuro", e.target.value); // Dynamically update the form value
+                    setValue("specialtyNeuro", e.target.value);
                   }}
                 />
               )}
-            </div>
+            </motion.div>
           </div>
 
-            <h3 className="text-lg font-semibold mt-4 mb-2"><span className="font-bold mr-2">B.</span> Falls/Balance</h3>
+            <motion.h3 initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.3,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }} className="text-lg font-semibold mt-4 mb-2"><span className="font-bold mr-2">B.</span> Falls/Balance</motion.h3>
             <FormTextInput
             label="Number of Falls in the Last 3 Months"
             registerName="fallsBalance"
@@ -345,7 +531,18 @@ const ReferralsPage = () => {
             type="number"
             required
           />
-            <h3 className="text-lg font-semibold mt-4 mb-2"><span className="font-bold mr-2">C.</span> Surgery Prehab/Rehab</h3>
+            <motion.h3 initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.3,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }} className="text-lg font-semibold mt-4 mb-2"><span className="font-bold mr-2">C.</span> Surgery Prehab/Rehab</motion.h3>
             <FormTextInput
             label="Specify the (Planned) Surgery"
             registerName="surgeryDetails"
@@ -354,7 +551,18 @@ const ReferralsPage = () => {
             required
           />
 
-            <h3 className="text-lg font-semibold mt-4 mb-2"><span className="font-bold mr-2">D.</span> Fracture/Joint Health/Amputee</h3>
+            <motion.h3 initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.3,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }} className="text-lg font-semibold mt-4 mb-2"><span className="font-bold mr-2">D.</span> Fracture/Joint Health/Amputee</motion.h3>
             <FormTextInput
             label="Specify Involved Joint(s)"
             registerName="fractureJointHealth"
@@ -363,7 +571,18 @@ const ReferralsPage = () => {
             required
           />
 
-            <h3 className="text-lg font-semibold mt-4 mb-2"><span className="font-bold mr-2">E.</span> Mental Health</h3>
+            <motion.h3 initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.3,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }} className="text-lg font-semibold mt-4 mb-2"><span className="font-bold mr-2">E.</span> Mental Health</motion.h3>
             <FormTextInput
             label="Specify diagnosed condition"
             registerName="mentalHealthCondition"
@@ -373,7 +592,18 @@ const ReferralsPage = () => {
           /> 
           
           <div className="mb-6">
-            <h2 className="text-xl font-bold font-inter">5. Functional Status <span className="text-red-700"> *</span></h2>
+            <motion.h2 initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.3,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }} className="text-xl font-bold font-inter">5. Functional Status <span className="text-red-700"> *</span></motion.h2>
             <label className="text-base font-medium text-maintext block my-1 ml-5"> Please provide information about the patient&#39;s current functional abilities:</label>
             <FormTextInput
             label="Mobility"
@@ -392,7 +622,18 @@ const ReferralsPage = () => {
           </div>
 
           <div className="mb-6">
-            <h2 className="text-xl font-bold font-inter">6. Medical History and Current Condition</h2>
+            <motion.h2 initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.3,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }} className="text-xl font-bold font-inter">6. Medical History and Current Condition</motion.h2>
             <FormTextInput
             label="A. Specify Diagnosed Condition"
             registerName="medicalHistory.diagnosedCondition"
@@ -415,7 +656,18 @@ const ReferralsPage = () => {
 
 
           <div className="mb-6">
-            <h2 className="text-xl font-bold font-inter">7. Client Information</h2>
+            <motion.h2 initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.3,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }} className="text-xl font-bold font-inter">7. Client Information</motion.h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <FormTextInput
                 label="A. Patient Full Name"
@@ -428,7 +680,7 @@ const ReferralsPage = () => {
               label="B. Date Of Birth"
               registerName="clientInfo.dob"
               control={control}
-              required={true}
+              required={false}
             />
 
               <FormPhoneInput
@@ -446,13 +698,15 @@ const ReferralsPage = () => {
                 register={register}
                 placeholder="Email Address"
                 type="email"
+                required={false}
               />
             </div>
               <FormTextInput 
                 label="E. Address" 
                 placeholder="Address" 
                 registerName="clientInfo.address" 
-                register={register} 
+                register={register}
+                required={false}
               />
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -460,7 +714,8 @@ const ReferralsPage = () => {
                   label="F. Emergency Contact Name" 
                   placeholder="Emergency Contact Name" 
                   registerName="clientInfo.emergencyContactName" 
-                  register={register} 
+                  register={register}
+                  required={false} 
                 />
 
                 <FormPhoneInput
@@ -469,7 +724,6 @@ const ReferralsPage = () => {
                 setValue={setValue}
                 phone={phone}
                 setPhone={setPhone}
-                required
               />
                 
               </div>
@@ -477,22 +731,53 @@ const ReferralsPage = () => {
 
 
           <div className="mb-6">
-            <h2 className="text-xl font-bold font-inter">8. Additional Information</h2>
+            <motion.h2 initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.3,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }} className="text-xl font-bold font-inter">8. Additional Information</motion.h2>
             <FormRadioGroup
               label="A. Does the Patient Have A Caregiver/Family Member to Assist?"
               options={["Yes", "No"]}
               registerName="additionalInfo.hasCaregiver"
               register={register}
-              required
             />
             <FormTextInput label="B. Any Special Home Considerations?" placeholder="Any special home considerations (e.g., stairs, narrow hallways, behavioural issues)?" register={register} registerName={"additionalInfo.specialHomeConsiderations"} />
             <FormTextInput label="C. Other Notes/Additional Information:" placeholder="Other Notes/Additional Information:"  register={register} registerName={"additionalInfo.otherNotes"} />
           </div>
 
           <div className="mb-8">
-            <h2 className="text-xl font-bold font-inter">9. Consent and Privacy <span className="text-red-700"> *</span></h2>
+            <motion.h2 initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.3,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }} className="text-xl font-bold font-inter">9. Consent and Privacy <span className="text-red-700"> *</span></motion.h2>
 
-            <div className='flex items-start my-4'>
+            <motion.div className='flex items-start my-4' initial={{ opacity: 0, scale: 1.4 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.3,
+                    scale: {
+                      type: "spring",
+                      damping: 15,
+                      stiffness: 200,
+                      restDelta: 0.001,
+                    },
+                  }}>
               <FormControlLabel
                 control={
                   <Checkbox
@@ -513,13 +798,14 @@ const ReferralsPage = () => {
                   </span>
                 }
               />
-            </div>
+            </motion.div>
             
 
             <FormFileInput
               label="Referring Health Professional Signature"
               registerName="referringHealthProfessionalDetails.signature"
               register={register}
+              setValue={setValue}
             />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -533,13 +819,25 @@ const ReferralsPage = () => {
           </div>
 
           <div className="mb-6">
-            <h2 className="text-xl font-bold font-inter">10. Referring Health Professional Details</h2>
+            <motion.h2 initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.3,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }} className="text-xl font-bold font-inter">10. Referring Health Professional Details</motion.h2>
             <FormTextInput
               label="A. Health Professional Name"
               registerName="referringHealthProfessionalDetails.name"
               register={register}
               placeholder="Enter health professional name"
               required
+              req_star={true}
             />
 
             <FormTextInput
@@ -562,10 +860,9 @@ const ReferralsPage = () => {
                   setValue={setValue}
                   phone={phone}
                   setPhone={setPhone}
+                  req_star={true}
                   
               />
-
-
               <FormTextInput
                 label="Preferred Contact Method (Email)"
                 registerName="referringHealthProfessionalDetails.email"
@@ -573,6 +870,7 @@ const ReferralsPage = () => {
                 placeholder="Email"
                 type="email"
                 required
+                req_star={true}
               />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -580,7 +878,7 @@ const ReferralsPage = () => {
               label="E. Date Of Referral:"
               registerName="referringHealthProfessionalDetails.dateOfReferral"
               control={control}
-              required={true}
+              
             />
             </div>
             
@@ -590,7 +888,7 @@ const ReferralsPage = () => {
           <button
               type="submit"
               className={`px-10 py-3 rounded-3xl font-bold ${
-                isValid ? 'bg-maintext text-white hover:bg-maintext-hover' : 'bg-[#c4c4c4] cursor-not-allowed text-black'
+                isValid ? 'bg-maintext text-white hover:bg-primary' : 'bg-[#c4c4c4] cursor-not-allowed text-black'
               }`}
               disabled={!isValid || loading}
             >

@@ -6,6 +6,7 @@ import RehabSection from '@/components/RehabSection';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import { motion } from "framer-motion";
 import Loader from "@/components/Loader";
 
 
@@ -88,6 +89,19 @@ const StrokeRehabilitationPage = () => {
     <section className="py-16 text-maintext">
       <Toaster position="top-right" reverseOrder={false} />
       <div className="container mx-auto max-w-full">
+      <motion.div initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.2,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }}>
         <div className="flex justify-center mb-6">
           <Image src="/icons/top_border.svg" alt="Top Border" width={600} height={400} />
         </div>
@@ -97,8 +111,22 @@ const StrokeRehabilitationPage = () => {
         <div className="flex justify-center mb-12">
           <Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} />
         </div>
-
-        <div className="flex justify-center mb-12">
+        </motion.div>
+        <motion.div className="flex justify-center mb-12"
+         initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 60 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.3,
+              scale: {
+                type: "spring",
+                damping: 14,
+                stiffness: 200,
+                restDelta: 0.001,
+              },
+            }}
+          >
           <img
             src="/images/for-professionals/HCPC-Job-interview-Career-support-page.webp"
             alt="HCPC-Job-interview-Career-support-page"
@@ -106,15 +134,28 @@ const StrokeRehabilitationPage = () => {
             height={400}
             className="rounded-lg shadow-md"
           />
-        </div>
+        </motion.div>
 
         <section className="p-16 bg-[#d4c0a9] text-maintext w-full">
-          <div className="container mx-auto max-w-4xl">
+          <div className="container mx-auto max-w-6xl">
             <h1 className="text-4xl font-bold text-center uppercase mb-10 font-inter">
               What We Offer
             </h1>
 
-            <div className="mb-8">
+            <motion.div className="mb-8"
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 60 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.3,
+              scale: {
+                type: "spring",
+                damping: 14,
+                stiffness: 200,
+                restDelta: 0.001,
+              },
+            }}>
               <h2 className="text-base font-bold mb-2">1. Job Search Assistance</h2>
               <p className="text-base mb-4">
                 Finding the right job in physiotherapy can be challenging, especially with the variety of roles and settings available. Our consulting service offers tailored job search assistance to help you identify opportunities that align with your skills, experience, and career goals.
@@ -127,9 +168,22 @@ const StrokeRehabilitationPage = () => {
                   <strong>Facilitating Communication with Prospective Employers:</strong> We help you communicate effectively with potential employers, guiding you to ask the right questions to clarify roles and expectations. Our support ensures you gather valuable insights about the position while making a strong, positive first impression that sets you apart from other candidates.
                 </li>
               </ul>
-            </div>
+            </motion.div>
 
-            <div className="mb-8">
+            <motion.div className="mb-8"
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 60 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.3,
+              scale: {
+                type: "spring",
+                damping: 14,
+                stiffness: 200,
+                restDelta: 0.001,
+              },
+            }}>
               <h2 className="text-base font-bold mb-2">2. Job Application Writing</h2>
               <p className="text-base mb-4">
                 A strong CV and cover letter are crucial for making a great impression with potential employers. Our experts will help you craft a professional, compelling application that highlights your qualifications and sets you apart from other candidates.
@@ -139,9 +193,22 @@ const StrokeRehabilitationPage = () => {
                   <strong>Preparing Supporting Information in the Application:</strong> We assist you in crafting the crucial supporting information section of your application, ensuring it highlights your strengths and directly matches the job’s specification. This tailored approach helps you stand out and demonstrate your suitability for the role.
                 </li>
               </ul>
-            </div>
+            </motion.div>
 
-            <div className="mb-8">
+            <motion.div className="mb-8"
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 60 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.3,
+              scale: {
+                type: "spring",
+                damping: 14,
+                stiffness: 200,
+                restDelta: 0.001,
+              },
+            }}>
               <h2 className="text-base font-bold mb-2">3. Interview Preparation</h2>
               <p className="text-base mb-4">
                 Our team of consultants will fully prepare you for interviews with mock sessions, industry-specific questions, and expert advice on how to present your skills with confidence. This is definitely our strength—our specialists have risen through the ranks from Band 5 to Band 8 and now work in staff recruitment. With our insider knowledge, we know exactly how to help you maximize your performance and stand out in interviews.
@@ -154,9 +221,22 @@ const StrokeRehabilitationPage = () => {
                   <strong>Feedback and Improvement:</strong> We provide constructive feedback and tips to enhance your communication and presentation skills, ensuring you&#39;re interview-ready.
                 </li>
               </ul>
-            </div>
+            </motion.div>
 
-            <div className="mb-8">
+            <motion.div className="mb-8"
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 60 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.3,
+              scale: {
+                type: "spring",
+                damping: 14,
+                stiffness: 200,
+                restDelta: 0.001,
+              },
+            }}>
               <h2 className="text-base font-bold mb-2">4. Registration and Licensing Guidance</h2>
               <p className="text-base mb-4">
                 If you&#39;re an international physiotherapist or new to the UK job market, you&#39;ll need to navigate the registration process with the Health and Care Professions Council (HCPC). We simplify this process by providing you with step-by-step guidance on the requirements, documentation, and timelines.
@@ -166,9 +246,22 @@ const StrokeRehabilitationPage = () => {
                   <strong>HCPC Registration Support:</strong> We assist you in gathering the necessary documentation, completing the registration, and understanding how to meet UK standards for physiotherapy practice.
                 </li>
               </ul>
-            </div>
+            </motion.div>
 
-            <div className="mb-8">
+            <motion.div className="mb-8"
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 60 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.3,
+              scale: {
+                type: "spring",
+                damping: 14,
+                stiffness: 200,
+                restDelta: 0.001,
+              },
+            }}>
               <h2 className="text-base font-bold mb-2">5. Career Development Advice</h2>
               <p className="text-base mb-4">
                 Beyond job placement, we offer career development advice and training to help you advance in your physiotherapy career. Whether you&#39;re aiming for senior roles, looking to specialize in a particular area of practice, or moving towards research or management, we can support your long-term goals.
@@ -181,10 +274,7 @@ const StrokeRehabilitationPage = () => {
                   <strong>Specialization Pathways:</strong> If you’re looking to specialize in areas like sports physiotherapy, neurological rehabilitation, or paediatrics, we can advise on relevant training programs and certifications.
                 </li>
               </ul>
-            </div>
-
-
-            {/* Additional sections omitted for brevity */}
+            </motion.div>
           </div>
         </section>
 
@@ -213,7 +303,19 @@ const StrokeRehabilitationPage = () => {
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 1.4 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.3,
+                    scale: {
+                      type: "spring",
+                      damping: 15,
+                      stiffness: 200,
+                      restDelta: 0.001,
+                    },
+                  }}
+                >
                   <label className="block font-semibold mb-1 text-[#4f366d]">Name</label>
                   <input
                     {...register('name', { required: true })}
@@ -223,9 +325,21 @@ const StrokeRehabilitationPage = () => {
                   {errors.name && (
                     <p className="text-red-500 text-sm">Name is required</p>
                   )}
-                </div>
+                </motion.div>
 
-                <div>
+                <motion.div
+                initial={{ opacity: 0, scale: 1.4 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.3,
+                    scale: {
+                      type: "spring",
+                      damping: 15,
+                      stiffness: 200,
+                      restDelta: 0.001,
+                    },
+                  }}
+                >
                   <label className="block font-semibold mb-1 text-[#4f366d]">Email</label>
                   <input
                     {...register('email', {
@@ -238,10 +352,21 @@ const StrokeRehabilitationPage = () => {
                   {errors.email && (
                     <p className="text-red-500 text-sm">Valid email is required</p>
                   )}
-                </div>
+                </motion.div>
               </div>
 
-              <div>
+              <motion.div
+              initial={{ opacity: 0, scale: 1.4 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.3,
+                    scale: {
+                      type: "spring",
+                      damping: 15,
+                      stiffness: 200,
+                      restDelta: 0.001,
+                    },
+                  }}>
                 <label className="block font-semibold">Location</label>
                 <input
                   {...register('location', { required: true })}
@@ -251,23 +376,47 @@ const StrokeRehabilitationPage = () => {
                 {errors.location && (
                   <p className="text-red-500 text-sm">Location is required</p>
                 )}
-              </div>
-              <div className="text-center mt-6">
+              </motion.div>
+              <motion.div className="text-center mt-6"
+              initial={{ opacity: 0, rotateY: 180 }}
+              whileInView={{ opacity: 1, rotateY: 0 }}
+              exit={{ opacity: 0, rotateY: -180 }}
+              transition={{
+                duration: 0.5,
+                delay: 0.2,
+                scale: {
+                  type: "spring",
+                  damping: 14,
+                  stiffness: 200,
+                  restDelta: 0.001,
+                },
+              }}>
                 <button
                   type="submit"
-                  className="w-1/6 py-3 mt-4 bg-maintext text-white font-bold rounded-md hover:text-primary hover:bg-[#FEF7F7]"
+                  className="w-1/6 py-3 mt-4 bg-maintext text-white font-bold rounded-md  hover:bg-primary"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Sending Request...' : 'Get Started'}
                 </button>
-              </div>
+              </motion.div>
             </form>
-            <div className="text-center mt-10">
+            <motion.div className="text-center mt-10"
+            initial={{ opacity: 0, scale: 1.4 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.3,
+                    scale: {
+                      type: "spring",
+                      damping: 15,
+                      stiffness: 200,
+                      restDelta: 0.001,
+                    },
+                  }}>
               <p className='font-bold'>OR</p>
               <p className="mt-4">
                 Or, simply fill out our <a href="/enquiry" className="text-maintext font-semibold underline">online consultation request form</a>, and a member of our team will be in touch to discuss how we can support your job search.
               </p>
-            </div>
+            </motion.div>
           </div>
         </section>
       </div>

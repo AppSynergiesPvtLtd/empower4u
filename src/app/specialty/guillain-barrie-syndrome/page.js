@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
 import Loader from "@/components/Loader";
 import Image from 'next/image';
 import Link from 'next/link';
@@ -9,7 +10,8 @@ import CallToActionSection from '@/components/CallToActionSection';
 
 const uniqueApproachData = {
   title: "Our unique approach",
-  introText: "If these resonate with you, our services are the perfect fit!",
+  introText: "",
+  endingText: "If these resonate with you, our services are the perfect fit!",
   items: [
     {
       title: "Accelerate Your Progress",
@@ -93,43 +95,44 @@ const treatmentMayIncludeData = {
 
 
 const benefitsOfPhysiotherapyData = {
-  title: "Benefits of physiotherapy for MS include",
+  title: "Benefits of physiotherapy include",
   introText: "",
   items: [
     {
-      title: "Improved walking and mobility",
-      description: "Gait and strength training can help patients walk more safely and confidently.",
+      title: "Improved mobility",
+      description: "Exercises help regain movement, allowing patients to walk and perform tasks independently.",
     },
     {
-      title: "Reduced muscle stiffness (spasticity)",
-      description: "Stretching, strengthening exercises, and other techniques help reduce stiffness and improve range of motion.",
+      title: "Fall prevention",
+      description: "Balance training reduces the risk of falls and injuries during recovery.",
     },
     {
-      title: "Better balance and fall prevention",
-      description: "Balance exercises help improve stability and reduce the risk of falls.",
+      title: "Reduced muscle stiffness",
+      description: "Stretching and movement exercises help reduce stiffness and improve range of motion.",
     },
     {
-      title: "Increased strength and endurance",
-      description: "Regular strength training can help improve overall body strength and endurance.",
+      title: "Better respiratory function",
+      description: "Breathing exercises strengthen respiratory muscles and improve lung capacity.",
     },
     {
       title: "Enhanced independence",
-      description: "Physiotherapy focuses on helping patients perform daily activities with less assistance.",
+      description: "Rehabilitation supports the ability to perform daily activities without assistance.",
     },
     {
-      title: "Prevention of complications",
-      description: "Early intervention helps prevent issues like deconditioning, joint stiffness, and muscle wasting.",
+      title: "Increased strength",
+      description: "Progressive strength training rebuilds muscle power, supporting faster recovery.",
     },
     {
-      title: "Boosts mental well-being",
-      description: "Setting goals and tracking progress fosters motivation and supports mental health throughout recovery.",
+      title: "Pain management",
+      description: "Nerve pain is managed through a combination of exercises and positioning techniques.",
+    },
+    {
+      title: "Improved mental well-being",
+      description: "Goal setting and tracking progress provide motivation and support mental health during recovery.",
     },
   ],
   backgroundColor: "bg-[#f9f5f1]",
 };
-
-
-
 
 
 const StrokeRehabilitationPage = () => {
@@ -150,7 +153,20 @@ const StrokeRehabilitationPage = () => {
 
   return (
     <section className="py-16 px-4 text-maintext">
-      <div className="container mx-auto max-w-4xl">
+      <div className="container mx-auto max-w-6xl">
+      <motion.div initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.2,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }}>
         <div className="flex justify-center mb-6"><Image src="/icons/top_border.svg" alt="Top Border" width={600} height={400} /></div>
         <h1 className="text-4xl font-bold text-center uppercase font-inter my-4"> Guillain-Barré Syndrome  </h1>
         <div className="flex justify-center mb-12"><Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} /></div>
@@ -161,6 +177,22 @@ const StrokeRehabilitationPage = () => {
         
         
         </p>
+        </motion.div>
+        <motion.div
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 60 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.3,
+              scale: {
+                type: "spring",
+                damping: 14,
+                stiffness: 200,
+                restDelta: 0.001,
+              },
+            }}
+          >
         
         <div className="flex justify-center mb-12">
           <img
@@ -170,12 +202,13 @@ const StrokeRehabilitationPage = () => {
             height={400}
             className="rounded-lg shadow-md"
           />
-        </div>
+        </div></motion.div>
 
         
         <RehabSection
           title={uniqueApproachData.title}
           introText={uniqueApproachData.introText}
+          endingText={uniqueApproachData.endingText}
           items={uniqueApproachData.items}
           backgroundColor={uniqueApproachData.backgroundColor}
         />

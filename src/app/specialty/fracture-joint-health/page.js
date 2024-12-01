@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
 import Loader from "@/components/Loader";
 import Image from 'next/image';
 import Link from 'next/link';
@@ -9,7 +10,8 @@ import CallToActionSection from '@/components/CallToActionSection';
 
 const uniqueApproachData = {
   title: "Our unique approach",
-  introText: "If these resonate with you, our services are the perfect fit!",
+  introText: "",
+  endingText: "If these resonate with you, our services are the perfect fit!",
   items: [
     {
       title: "Accelerate Your Progress",
@@ -183,7 +185,20 @@ const StrokeRehabilitationPage = () => {
 
   return (
     <section className="py-16 px-4 text-maintext">
-      <div className="container mx-auto max-w-4xl">
+      <div className="container mx-auto max-w-6xl">
+      <motion.div initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.2,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }}>
         <div className="flex justify-center mb-6"><Image src="/icons/top_border.svg" alt="Top Border" width={600} height={400} /></div>
         <h1 className="text-4xl font-bold text-center uppercase font-inter my-4"> FRACTURE/ JOINT HEALTH/ AMPUTEE  </h1>
         <div className="flex justify-center mb-12"><Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} /></div>
@@ -191,6 +206,22 @@ const StrokeRehabilitationPage = () => {
         <p className="text-lg !border-2 !border-primary p-4 mb-8">
           Rare neurological conditions, such as Huntington’s disease, Amyotrophic Lateral Sclerosis (ALS), and various neuromuscular diseases, can lead to progressive physical and cognitive impairments. These conditions affect muscle control, movement, coordination, and often speech, gradually reducing a person&#39;s ability to perform everyday tasks independently. The progressive nature of these diseases also places significant emotional and physical strain on both patients and their caregivers, often requiring long-term care and support.
         </p>
+        </motion.div>
+        <motion.div
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 60 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.3,
+              scale: {
+                type: "spring",
+                damping: 14,
+                stiffness: 200,
+                restDelta: 0.001,
+              },
+            }}
+          >
         
         <div className="flex justify-center mb-12">
           <img
@@ -200,11 +231,12 @@ const StrokeRehabilitationPage = () => {
             height={400}
             className="rounded-lg shadow-md"
           />
-        </div>
+        </div></motion.div>
 
         <RehabSection
           title={uniqueApproachData.title}
           introText={uniqueApproachData.introText}
+          endingText={uniqueApproachData.endingText}
           items={uniqueApproachData.items}
           backgroundColor={uniqueApproachData.backgroundColor}
         />

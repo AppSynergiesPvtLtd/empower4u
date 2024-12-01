@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
 import Loader from "@/components/Loader";
 import { Toaster, toast } from 'react-hot-toast';
 import Link from 'next/link';

@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
 import Loader from "@/components/Loader";
 import Image from 'next/image';
 import CallToActionSection from '@/components/CallToActionSection';
@@ -22,34 +23,110 @@ const AboutPage = () => {
   return (
     <div className=" text-maintext ">
       <section className="py-16 px-4 max-w-6xl mx-auto">
-        <div className="container mx-auto">
+        <motion.div className="container mx-auto"
+          initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.2,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }}
+        >
+
+        
           <div className="flex justify-center mb-6"><Image src="/icons/top_border.svg" alt="Top Border" width={600} height={400} /></div>
-          <h1 className="text-4xl font-bold text-center uppercase font-inter my-4 text-maintext"> About Us  </h1>
+          <h1 className="text-4xl font-bold text-center font-inter my-4 text-maintext"> About Us  </h1>
           <div className="flex justify-center mb-12"><Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} /></div>
 
-          <p className="max-w-3xl mx-auto text-lg mb-10">
+          <p className="max-w-6xl mx-auto text-lg mb-10">
             Using evidence-based, personalized treatment plans, we set clear, attainable goals to ensure optimal progress through intensive, tailored sessions. Our team of highly skilled therapists, supported by qualified assistants, provides cost-effective, high-quality care to help you reach your health goals efficiently.
           </p>
-          <div className="max-w-4xl mx-auto p-6 border-primary border-2">
-            <h2 className="text-xl font-semibold text-maintext mb-4 uppercase text-center">The Best Use of Our Service</h2>
+          <div className="max-w-6xl mx-auto p-6 border-primary border-2">
+            <h2 className="text-3xl font-bold text-maintext mb-4 uppercase text-center">The Best Use of Our Service</h2>
             <p className="text-lg">
               To supplement your current physiotherapy routine with short-term, intensive, affordable, home-based therapy sessions, designed to consolidate the progress from your ongoing sessions or help you achieve new skills faster. Afterward, you can seamlessly return to your regular therapist with enhanced results.
             </p>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       <section className="bg-[#d4c0a9]">
         <div className='max-w-6xl mx-auto py-16 text-maintext '>
-          <h2 className="text-5xl font-semibold mb-10 font-inter text-center">Best Results</h2>
+        <motion.div className="container mx-auto"
+          initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.2,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }}
+        ></motion.div>
+        
+          <motion.h2 className="text-4xl md:text-5xl font-semibold mb-10 font-inter text-center"
+          initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.2,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }}
+          >Best Results</motion.h2>
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-              <div className="flex justify-center">
-                <img src="/images/about/Best results.webp" alt="Best Results" className="w-4/5 max-w-xs md:max-w-full rounded-3xl shadow-lg" />
-              </div>
+            <motion.div className="flex justify-center"
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 60 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.3,
+              scale: {
+                type: "spring",
+                damping: 14,
+                stiffness: 200,
+                restDelta: 0.001,
+              },
+            }}
+          >
+            <img src="/images/about/Best results.webp" alt="Best Results" className="w-4/5 max-w-xs md:max-w-full rounded-3xl shadow-lg" />
+          </motion.div>
               
-              <div className='items-start mr-4'>
-                <p className="text-3xl font-bold text-maintext">Experience outstanding results with our tailored approach:</p>
+            
+              
+              <motion.div className='items-start mx-4'
+             initial={{ opacity: 0, x: 100 }}
+             whileInView={{ opacity: 1, x: 0 }}
+             exit={{ opacity: 0, x: -100 }}
+             transition={{
+               duration: 0.5,
+               delay: 0.5,
+               scale: {
+                 type: "spring",
+                 damping: 14,
+                 stiffness: 200,
+                 restDelta: 0.001,
+               },
+             }}
+          >
+                <p className="text-xl md:text-3xl font-bold text-maintext">Experience outstanding results with our tailored approach:</p>
                 <ul className="space-y-4 mt-8 text-xl">
                   <li className="flex items-start space-x-2">
                     <img 
@@ -76,7 +153,7 @@ const AboutPage = () => {
                     <span><strong>Goal-Oriented Method:</strong> Your treatment is guided by the latest research and proven methods.</span>
                   </li>
                 </ul>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -85,11 +162,37 @@ const AboutPage = () => {
 
 
       <section className="py-16 text-maintext max-w-6xl mx-auto">
-        <h2 className="text-5xl font-semibold mb-10 font-inter text-center">Best Evidence</h2>
+        <motion.h2 className="text-4xl md:text-5xl font-semibold mb-10 font-inter text-center"
+          initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.2,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }}>Best Evidence</motion.h2>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-            <div className='items-start ml-4'>
-              <p className="text-3xl font-bold text-maintext">Ensure exceptional results with our evidence-based approach:</p>
+          <motion.div className="items-start mx-4 order-2 md:order-1"
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 60 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.3,
+              scale: {
+                type: "spring",
+                damping: 14,
+                stiffness: 200,
+                restDelta: 0.001,
+              },
+            }}>
+              <p className="text-xl md:text-3xl font-bold text-maintext">Ensure exceptional results with our evidence-based approach:</p>
               <ul className="space-y-4 mt-8 text-xl">
                 <li className="flex items-start space-x-2">
                   <img 
@@ -116,10 +219,24 @@ const AboutPage = () => {
                   <span><strong>Expert Care:</strong> All evidence search and practice guidelines are carried out by experienced and highly skilled therapists.</span>
                 </li>
               </ul>
-            </div>
-            <div className="flex justify-center">
+            </motion.div>
+            <motion.div className="flex justify-center order-1 md:order-2"
+             initial={{ opacity: 0, x: 100 }}
+             whileInView={{ opacity: 1, x: 0 }}
+             exit={{ opacity: 0, x: -100 }}
+             transition={{
+               duration: 0.5,
+               delay: 0.5,
+               scale: {
+                 type: "spring",
+                 damping: 14,
+                 stiffness: 200,
+                 restDelta: 0.001,
+               },
+             }}
+          >
               <img src="/images/about/Best evidence.webp" alt="Best Evidence" className="w-4/5 max-w-xs md:max-w-full rounded-3xl shadow-lg" />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -127,14 +244,55 @@ const AboutPage = () => {
 
       <section className="bg-[#d4c0a9]">
         <div className='max-w-6xl mx-auto py-16 text-maintext '>
-          <h2 className="text-5xl font-semibold mb-10 font-inter text-center">Best People</h2>
+          <motion.h2 className="text-4xl md:text-5xl font-semibold mb-10 font-inter text-center"
+          initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.2,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }}>Best People</motion.h2>
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-              <div className="flex justify-center">
+              <motion.div className="flex justify-center"
+                initial={{ opacity: 0, x: -60 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 60 }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.3,
+                  scale: {
+                    type: "spring",
+                    damping: 14,
+                    stiffness: 200,
+                    restDelta: 0.001,
+                  },
+                }}
+              >
                 <img src="/images/about/Best people.webp" alt="Best People" className="w-4/5 max-w-xs md:max-w-full rounded-3xl shadow-lg" />
-              </div>
-              <div className='items-start mr-4'>
-                <p className="text-3xl font-bold text-maintext">Receive superior care with our expert team:</p>
+              </motion.div>
+              <motion.div className='items-start mx-4'
+             initial={{ opacity: 0, x: 100 }}
+             whileInView={{ opacity: 1, x: 0 }}
+             exit={{ opacity: 0, x: -100 }}
+             transition={{
+               duration: 0.5,
+               delay: 0.5,
+               scale: {
+                 type: "spring",
+                 damping: 14,
+                 stiffness: 200,
+                 restDelta: 0.001,
+               },
+             }}
+          >
+                <p className="text-xl md:text-3xl font-bold text-maintext">Receive superior care with our expert team:</p>
                 <ul className="space-y-4 mt-8 text-xl">
                   <li className="flex items-start space-x-2">
                     <img 
@@ -161,18 +319,44 @@ const AboutPage = () => {
                     <span><strong>Support Team:</strong> Specialists in digital healthcare, ensuring prompt and efficient communication.</span>
                   </li>
                 </ul>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
       </section>
 
       <section className="py-16 text-maintext max-w-6xl mx-auto">
-        <h2 className="text-5xl font-semibold mb-10 font-inter text-center">Best Value</h2>
+        <motion.h2 className="text-4xl md:text-5xl font-semibold mb-10 font-inter text-center"
+          initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.2,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }}>Best Value</motion.h2>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-            <div className='items-start ml-4'>
-              <p className="text-3xl font-bold text-maintext">Gain great value with our cost-effective approach:</p>
+           <motion.div className="items-start mx-4 order-2 md:order-1"
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 60 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.3,
+              scale: {
+                type: "spring",
+                damping: 14,
+                stiffness: 200,
+                restDelta: 0.001,
+              },
+            }}>
+              <p className="text-xl md:text-3xl font-bold text-maintext">Gain great value with our cost-effective approach:</p>
               <ul className="space-y-4 mt-8 text-xl">
                 <li className="flex items-start space-x-2">
                   <img 
@@ -199,10 +383,24 @@ const AboutPage = () => {
                   <span><strong>High-Intensity, Affordable Pricing:</strong> We deliver high-intensity, assistance-led sessions at an affordable cost.</span>
                 </li>
               </ul>
-            </div>
-            <div className="flex justify-center">
+            </motion.div>
+            <motion.div className="flex justify-center order-1 md:order-2"
+             initial={{ opacity: 0, x: 100 }}
+             whileInView={{ opacity: 1, x: 0 }}
+             exit={{ opacity: 0, x: -100 }}
+             transition={{
+               duration: 0.5,
+               delay: 0.5,
+               scale: {
+                 type: "spring",
+                 damping: 14,
+                 stiffness: 200,
+                 restDelta: 0.001,
+               },
+             }}
+          >
               <img src="/images/about/Best value.webp" alt="Best Value" className="w-4/5 max-w-xs md:max-w-full rounded-3xl shadow-lg" />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

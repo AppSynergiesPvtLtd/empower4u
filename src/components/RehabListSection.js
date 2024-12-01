@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
 import Loader from "@/components/Loader";
 
 const RehabListSection = ({
@@ -11,8 +12,37 @@ const RehabListSection = ({
 }) => {
   return (
     <section className={`${backgroundColor} py-16`}>
-      <div className="max-w-4xl mx-auto p-8">
-        <h2 className="text-2xl font-bold mb-6 text-maintext text-center font-inter">{title}</h2>
+      <div className="max-w-4xl mx-auto p-3 md:p-8">
+        <motion.h2 className="text-4xl font-bold mb-6 text-maintext text-center font-inter"
+          initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.2,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }}
+        >{title}</motion.h2>
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: 60 }}
+        transition={{
+          duration: 0.5,
+          delay: 0.2,
+          scale: {
+            type: "spring",
+            damping: 14,
+            stiffness: 200,
+            restDelta: 0.001,
+          },
+        }}
+          >
         <p className="text-lg mb-6">{introText}</p>
 
         <ul className="space-y-2 text-lg">
@@ -40,17 +70,18 @@ const RehabListSection = ({
               />
               <h3 className="text-lg font-bold text-maintext">{section.heading}</h3>
             </div>
-            <ul className="list-disc list-inside space-y-2 text-lg ml-6">
+            <ul className="list-disc list-inside space-y-2 text-lg ml-2">
               {section.items.map((item, itemIndex) => (
                 <li key={itemIndex} className="mb-0">
                   <span>
-                    <strong>{item.title}:</strong> {item.description}
+                    {item.title}: {item.description}
                   </span>
                 </li>
               ))}
             </ul>
           </div>
         ))}
+        </motion.div>
       </div>
     </section>
   );

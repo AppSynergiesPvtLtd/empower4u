@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
 import Loader from "@/components/Loader";
 import Image from 'next/image';
 import Link from 'next/link';
@@ -9,7 +10,8 @@ import CallToActionSection from '@/components/CallToActionSection';
 
 const uniqueApproachData = {
   title: "Our unique approach",
-  introText: "If these resonate with you, our services are the perfect fit!",
+  introText: "",
+  endingText: "If these resonate with you, our services are the perfect fit!",
   items: [
     {
       title: "Accelerate Your Progress",
@@ -127,7 +129,20 @@ const StrokeRehabilitationPage = () => {
 
   return (
     <section className="py-16 px-4 text-maintext">
-      <div className="container mx-auto max-w-4xl">
+      <div className="container mx-auto max-w-6xl">
+      <motion.div initial={{ opacity: 0, y: -80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 80 }}
+          transition={{
+            duration: 0.5,
+            delay: 0.2,
+            scale: {
+              type: "spring",
+              damping: 14,
+              stiffness: 200,
+              restDelta: 0.001,
+            },
+          }}>
         <div className="flex justify-center mb-6"><Image src="/icons/top_border.svg" alt="Top Border" width={600} height={400} /></div>
         <h1 className="text-4xl font-bold text-center uppercase font-inter my-4"> Mental Health  </h1>
         <div className="flex justify-center mb-12"><Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} /></div>
@@ -135,6 +150,22 @@ const StrokeRehabilitationPage = () => {
         <p className="text-lg !border-2 !border-primary p-4 mb-8">
           Good mental health is essential for overall well-being, but poor mental health is linked to disability, reduced quality of life, and chronic pain. Physical activity has been proven to improve mental health, alleviate psychiatric symptoms, and enhance quality of life. Aerobic and strength exercises, such as walking, jogging, and swimming, can reduce anxiety and depression. Given the strong link between mental health issues and conditions like chronic pain, a holistic, multidisciplinary approach is crucial for effective treatment and prevention. Physiotherapy interventions play a key role in supporting both physical and mental health.
         </p>
+        </motion.div>
+        <motion.div
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 60 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.3,
+              scale: {
+                type: "spring",
+                damping: 14,
+                stiffness: 200,
+                restDelta: 0.001,
+              },
+            }}
+          >
         
         <div className="flex justify-center mb-12">
           <img
@@ -144,12 +175,13 @@ const StrokeRehabilitationPage = () => {
             height={400}
             className="rounded-lg shadow-md"
           />
-        </div>
+        </div></motion.div>
 
         
         <RehabSection
           title={uniqueApproachData.title}
           introText={uniqueApproachData.introText}
+          endingText={uniqueApproachData.endingText}
           items={uniqueApproachData.items}
           backgroundColor={uniqueApproachData.backgroundColor}
         />

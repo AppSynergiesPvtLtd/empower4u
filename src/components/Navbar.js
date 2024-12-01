@@ -32,7 +32,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="px-4 text-navbar fixed inset-x-0 top-0 z-50 shadow-sm text-sm uppercase w-full bg-[#f9f5f1]">
+    <nav className="px-4 text-navbar fixed inset-x-0 top-0 z-50 shadow-sm text-sm uppercase w-full bg-[#f9f5f1] overflow-hidden">
       <div className="px-4 md:px-0 flex justify-between items-center h-16">
         <button
           className="md:hidden text-white bg-primary p-2 rounded-sm"

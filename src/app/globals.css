@@ -15,18 +15,26 @@ body {
 
 }
 
-.css-1abvrni-MuiButtonBase-root-MuiButton-root {
+.css-ghr9bt {
   background-color: #fff !important;
   color: #4f296b !important;
   border: #4f296b 1px dashed !important;
   box-shadow: none !important;
 }
 
-.css-1dune0f-MuiInputBase-input-MuiOutlinedInput-input {
+.MuiButton-colorPrimary {
+  background-color: #fff !important;
   color: #4f296b !important;
+  border: #4f296b 1px dashed !important;
+  box-shadow: none !important;
 }
 
-.css-1b1fjlj-MuiFormControl-root-MuiTextField-root {
+.MuiInputBase-inputAdornedEnd {
+  color: #4f296b !important;
+  padding: 0 5% !important;
+}
+
+.MuiTextField-root {
   color: #4f296b !important;
   width: 100%;
 }
@@ -36,33 +44,27 @@ body {
   color: #4f296b !important;
 }
 
-.css-4k4mmf-MuiButtonBase-root-MuiPickersDay-root
-{
-  color: #4f296b !important;
-}
-
-.css-4k4mmf-MuiButtonBase-root-MuiPickersDay-root.Mui-selected
-{
-  background-color: #4f296b !important;
-  color: #fff !important;
-}
-
-.css-17f9e7e-MuiTypography-root-MuiDayCalendar-weekDayLabel
-{
+.MuiDayCalendar-weekDayLabel{
   color: #af9fbd !important;
 
 }
 
-.css-1ckov0h-MuiSvgIcon-root
+.MuiPickersArrowSwitcher-leftArrowIcon, .MuiPickersArrowSwitcher-rightArrowIcon
 {
-  background-color: #ac8e6d;
+  background-color: #ac8e6d !important;
   border-radius: 100%;
   color: #fff;
 }
 
-.css-1chuxo2-MuiPickersCalendarHeader-label
+.MuiPickersCalendarHeader-label, .Mui-focused, .MuiPickersDay-dayWithMargin
 {
   color: #4f296b !important;
+}
+
+.Mui-selected
+{
+  background-color: #4f296b !important;
+  color: #fff !important;
 }
 
 .font-inter {
@@ -193,6 +195,7 @@ body {
 @layer base {
   input {
     @apply border-border !important;
+    height: 3rem !important;
   }
   body {
     @apply bg-background text-foreground;
@@ -202,6 +205,10 @@ body {
 }
 
 
-.css-jupps9-MuiInputBase-root-MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {
+.MuiOutlinedInput-notchedOutline  {
+  border-color: hsl(0 3% 90% / 1) !important;
+}
+
+.css-1oy18r0.Mui-error .MuiOutlinedInput-notchedOutline {
   border-color: hsl(0 3% 90% / 1) !important;
 }

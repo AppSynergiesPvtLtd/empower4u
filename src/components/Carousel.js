@@ -2,6 +2,7 @@
 
 "use client";
 import React, { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
 import Loader from "@/components/Loader";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Slide from './Slide';
