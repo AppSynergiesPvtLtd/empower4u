@@ -32,11 +32,18 @@ body {
 .MuiInputBase-inputAdornedEnd {
   color: #4f296b !important;
   padding: 0 5% !important;
+
 }
 
 .MuiTextField-root {
   color: #4f296b !important;
   width: 100%;
+  margin-left: 4% !important;
+}
+
+.phone-input-container
+{
+  margin-left: 5% !important;
 }
 
 .css-oeq6yz-MuiButtonBase-root-MuiIconButton-root
@@ -196,6 +203,7 @@ body {
   input {
     @apply border-border !important;
     height: 3rem !important;
+    padding: 8px 0 4px 16px !important;
   }
   body {
     @apply bg-background text-foreground;

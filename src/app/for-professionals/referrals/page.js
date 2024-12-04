@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 import { Toaster, toast } from 'react-hot-toast';
 import 'react-phone-input-2/lib/style.css';
 import PhoneInput from 'react-phone-input-2';
-import React, { useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Checkbox, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel } from '@mui/material';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
@@ -77,10 +77,10 @@ const FormTextInput = ({ label, registerName, register, placeholder, type = 'tex
     <label className="block font-medium text-maintext">{label} {req_star && <span className="text-red-500">*</span>}</label>
     <input
       type={type}
-      {...register(registerName)}
+      {...register(registerName, { required })}
       placeholder={placeholder}
       required={required}
-      className="w-full p-2 border border-gray-300 rounded mt-2 bg-transparent"
+      className="w-full p-2 border border-gray-300 rounded ml-5 mt-2 bg-transparent"
     />
   </motion.div>
 );
@@ -107,7 +107,7 @@ const FormFileInput = ({ label, registerName, register, required = false, setVal
   };
 
   return (
-    <motion.div className="flex items-center space-x-4 mb-6" initial={{ opacity: 0, scale: 1.4 }}
+    <motion.div className="flex items-center space-x-4 mb-6 ml-5" initial={{ opacity: 0, scale: 1.4 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{
                     duration: 0.3,
@@ -128,7 +128,7 @@ const FormFileInput = ({ label, registerName, register, required = false, setVal
         <input
           type="file"
           hidden
-          {...register(registerName)}
+          {...register(registerName, { required })}
           required={required}
           onChange={handleFileChange}
         />
@@ -155,7 +155,7 @@ const FormTextArea = ({ label, registerName, register, placeholder, required = f
                   }}>
     <label className="text-xl font-bold font-inter">{label}</label>
     <textarea
-      {...register(registerName)}
+      {...register(registerName, { required })}
       placeholder={placeholder}
       required={required}
       className="w-full p-2 bg-transparent border border-gray-300 rounded mt-2"
@@ -177,12 +177,12 @@ const FormRadioGroup = ({ label, options, registerName, register, required = fal
                       restDelta: 0.001,
                     },
                   }}>
-      <FormLabel component="legend" className="block text-maintext mr-4 ml-5">
+      <FormLabel component="legend" className="block !text-maintext mr-4 ml-5">
         {label}
       </FormLabel>
       <RadioGroup
         row
-        {...register(registerName)} 
+        {...register(registerName, { required })} 
         className="ml-5 flex items-center space-x-1"
       >
         {options.map((option, index) => (
@@ -200,7 +200,7 @@ const FormRadioGroup = ({ label, options, registerName, register, required = fal
               />
             }
             label={option}
-            className="text-base font-medium text-maintext"
+            className="text-base font-medium !text-maintext !ml-3 !my-1"
           />
         ))}
       </RadioGroup>
@@ -362,7 +362,7 @@ const ReferralsPage = () => {
           <img src="/images/for-professionals/referral-page.webp" alt="referral-page" width={400} height={300} className="rounded-lg shadow-md" />
         </motion.div>
 
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)} className='max-w-4xl mx-auto'>
           <div className="mb-6">
             <motion.h2 initial={{ opacity: 0, y: -80 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -603,7 +603,7 @@ const ReferralsPage = () => {
               stiffness: 200,
               restDelta: 0.001,
             },
-          }} className="text-xl font-bold font-inter">5. Functional Status <span className="text-red-700"> *</span></motion.h2>
+          }} className="text-xl font-bold font-inter my-3">5. Functional Status <span className="text-red-700"> *</span></motion.h2>
             <label className="text-base font-medium text-maintext block my-1 ml-5"> Please provide information about the patient&#39;s current functional abilities:</label>
             <FormTextInput
             label="Mobility"
@@ -633,7 +633,7 @@ const ReferralsPage = () => {
               stiffness: 200,
               restDelta: 0.001,
             },
-          }} className="text-xl font-bold font-inter">6. Medical History and Current Condition</motion.h2>
+          }} className="text-xl font-bold font-inter my-3">6. Medical History and Current Condition</motion.h2>
             <FormTextInput
             label="A. Specify Diagnosed Condition"
             registerName="medicalHistory.diagnosedCondition"
@@ -667,7 +667,7 @@ const ReferralsPage = () => {
               stiffness: 200,
               restDelta: 0.001,
             },
-          }} className="text-xl font-bold font-inter">7. Client Information</motion.h2>
+          }} className="text-xl font-bold font-inter my-3">7. Client Information</motion.h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <FormTextInput
                 label="A. Patient Full Name"
@@ -742,7 +742,7 @@ const ReferralsPage = () => {
               stiffness: 200,
               restDelta: 0.001,
             },
-          }} className="text-xl font-bold font-inter mb-2">8. Additional Information</motion.h2>
+          }} className="text-xl font-bold font-inter my-3">8. Additional Information</motion.h2>
             <FormRadioGroup
               label="A. Does the Patient Have A Caregiver/Family Member to Assist?"
               options={["Yes", "No"]}
@@ -781,8 +781,7 @@ const ReferralsPage = () => {
               <FormControlLabel
                 control={
                   <Checkbox
-                    {...register("consentProvided")}
-                    required
+                    {...register("consentProvided", { required: true })}
                     sx={{
                       color: '#4f296b',
                       '&.Mui-checked': {
@@ -830,13 +829,13 @@ const ReferralsPage = () => {
               stiffness: 200,
               restDelta: 0.001,
             },
-          }} className="text-xl font-bold font-inter">10. Referring Health Professional Details</motion.h2>
+          }} className="text-xl font-bold font-inter my-3">10. Referring Health Professional Details</motion.h2>
             <FormTextInput
               label="A. Health Professional Name"
               registerName="referringHealthProfessionalDetails.name"
               register={register}
               placeholder="Enter health professional name"
-              required
+              required={true}
               req_star={true}
             />
 
@@ -861,6 +860,7 @@ const ReferralsPage = () => {
                   phone={phone}
                   setPhone={setPhone}
                   req_star={true}
+                  required={true}
                   
               />
               <FormTextInput
@@ -869,7 +869,7 @@ const ReferralsPage = () => {
                 register={register}
                 placeholder="Email"
                 type="email"
-                required
+                required={true}
                 req_star={true}
               />
             </div>

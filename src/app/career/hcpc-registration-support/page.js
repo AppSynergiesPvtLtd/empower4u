@@ -136,7 +136,7 @@ const StrokeRehabilitationPage = () => {
           />
         </motion.div>
 
-        <section className="p-16 bg-[#d4c0a9] text-maintext w-full">
+        <section className="p-8 md:p-16 bg-[#d4c0a9] text-maintext w-full">
           <div className="container mx-auto max-w-6xl">
             <h1 className="text-4xl font-bold text-center uppercase mb-10 font-inter">
               What We Offer

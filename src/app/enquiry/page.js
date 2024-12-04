@@ -136,7 +136,7 @@ const Enquiry = () => {
                 type="email"
                 id="email"
                 placeholder="Enter email"
-                className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:outline-none"
+                className="w-full border border-gray-300 p-3 rounded-md focus:outline-none"
                 {...register("email", {
                   required: "Email is required",
                   pattern: {
@@ -166,7 +166,7 @@ const Enquiry = () => {
             <textarea
               id="enquiry"
               placeholder="Enter enquiry"
-              className="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:outline-none h-32 resize-none"
+              className="w-full border border-gray-300 p-3 rounded-md focus:outline-none h-32 resize-none"
               {...register("enquiry", { required: "Enquiry is required" })}
             ></textarea>
             {errors.enquiry && <p className="text-red-500 text-sm">{errors.enquiry.message}</p>}

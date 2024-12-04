@@ -132,7 +132,7 @@ const ClientsWorkTogether = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8  my-8">
-                        <motion.div className="flex justify-center md:justify-start"
+                        <motion.div className="flex justify-center md:justify-start order-2 md:order-1"
                         initial={{ opacity: 0, x: -60 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: 60 }}
@@ -154,7 +154,7 @@ const ClientsWorkTogether = () => {
                                 className="rounded-2xl shadow-md"
                             />
                         </motion.div>
-                        <motion.div className="flex flex-col items-start space-y-4"
+                        <motion.div className="flex flex-col items-start space-y-4 order-1 md:order-2"
                         initial={{ opacity: 0, x: 100 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -100 }}
