@@ -393,7 +393,7 @@ const StrokeRehabilitationPage = () => {
               }}>
                 <button
                   type="submit"
-                  className="w-1/6 py-3 mt-4 bg-maintext text-white font-bold rounded-md  hover:bg-primary"
+                  className="w-2/5 md:w-1/6 py-3 mt-4 bg-maintext text-white font-bold rounded-md  hover:bg-primary"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? 'Sending Request...' : 'Get Started'}

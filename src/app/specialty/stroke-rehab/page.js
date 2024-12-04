@@ -156,6 +156,7 @@ const StrokeRehabilitationPage = () => {
 
   return (
     <section className="py-16 px-4 text-maintext">
+    <div>
       <div className="container mx-auto max-w-6xl">
       <motion.div initial={{ opacity: 0, y: -80 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -204,7 +205,7 @@ const StrokeRehabilitationPage = () => {
           />
         </div>
         </motion.div>
-
+      </div>
         <RehabSection
           title={uniqueApproachData.title}
           introText={uniqueApproachData.introText}

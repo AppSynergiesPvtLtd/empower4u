@@ -121,7 +121,8 @@ const StrokeRehabilitationPage = () => {
 
   return (
     <section className="py-16 px-4 text-maintext">
-      <div className="container mx-auto max-w-6xl">
+      <div className="">
+        <div className='container mx-auto max-w-6xl'>
         <motion.div initial={{ opacity: 0, y: -80 }}
           whileInView={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 80 }}
@@ -168,6 +169,7 @@ const StrokeRehabilitationPage = () => {
             className="rounded-lg shadow-md"
           />
         </div></motion.div>
+        </div>
 
         
         <RehabSection

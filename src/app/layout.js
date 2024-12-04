@@ -12,8 +12,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className="antialiased flex flex-col min-h-screen mt-10">
+    <html lang="en" className="overflow-x-hidden">
+      <body className="antialiased flex flex-col min-h-screen mt-10 overflow-x-hidden">
         <Toaster position="top-right" reverseOrder={false} />
         <NavBar />
         {/* <PageTransition> */}

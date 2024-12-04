@@ -87,7 +87,7 @@ const FormTextInput = ({ label, registerName, register, placeholder, type = 'tex
 
 const options = [
     'Stroke Vestibular Disorder',
-    "Parkinson&#39;s Disease",
+    "Parkinson's Disease",
     'Spinal Cord Injury',
     'Multiple Sclerosis',
     'Guillain-Barre Syndrome',
@@ -165,7 +165,7 @@ const FormTextArea = ({ label, registerName, register, placeholder, required = f
 );
 
 const FormRadioGroup = ({ label, options, registerName, register, required = false }) => (
-  <FormControl component="fieldset" className="mb-2">
+  <FormControl component="fieldset" className="!mb-4">
     <motion.div className=" items-center" initial={{ opacity: 0, scale: 1.4 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{
@@ -453,7 +453,7 @@ const ReferralsPage = () => {
               stiffness: 200,
               restDelta: 0.001,
             },
-          }} className="text-lg font-semibold mt-4 mb-2"><span className="font-bold mr-2">A.</span> Neuro</motion.h3>
+          }} className="text-lg font-semibold mt-4 mb-2 ml-5"><span className="font-bold mr-2">A.</span> Neuro</motion.h3>
             <motion.div className="ml-4" initial={{ opacity: 0, scale: 1.4 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{
@@ -522,7 +522,7 @@ const ReferralsPage = () => {
               stiffness: 200,
               restDelta: 0.001,
             },
-          }} className="text-lg font-semibold mt-4 mb-2"><span className="font-bold mr-2">B.</span> Falls/Balance</motion.h3>
+          }} className="text-lg font-semibold mt-4 mb-2 ml-5"><span className="font-bold mr-2">B.</span> Falls/Balance</motion.h3>
             <FormTextInput
             label="Number of Falls in the Last 3 Months"
             registerName="fallsBalance"
@@ -542,7 +542,7 @@ const ReferralsPage = () => {
               stiffness: 200,
               restDelta: 0.001,
             },
-          }} className="text-lg font-semibold mt-4 mb-2"><span className="font-bold mr-2">C.</span> Surgery Prehab/Rehab</motion.h3>
+          }} className="text-lg font-semibold mt-4 mb-2 ml-5"><span className="font-bold mr-2">C.</span> Surgery Prehab/Rehab</motion.h3>
             <FormTextInput
             label="Specify the (Planned) Surgery"
             registerName="surgeryDetails"
@@ -562,7 +562,7 @@ const ReferralsPage = () => {
               stiffness: 200,
               restDelta: 0.001,
             },
-          }} className="text-lg font-semibold mt-4 mb-2"><span className="font-bold mr-2">D.</span> Fracture/Joint Health/Amputee</motion.h3>
+          }} className="text-lg font-semibold mt-4 mb-2 ml-5"><span className="font-bold mr-2">D.</span> Fracture/Joint Health/Amputee</motion.h3>
             <FormTextInput
             label="Specify Involved Joint(s)"
             registerName="fractureJointHealth"
@@ -582,7 +582,7 @@ const ReferralsPage = () => {
               stiffness: 200,
               restDelta: 0.001,
             },
-          }} className="text-lg font-semibold mt-4 mb-2"><span className="font-bold mr-2">E.</span> Mental Health</motion.h3>
+          }} className="text-lg font-semibold mt-4 mb-2 ml-5"><span className="font-bold mr-2">E.</span> Mental Health</motion.h3>
             <FormTextInput
             label="Specify diagnosed condition"
             registerName="mentalHealthCondition"
@@ -742,7 +742,7 @@ const ReferralsPage = () => {
               stiffness: 200,
               restDelta: 0.001,
             },
-          }} className="text-xl font-bold font-inter">8. Additional Information</motion.h2>
+          }} className="text-xl font-bold font-inter mb-2">8. Additional Information</motion.h2>
             <FormRadioGroup
               label="A. Does the Patient Have A Caregiver/Family Member to Assist?"
               options={["Yes", "No"]}

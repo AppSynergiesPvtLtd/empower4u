@@ -20,7 +20,8 @@ const PricingAndAvailability = () => {
   // }
   return (
     <section className="py-16 px-4 text-maintext">
-      <div className="container mx-auto max-w-6xl">
+      <div className="container-fluid">
+      <div className='mx-auto max-w-6xl'>
         <motion.div initial={{ opacity: 0, y: -80 }}
           whileInView={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 80 }}
@@ -66,8 +67,10 @@ const PricingAndAvailability = () => {
             className="rounded-lg shadow-md"
           />
         </motion.div>
+        </div>
 
         <div className="bg-[#d4c0a9] p-8 mb-8">
+        <div className='mx-auto max-w-6xl'>
           <motion.h2 initial={{ opacity: 0, y: -80 }}
           whileInView={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 80 }}
@@ -99,9 +102,10 @@ const PricingAndAvailability = () => {
             <li>One free telephone consultation: ½ hour</li>
             <li>First two week 20% discount</li>
           </ul></motion.div>
+          </div>
         </div>
 
-        <div className="mb-8 p-8">
+        <div className="mb-8 p-8 mx-auto max-w-6xl">
           <motion.h2 initial={{ opacity: 0, y: -80 }}
           whileInView={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 80 }}
@@ -136,6 +140,7 @@ const PricingAndAvailability = () => {
         </div>
 
         <div className="bg-[#d4c0a9] p-8 mb-8">
+        <div className='mx-auto max-w-6xl'>
           <motion.h2 initial={{ opacity: 0, y: -80 }}
           whileInView={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 80 }}
@@ -169,10 +174,10 @@ const PricingAndAvailability = () => {
             For more detailed pricing information and availability, please <a href="/enquiry" className="underline">Contact Us</a> directly, and we&#39;ll be happy to assist you.
           </p>
           </motion.div>
-          
+         </div> 
         </div>
 
-        <div className=" mb-8">
+        <div className=" mb-8 mx-auto max-w-6xl">
           <motion.h2 initial={{ opacity: 0, y: -80 }}
           whileInView={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 80 }}
@@ -211,8 +216,7 @@ const PricingAndAvailability = () => {
             We currently offer home visits for clients located within a 10-15 minute walk from public transport stations in North, Northwest, East, Central, and parts of South London. Please feel free to reach out to discuss your location with us.
           </p>
         </div>
-
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 mx-auto max-w-6xl">
           <motion.h2 initial={{ opacity: 0, y: -80 }}
           whileInView={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 80 }}
