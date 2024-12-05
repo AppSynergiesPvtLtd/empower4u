@@ -46,6 +46,16 @@ body {
   margin-left: 5% !important;
 }
 
+@media (max-width: 768px) {
+  .phone-input-container {
+    margin-left: 0 !important;
+  }
+
+  .MuiTextField-root {
+    margin-left: 0 !important;
+  }
+}
+
 .css-oeq6yz-MuiButtonBase-root-MuiIconButton-root
 {
   color: #4f296b !important;

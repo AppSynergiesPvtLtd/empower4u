@@ -80,7 +80,7 @@ const FormTextInput = ({ label, registerName, register, placeholder, type = 'tex
       {...register(registerName, { required })}
       placeholder={placeholder}
       required={required}
-      className="w-full p-2 border border-gray-300 rounded ml-5 mt-2 bg-transparent"
+      className="w-full p-2 border border-gray-300 rounded md:ml-5 mt-2 bg-transparent"
     />
   </motion.div>
 );
