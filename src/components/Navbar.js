@@ -46,7 +46,7 @@ const Navbar = () => {
             alt="Empower4U Logo"
             width={170}
             height={170}
-            priority
+          
           />
         </Link>
 
@@ -125,7 +125,7 @@ const Navbar = () => {
                 alt="Empower4U Logo"
                 width={70}
                 height={70}
-                priority
+               
               />
               <button
                 className="text-black font-thin mb-4"
