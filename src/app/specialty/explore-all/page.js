@@ -67,13 +67,13 @@ const SpecialtyPage = () => {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto justify-items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-16 max-w-5xl container mx-auto justify-items-center">
           {specialtiesData.map((item, index) => (
             <SpecialtyCircle key={index} title={item.title} link={item.link} />
           ))}
         </div>
-        <div className='mx-auto justify-items-center'>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-48 max-w-6xl justify-items-center">
+        <div className='mx-auto justify-items-center lg:mt-10 mt-6'>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-16 max-w-5xl justify-items-center">
           {specialtiesData2.map((item, index) => (
             <SpecialtyCircle key={index} title={item.title} link={item.link} />
           ))}
