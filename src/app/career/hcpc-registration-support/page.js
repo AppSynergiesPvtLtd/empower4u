@@ -367,7 +367,7 @@ const StrokeRehabilitationPage = () => {
                       restDelta: 0.001,
                     },
                   }}>
-                <label className="block font-semibold">Location</label>
+                <label className="block font-semibold pb-1">Location</label>
                 <input
                   {...register('location', { required: true })}
                   className="w-full !border !border-[#4f366d] bg-transparent p-3 "
