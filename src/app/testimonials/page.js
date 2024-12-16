@@ -1,68 +1,122 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Loader from "@/components/Loader";
-import Image from 'next/image';
+import Image from "next/image";
 
 const Testimonials = () => {
-  const [isLoading, setIsLoading] = useState(true);
+	const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setIsLoading(false);
+		}, 1000);
 
-    return () => clearTimeout(timer);
-  }, []);
+		return () => clearTimeout(timer);
+	}, []);
 
-  // if (isLoading) {
-  //   return <Loader />;
-  // }
-  return (
-    <section className="py-16 px-4 bg-[#f9f5f1] text-maintext max-w-5xl mx-auto my-10">
-      <div className="flex justify-center mb-6">
-        <Image src="/icons/top_border.svg" alt="Top Border" width={600} height={400} />
-      </div>
-      <h1 className="text-4xl font-bold text-center uppercase font-inter my-4">Testimonials</h1>
-      <div className="flex justify-center mb-12">
-        <Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} />
-      </div>
+	// if (isLoading) {
+	//   return <Loader />;
+	// }
+	return (
+		<section className="py-16 lg:px-4 px-1 bg-[#f9f5f1] text-maintext lg:max-w-5xl mx-auto my-8">
+			<div className="flex justify-center mb-6">
+				<Image
+					src="/icons/top_border.svg"
+					alt="Top Border"
+					width={600}
+					height={400}
+				/>
+			</div>
+			<h1 className="text-4xl font-bold text-center uppercase font-inter my-4">
+				Testimonials
+			</h1>
+			<div className="flex justify-center mb-12">
+				<Image
+					src="/icons/bottom_border.svg"
+					alt="Bottom Border"
+					width={600}
+					height={400}
+				/>
+			</div>
 
-      <div className="bg-maintext p-8 shadow-lg border-4 border-primary mb-8">
-        <div className="bg-maintext text-white p-8 shadow-lg border-4 border-primary mb-8">
-          <div className="flex justify-center mb-4">
-            <span className="text-primary text-xl mx-1">★</span>
-            <span className="text-primary text-3xl mx-1">★</span>
-            <span className="text-primary text-xl mx-1">★</span>
-          </div>
+			<div className="bg-maintext lg:p-8 p-1.5 shadow-lg border-4 border-primary mb-8">
+				<div className="bg-maintext text-white px-1.5 py-4 lg:p-8 shadow-lg lg:border-4 border-2 border-primary mb-8">
+					<div className="flex justify-center mb-4">
+						<span className="text-primary text-xl mx-1">★</span>
+						<span className="text-primary text-3xl mx-1">★</span>
+						<span className="text-primary text-xl mx-1">★</span>
+					</div>
 
-          <h2 className="text-center text-2xl font-bold mb-2">Mina</h2>
-          <hr className="border-t border-primary mb-6" />
-          <p className="text-center text-sm leading-relaxed mb-6 px-4">
-            When Shu first met my dad after his stroke, he could only transfer to a wheelchair and was living downstairs due to limited mobility. From the start, Shu&#39;s professionalism, empathy, and positive approach gave our family confidence. In just three weeks, she had my dad practicing walking on stairs, something we never thought possible so soon. By the time Shu discharged him, my dad was walking outside and even cycling at home! We are incredibly grateful for her dedication and expertise. Shu truly made a remarkable difference in my dad’s recovery, and we can’t recommend her enough.
-          </p>
+					<h2 className="text-center text-2xl font-bold mb-2">
+						Mina
+					</h2>
+					<div className="flex justify-center mb-6">
+						<Image
+							src="/icons/bottom_border.svg"
+							alt="Bottom Border"
+							width={300}
+							height={300}
+						/>
+					</div>
 
-          <div className="flex justify-center mb-4">
-            <span className="text-primary text-base mx-1">★</span>
-            <span className="text-primary text-xl mx-1">★</span>
-            <span className="text-primary text-base mx-1">★</span>
-          </div>
+					<p className="text-center text-sm lg:text-base leading-relaxed mb-6 lg:px-4">
+						My father suffered a severe stroke which left the family
+						devastated. Through the grace of god, we found Shu as my
+						dad’s specialist physio. From the very first session
+						with my father Shu built a great rapport, gave him
+						confidence and motivation. Shu’s expertise in this area
+						came through each time my dad had a session with her,
+						where she adapted exercises and plans and kept him
+						mentally strong as he progressed through improvements.
+						Her techniques were bespoke to my father’s particular
+						stroke issues as well enhancing activities he enjoyed
+						prior to stroke. Shu’s whole personality and approach to
+						her work is of the highest calibre. We are blessed that
+						we came across her and would highly recommend her
+						services to anyone who require specialist physio .
+					</p>
 
-          <h2 className="text-center text-2xl font-bold mb-2">Alec</h2>
-          <hr className="border-t border-primary mb-6" />
-          <p className="text-center text-sm leading-relaxed mb-6 px-4">
-            Shu was my private physiotherapist following brain tumor surgery, and I couldn’t have asked for better support during my recovery. She is incredibly knowledgeable and reassuring, always helping me set realistic goals with clear, detailed steps to achieve them. Shu’s hands-on approach made all the difference—thanks to her, I regained function in my affected arm, which had almost completely been lost after surgery. I highly recommend Shu for her caring and individualized care plan, her extensive knowledge, and her incredible patience. She truly helped me get my life back.
-          </p>
+					<div className="flex justify-center mb-8">
+						<span className="text-primary text-base mx-1">★</span>
+						<span className="text-primary text-xl mx-1">★</span>
+						<span className="text-primary text-base mx-1">★</span>
+					</div>
 
-          <div className="flex justify-center mt-6">
-            <span className="text-primary text-xl mx-1">★</span>
-            <span className="text-primary text-3xl mx-1">★</span>
-            <span className="text-primary text-xl mx-1">★</span>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+					<h2 className="text-center text-2xl font-bold mb-2">
+						Alec
+					</h2>
+					<div className="flex justify-center mb-6">
+						<Image
+							src="/icons/bottom_border.svg"
+							alt="Bottom Border"
+							width={300}
+							height={300}
+						/>
+					</div>
+					<p className="text-center text-sm lg:text-base  leading-relaxed mb-6 lg:px-4">
+						Shu was my private physiotherapist following brain
+						tumour surgery, and she was an incredible support on my
+						recovery path. She is extremely knowledgeable and
+						reassuring, and always helped me to set realistic
+						rehabilitation goals with clear, detailed steps to
+						achieve them. Shu’s hands-on approach made all the
+						difference—thanks to her, I regained some function in my
+						affected arm following the surgery. I highly recommend
+						Shu for her caring and individualised care plan, her
+						extensive knowledge, and her incredible patience. Thank
+						you Shu!
+					</p>
+
+					<div className="flex justify-center mt-6">
+						<span className="text-primary text-xl mx-1">★</span>
+						<span className="text-primary text-3xl mx-1">★</span>
+						<span className="text-primary text-xl mx-1">★</span>
+					</div>
+				</div>
+			</div>
+		</section>
+	);
 };
 
 export default Testimonials;

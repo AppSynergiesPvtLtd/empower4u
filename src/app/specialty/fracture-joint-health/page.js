@@ -205,7 +205,7 @@ const StrokeRehabilitationPage = () => {
         <div className="flex justify-center mb-12"><Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} /></div>
 
         <p className="text-lg !border-2 !border-primary p-4 mb-8">
-          Rare neurological conditions, such as Huntington’s disease, Amyotrophic Lateral Sclerosis (ALS), and various neuromuscular diseases, can lead to progressive physical and cognitive impairments. These conditions affect muscle control, movement, coordination, and often speech, gradually reducing a person&#39;s ability to perform everyday tasks independently. The progressive nature of these diseases also places significant emotional and physical strain on both patients and their caregivers, often requiring long-term care and support.
+         This service is designed to help individuals recover and maintain optimal function following injuries, joint conditions like arthritis, or the loss of a limb. Fractures and joint health issues, can significantly impact movement, mobility, and the ability to perform daily tasks, leading to pain and reduced quality of life. Similarly, amputations require a unique recovery process that addresses both physical and emotional challenges, helping individuals adjust to new ways of moving and living. These conditions place significant strain on patients and their caregivers, often requiring long-term support and a tailored rehabilitation plan to promote healing, improve mobility, and restore independence.
         </p>
         </motion.div>
         <motion.div
