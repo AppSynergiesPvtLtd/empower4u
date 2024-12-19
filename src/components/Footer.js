@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="">
           <p className="text-primary">
             © 2024 Empower4uRehabilitationClinic, All Rights Reserved. | 
-            <a href="/terms" className="text-primary hover:underline ml-1">T&C</a>
+            <a href="/policy" className="text-primary hover:underline ml-1">T&C</a>
           </p>
         </div>
         <div className="flex space-x-6 text-primary">
