@@ -376,7 +376,7 @@ const ClientsWorkTogether = () => {
                 className="w-4 max-w-full h-auto text-maintext mr-4 pt-2"
               />
                     <span>
-                    <strong>An Emphasis on Collaboration:</strong> We involve family members in the treatment process when appropriate, ensuring they understand their role in supporting the client&#39;s recovery. We provide clear, easy-to-understand explanations about the reasons behind each selected treatment and the principles guiding our approach. By offering this information in plain language, we empower clients and their families, helping them feel more motivated and in control of the rehabilitation process.
+                    <strong>An Emphasis on Collaboration:</strong> We involve family members in the treatment process when appropriate, ensuring they understand their role in supporting the client's recovery. We provide clear, easy-to-understand explanations about the reasons behind each selected treatment and the principles guiding our approach. By offering this information in plain language, we empower clients and their families, helping them feel more motivated and in control of the rehabilitation process.
                     </span>
                 </li>
                 <li className="flex items-start">
@@ -417,7 +417,7 @@ const ClientsWorkTogether = () => {
                 </ul>
 
                 <p className="text-lg mt-8">
-                By delivering 2-5 intensive sessions per week, tailored to the client&#39;s needs and condition, we maximize recovery potential, helping clients achieve their rehabilitation goals faster and more efficiently. This evidence-backed approach ensures that our clients receive the best possible care for optimal outcomes.
+                By delivering 2-5 intensive sessions per week, tailored to the client's needs and condition, we maximize recovery potential, helping clients achieve their rehabilitation goals faster and more efficiently. This evidence-backed approach ensures that our clients receive the best possible care for optimal outcomes.
                 </p>
                 </motion.div>
             </div>
