@@ -3,6 +3,7 @@ import "./globals.css";
 import "react-phone-input-2/lib/style.css";
 import NavBar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CallCTA from "@/components/CallCTA";
 // import PageTransition from "@/components/PageTransition";
 
 export const metadata = {
@@ -18,8 +19,10 @@ export default function RootLayout({ children }) {
         <NavBar />
         {/* <PageTransition> */}
           {children}
-        {/* </PageTransition> */}
+        {/* </PageTransition> */ }
+        <CallCTA/>
         <Footer />
+
       </body>
     </html>
   );

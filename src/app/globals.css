@@ -9,6 +9,11 @@ body {
   background: #fbf3f3 !important;
 }
 
+/* @keyframes buzzer {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+} */
+
 .css-i8nm4w {
     color: #4f296b !important;
     font-weight: 600 !important;
@@ -230,3 +235,5 @@ body {
 .css-1oy18r0.Mui-error .MuiOutlinedInput-notchedOutline {
   border-color: hsl(0 3% 90% / 1) !important;
 }
+
+
