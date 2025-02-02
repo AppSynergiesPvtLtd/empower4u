@@ -243,12 +243,20 @@ const StrokeRehabilitationPage = () => {
           backgroundColor={uniqueApproachData.backgroundColor}
         />
         
-        <RehabSection
+        {/* <RehabSection
           title={whatWeCanHelpData.title}
           introText={whatWeCanHelpData.introText}
           items={whatWeCanHelpData.items}
           backgroundColor={whatWeCanHelpData.backgroundColor}
         />
+        
+        <RehabSection
+              title={treatmentMayIncludeData.title}
+              introText={treatmentMayIncludeData.introText}
+              items={treatmentMayIncludeData.items}
+              backgroundColor={treatmentMayIncludeData.backgroundColor}
+            />
+
 
         {!showMore && (
           <div className="text-center mt-6">
@@ -259,17 +267,12 @@ const StrokeRehabilitationPage = () => {
               View More
             </button>
           </div>
-        )}
+        )}*/}
 
-        {showMore && (
-          <>
-            <RehabSection
-              title={treatmentMayIncludeData.title}
-              introText={treatmentMayIncludeData.introText}
-              items={treatmentMayIncludeData.items}
-              backgroundColor={treatmentMayIncludeData.backgroundColor}
-            />
 
+       
+      
+            
             <RehabSection
               title={benefitsOfPhysiotherapyData.title}
               introText={benefitsOfPhysiotherapyData.introText}
@@ -289,13 +292,13 @@ const StrokeRehabilitationPage = () => {
             items={amputeeRehabilitationData.items}
             backgroundColor={amputeeRehabilitationData.backgroundColor}
             />
-          </>
-        )}
+         
+     
 
         <CallToActionSection
             title="We'd love to treat you"
             link="/enquiry"
-            buttonText="Make an Enquiry"
+            buttonText="Make an Online Enquiry"
         />
       </div>
     </section>

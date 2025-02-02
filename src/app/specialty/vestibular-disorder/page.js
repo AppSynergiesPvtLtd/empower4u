@@ -241,7 +241,7 @@ const StrokeRehabilitationPage = () => {
               <h2 className="text-3xl font-semibold mb-4 font-inter">We&#39;d love to treat you</h2>
               <Link href="/enquiry" passHref>
                 <button className="px-6 py-3 text-lg font-semibold text-white bg-maintext rounded-full hover:bg-primary">
-                  Make an Enquiry
+                 Make an Online Enquiry
                 </button>
               </Link>
             </div>

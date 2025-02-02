@@ -859,8 +859,8 @@ const ReferralsPage = () => {
                   setValue={setValue}
                   phone={phone}
                   setPhone={setPhone}
-                  req_star={true}
-                  required={true}
+                  req_star={false}
+                  required={false}
                   
               />
               <FormTextInput

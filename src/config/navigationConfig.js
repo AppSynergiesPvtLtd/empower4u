@@ -48,5 +48,5 @@ export const navItems = [
     ],
   },
   { title: "Policy", href: "/policy", hasDropdown: false },
-  { title: "Enquiry", href: "/enquiry", hasDropdown: false },
+  { title: "Contact Us", href: "/enquiry", hasDropdown: false },
 ];

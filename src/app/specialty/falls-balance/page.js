@@ -224,7 +224,7 @@ const StrokeRehabilitationPage = () => {
         <CallToActionSection
             title="We'd love to treat you"
             link="/enquiry"
-            buttonText="Make an Enquiry"
+            buttonText="Make an Online Enquiry"
         />
       </div>
     </section>

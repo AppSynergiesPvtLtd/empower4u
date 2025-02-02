@@ -20,7 +20,7 @@ const whyChooseEmpower4UData = {
     },
     {
       title: "Personalized Service",
-      description: "We provide one-on-one support tailored to your unique career needs, ensuring that you get the most out of our services at every stage of your job search.",
+      description: "We provide one to one support tailored to your unique career needs, ensuring that you get the most out of our services at every stage of your job search.",
     },
     {
       title: "Comprehensive Support",

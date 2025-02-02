@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row justify-between items-center w-full px-10 space-y-4 md:space-y-0">
         <div className="">
           <p className="text-primary">
-            © 2024 Empower4uRehabilitationClinic, All Rights Reserved. | 
+            © 2025 Empower4uRehabilitationClinic, All Rights Reserved. | 
             <a href="/policy" className="text-primary hover:underline ml-1">T&C</a>
           </p>
         </div>

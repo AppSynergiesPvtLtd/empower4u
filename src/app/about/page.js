@@ -150,7 +150,7 @@ const AboutPage = () => {
                 alt="Check Icon" 
                 className="w-4 max-w-full h-auto text-maintext mr-4 pt-2"
               />
-                    <span><strong>Goal-Oriented Method:</strong> Your treatment is guided by the latest research and proven methods.</span>
+                    <span><strong>Goal-Oriented Method:</strong> We focus on clear, achievable goals designed to keep you motivated and on track.</span>
                   </li>
                 </ul>
               </motion.div>
@@ -408,7 +408,7 @@ const AboutPage = () => {
         <CallToActionSection
             title="We'd love to treat you"
             link="/enquiry"
-            buttonText="Make an Enquiry"
+            buttonText="Make an Online Enquiry"
         />
     </div>
   );

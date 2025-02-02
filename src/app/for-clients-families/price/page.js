@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { motion } from "framer-motion";
 import Loader from "@/components/Loader";
 import Image from 'next/image';
+import Link from 'next/link';
+import { ExternalLink } from 'lucide-react';
 
 const PricingAndAvailability = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -99,8 +101,15 @@ const PricingAndAvailability = () => {
                         }}>
           <ul className="list-disc list-inside mt-2 space-y-2 text-lg">
             <li>For first time client only</li>
-            <li>One free telephone consultation: ½ hour</li>
-            <li>First two week 20% discount</li>
+            <li>One free telephone consultation: ½ hour <Link
+									href="https://calendly.com/shu-empower4u"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="md:mr-4  font-semibold underline text-maintext rounded-full hover:underline  transition duration-200"
+								>
+								(Book Now) 
+								</Link></li>
+            <li>First two week 10% discount</li>
           </ul></motion.div>
           </div>
         </div>
@@ -133,9 +142,9 @@ const PricingAndAvailability = () => {
                         },
                         }}>
           <ul className="list-disc list-inside mt-2 space-y-2 text-lg">
-            <li> Initial Physiotherapy Assessment: £145 for 1.5hour</li>
-            <li> Follow-up Physiotherapy sessions: £115 for 1hour</li>
-            <li> Therapy-assistant sessions: £60 for 1 hour</li>
+            <li> Initial Physiotherapy Assessment: £135 for 1.5hour</li>
+            <li> Follow-up Physiotherapy sessions: £110 for 1hour</li>
+            <li> Therapy-assistant sessions: £55 for 1 hour</li>
           </ul></motion.div>
         </div>
 
@@ -168,7 +177,7 @@ const PricingAndAvailability = () => {
                         },
                         }}>
           <p className="text-lg">
-            When you experience the value of our services and refer someone to us, you will receive 15% off one course of treatment. This discount applies once the new client successfully completes their treatment program, as a thank you for trusting us and spreading the word about our care.
+            When you experience the value of our services and refer someone to us, you will receive 10% off one course of treatment. This discount applies once the new client successfully completes their treatment program, as a thank you for trusting us and spreading the word about our care.
           </p>
           <p className="text-lg mt-4">
             For more detailed pricing information and availability, please <a href="/enquiry" className="underline">Contact Us</a> directly, and we&#39;ll be happy to assist you.
