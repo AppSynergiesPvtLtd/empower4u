@@ -222,7 +222,7 @@ const FormPhoneInput = ({ label, registerName, setValue, required = false, req_s
                   }}>
     <label className="block font-medium text-maintext mb-2">{label} {req_star && <span className="text-red-500">*</span>}</label>
     <PhoneInput
-      country="in"
+      country="gb"
       onChange={(value) => {
         setValue(registerName, value);
       }}
@@ -804,7 +804,8 @@ const ReferralsPage = () => {
               label="Referring Health Professional Signature"
               registerName="referringHealthProfessionalDetails.signature"
               register={register}
-              setValue={setValue}
+              setValue={ setValue }
+              required={false}
             />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

@@ -18,11 +18,11 @@ const Footer = () => {
           {/* <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-maintext">
             <FaFacebookF />
           </a>*/}
-          <a href="tel:07427170325" className="hover:text-maintext">
-            <FaPhoneAlt fontSize={18}/>
+          <a href="tel:07427170325" className="hover:text-maintext flex items-center space-x-2">
+            <FaPhoneAlt fontSize={18}/> <span>07427170325</span>
           </a> 
-          <a href="mailto:info@empower4u.org" className="hover:text-maintext">
-            <FaEnvelope fontSize={18}/>
+          <a href="mailto:info@empower4u.org" className="hover:text-maintext  flex items-center space-x-2">
+            <FaEnvelope fontSize={18}/> <span>info@empower4u.org</span>
           </a>
         </div>
       </div>
