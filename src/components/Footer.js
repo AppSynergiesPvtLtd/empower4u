@@ -11,18 +11,18 @@ const Footer = () => {
         <div className="">
           <p className="text-primary">
             © 2024 Empower4uRehabilitationClinic, All Rights Reserved. | 
-            <a href="/terms" className="text-primary hover:underline ml-1">T&C</a>
+            <a href="/policy" className="text-primary hover:underline ml-1">T&C</a>
           </p>
         </div>
-        <div className="flex space-x-4 text-primary">
+        <div className="flex space-x-6 text-primary">
           {/* <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-maintext">
             <FaFacebookF />
-          </a>
-          <a href="tel:+123456789" className="hover:text-primary">
-            <FaPhoneAlt />
-          </a> */}
+          </a>*/}
+          <a href="tel:07427170325" className="hover:text-maintext">
+            <FaPhoneAlt fontSize={18}/>
+          </a> 
           <a href="mailto:info@empower4u.org" className="hover:text-maintext">
-            <FaEnvelope />
+            <FaEnvelope fontSize={18}/>
           </a>
         </div>
       </div>

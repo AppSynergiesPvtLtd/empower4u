@@ -213,7 +213,7 @@ body {
   input {
     @apply border-border !important;
     height: 3rem !important;
-    padding: 8px 0 4px 16px !important;
+    padding: 4px 0 4px 16px !important;
   }
   body {
     @apply bg-background text-foreground;

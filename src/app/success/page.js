@@ -37,7 +37,7 @@ const SuccessPage = () => {
           width={700}
           height={700}
           className="mb-8"
-          priority
+         
         />
         <p className="text-lg font-semibold mb-10 text-maintext">
           Thank you for reaching out! We have received your message and will be in touch with you shortly.

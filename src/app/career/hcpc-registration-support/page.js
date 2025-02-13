@@ -16,7 +16,7 @@ const whyChooseEmpower4UData = {
   items: [
     {
       title: "Industry Expertise",
-      description: "With years of experience in the physiotherapy job market, we understand the industry&#39;s needs and requirements. Our consultants have insider knowledge of what employers are looking for and how to get you noticed.",
+      description: "With years of experience in the physiotherapy job market, we understand the industry's needs and requirements. Our consultants have insider knowledge of what employers are looking for and how to get you noticed.",
     },
     {
       title: "Personalized Service",
@@ -367,7 +367,7 @@ const StrokeRehabilitationPage = () => {
                       restDelta: 0.001,
                     },
                   }}>
-                <label className="block font-semibold">Location</label>
+                <label className="block font-semibold pb-1">Location</label>
                 <input
                   {...register('location', { required: true })}
                   className="w-full !border !border-[#4f366d] bg-transparent p-3 "

@@ -7,26 +7,26 @@ const Slide = ({ heading, description, buttonText, buttonLink, imageUrl }) => {
     <div className="flex flex-col-reverse md:flex-row items-center justify-between p-6 md:space-x-5 space-y-6 md:space-y-0">
       <div className="flex-1 px-4 space-y-4 my-6 text-center md:text-left">
         <div className="flex justify-center mb-6">
-          <Image 
+          <img
             src="/icons/top_border.svg" 
             alt="Top Border" 
             width={600} 
             height={400} 
             placeholder="blur" 
-            blurDataURL="/icons/top_border.svg"
+           
           />
         </div>
         <h1 className="text-3xl md:text-5xl font-bold text-center uppercase font-inter text-maintext">
           {heading}
         </h1>
         <div className="flex justify-center mb-12">
-          <Image 
+          <img
             src="/icons/bottom_border.svg" 
             alt="Bottom Border" 
             width={600} 
             height={400} 
             placeholder="blur" 
-            blurDataURL="/icons/bottom_border.svg" 
+          
           />
         </div>
 
@@ -51,7 +51,7 @@ const Slide = ({ heading, description, buttonText, buttonLink, imageUrl }) => {
           height={400}
           className="rounded-3xl shadow-lg object-cover"
           placeholder="blur" 
-          blurDataURL={imageUrl}
+        
         />
       </div>
     </div>

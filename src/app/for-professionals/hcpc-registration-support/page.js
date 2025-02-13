@@ -16,7 +16,7 @@ const whyChooseEmpower4UData = {
   items: [
     {
       title: "Industry Expertise",
-      description: "With years of experience in the physiotherapy job market, we understand the industry&#39;s needs and requirements. Our consultants have insider knowledge of what employers are looking for and how to get you noticed.",
+      description: "With years of experience in the physiotherapy job market, we understand the industry's needs and requirements. Our consultants have insider knowledge of what employers are looking for and how to get you noticed.",
     },
     {
       title: "Personalized Service",

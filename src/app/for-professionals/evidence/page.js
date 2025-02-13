@@ -6,9 +6,9 @@ import Image from 'next/image';
 import RehabSection from '@/components/RehabListSection';
 
 const conslusion = {
-    title: "Conslusion",
+    title: "Conclusion",
     introText:
-        "The scientific evidence supporting intensive home-based physiotherapy is robust. This model not only provides superior outcomes but also reduces strain on healthcare resources, offers cost-effective solutions, and leads to better goal achievement for clients. At [Business Name], we strive to bring the highest quality care directly to your home, helping you achieve your rehabilitation goals efficiently and comfortably.",
+        "The scientific evidence supporting intensive home-based physiotherapy is robust. This model not only provides superior outcomes but also reduces strain on healthcare resources, offers cost-effective solutions, and leads to better goal achievement for clients. At Empower4U, we strive to bring the highest quality care directly to your home, helping you achieve your rehabilitation goals efficiently and comfortably.",
     items: [],
     backgroundColor: "bg-[#d4c0a9]",
     subSections: [],
@@ -177,7 +177,7 @@ const feasibilityAccessibilityData = {
 const goalAchievementData = {
   title: "Better Goal Achievement",
   introText:
-    "Home-based physiotherapy allows for more personalized care, often leading to better achievement of client goals. Personalized programs tailored to the client&#39;s environment enable more effective rehabilitation.",
+    "Home-based physiotherapy allows for more personalized care, often leading to better achievement of client goals. Personalized programs tailored to the client's environment enable more effective rehabilitation.",
   items: [],
   backgroundColor: "bg-[#d4c0a9]",
   subSections: [
@@ -217,7 +217,7 @@ const goalAchievementData = {
 const holisticPersonalizedCareData = {
   title: "Holistic and Personalized Care",
   introText:
-    "Home-based physiotherapy allows for a holistic approach, where therapists can make real-time adjustments to the home environment and customize interventions to better suit the client&#39;s everyday activities.",
+    "Home-based physiotherapy allows for a holistic approach, where therapists can make real-time adjustments to the home environment and customize interventions to better suit the client's everyday activities.",
   items: [],
   backgroundColor: "bg-[#f9f5f1]",
   subSections: [
