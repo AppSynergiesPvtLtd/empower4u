@@ -144,7 +144,7 @@ const PricingAndAvailability = () => {
           <ul className="list-disc list-inside mt-2 space-y-2 text-lg">
             <li> Initial Physiotherapy Assessment: £135 for 1.5hour</li>
             <li> Follow-up Physiotherapy sessions: £110 for 1hour</li>
-            <li> Therapy-assistant sessions: £55 for 1 hour</li>
+            <li> Therapy-assistant sessions: £60 for 1 hour</li>
           </ul></motion.div>
         </div>
 
