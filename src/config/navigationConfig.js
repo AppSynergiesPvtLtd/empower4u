@@ -26,7 +26,7 @@ export const navItems = [
     options: [
       { title: "Evidence", href: "/for-professionals/evidence" },
       { title: "Referrals", href: "/for-professionals/referrals" },
-      { title: "HCPC Registration Support", href: "/for-professionals/hcpc-registration-support" },
+      // { title: "HCPC Registration Support", href: "/for-professionals/hcpc-registration-support" },
     ],
   },
   {
@@ -44,7 +44,7 @@ export const navItems = [
     hasDropdown: true,
     options: [
       { title: "Work with us", href: "/career/work-with-us" },
-      { title: "HCPC registration support", href: "/career/hcpc-registration-support" },
+      // { title: "HCPC registration support", href: "/career/hcpc-registration-support" },
     ],
   },
   { title: "Policy", href: "/policy", hasDropdown: false },

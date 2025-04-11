@@ -126,7 +126,7 @@ const Navbar = () => {
 					onClick={() => setSidebarOpen(false)}
 				>
 					<div
-						className="fixed inset-y-0 right-0 w-60 bg-white p-6 shadow-2xl transform transition-transform"
+						className="fixed inset-y-0 right-0 w-60 bg-white p-6 shadow-2xl transform transition-transform "
 						onClick={(e) => e.stopPropagation()}
 					>
 						<div className="flex justify-between">
