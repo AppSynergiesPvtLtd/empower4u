@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Loader from "@/components/Loader";
 import Carousel from '@/components/Carousel';
 import Services from '@/components/Services';
+import VisionMission from '@/components/VisionMission';
 
 const HomePage = () => {
   const slides = [
@@ -20,39 +21,40 @@ const HomePage = () => {
       description: "We cover a wide range of conditions and presentations",
       buttonText: "View More",
       buttonLink: "/specialty/rare-neurological-conditions",
-      imageUrl: "/images/home-page/Neurological-rehabilitation.webp",
+      imageUrl: "/images/home-page/neuro.png",
     },
     {
-      heading: "Falls and Balance",
+      heading: "Empowered by Technology",
       description: "All-rounded assessment and Holistic programme",
       buttonText: "View More",
       buttonLink: "/specialty/falls-balance",
-      imageUrl: "/images/home-page/Falls-and-Balance.webp",
+      imageUrl: "/images/home-page/tech.png",
     },
-    {
-      heading: "Fracture and Joint Health",
-      description: "Intensive sessions and Fastest recovery",
-      buttonText: "View More",
-      buttonLink: "/specialty/fracture-joint-health",
-      imageUrl: "/images/home-page/Fracture-and-Amputees.webp",
-    },
-    {
-      heading: "International Physiotherapist HCPC Support",
-      description: "We offer mentoring, clinical supervision and interview advice",
-      buttonText: "View More",
-      buttonLink: "/for-professionals/hcpc-registration-support",
-      imageUrl: "/images/home-page/International-professional-HCPC-registration.webp",
-    },
+    // {
+    //   heading: "Fracture and Joint Health",
+    //   description: "Intensive sessions and Fastest recovery",
+    //   buttonText: "View More",
+    //   buttonLink: "/specialty/fracture-joint-health",
+    //   imageUrl: "/images/home-page/Fracture-and-Amputees.webp",
+    // },
+    // {
+    //   heading: "International Physiotherapist HCPC Support",
+    //   description: "We offer mentoring, clinical supervision and interview advice",
+    //   buttonText: "View More",
+    //   buttonLink: "/for-professionals/hcpc-registration-support",
+    //   imageUrl: "/images/home-page/International-professional-HCPC-registration.webp",
+    // },
   ];
 
 
    return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-grow">
-        <div className="pt-20">
+        <div className="pt-10">
           <Carousel slides={slides} />
         </div>
-        <Services />
+         {/*<Services />*/ }
+         <VisionMission />
       </main>
     </div>
   );

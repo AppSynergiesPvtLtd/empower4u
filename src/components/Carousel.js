@@ -13,13 +13,13 @@ import 'swiper/css/effect-fade';
 
 const Carousel = ({ slides }) => {
   return (
-    <div className="w-full max-w-5xl mx-auto">
+    <div className="w-full max-w-6xl mx-auto">
       <Swiper
         spaceBetween={30}
         effect="fade"
         navigation
         pagination={{ clickable: true }}
-        autoplay={{ delay: 5000 }}
+        autoplay={{ delay: 3000 }}
         modules={[EffectFade, Navigation, Pagination, Autoplay]}
       >
         {slides.map((slide, index) => (

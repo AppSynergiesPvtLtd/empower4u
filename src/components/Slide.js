@@ -1,61 +1,29 @@
 "use client";
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
 
 const Slide = ({ heading, description, buttonText, buttonLink, imageUrl }) => {
-  return (
-    <div className="flex flex-col-reverse md:flex-row items-center justify-between p-6 md:space-x-5 space-y-6 md:space-y-0">
-      <div className="flex-1 px-4 space-y-4 my-6 text-center md:text-left">
-        <div className="flex justify-center mb-6">
-          <img
-            src="/icons/top_border.svg" 
-            alt="Top Border" 
-            width={600} 
-            height={400} 
-            placeholder="blur" 
-           
-          />
-        </div>
-        <h1 className="text-3xl md:text-5xl font-bold text-center uppercase font-inter text-maintext">
-          {heading}
-        </h1>
-        <div className="flex justify-center mb-12">
-          <img
-            src="/icons/bottom_border.svg" 
-            alt="Bottom Border" 
-            width={600} 
-            height={400} 
-            placeholder="blur" 
-          
-          />
-        </div>
+	return (
+		<div
+			className="relative w-full h-[350px] lg:h-[560px] lg:rounded-3xl overflow-hidden bg-cover bg-center bg-no-repeat flex items-center"
+			style={{ backgroundImage: `url(${imageUrl})` }}
+		>
+			<div className="absolute inset-0 bg-gradient-to-r from-black/10 to-black/80 z-10" />
 
-        <p className="text-base md:text-lg text-primary text-center">
-          {description}
-        </p>
-        <div className="flex justify-center">
-          <a
-            href={buttonLink}
-            className="inline-block px-6 py-2 text-maintext bg-[#ebddd2] rounded-full hover:bg-primary hover:text-white"
-          >
-            {buttonText}
-          </a>
-        </div>
-      </div>
-
-      <div className="flex-1 my-6 w-full max-w-xs md:max-w-md lg:max-w-lg mx-auto md:mx-0 md:ml-4">
-        <img
-          src={imageUrl}
-          alt={heading}
-          width={500}
-          height={400}
-          className="rounded-3xl shadow-lg object-cover"
-          placeholder="blur" 
-        
-        />
-      </div>
-    </div>
-  );
+			<div className="relative z-20 text-white lg:ml-auto lg:mr-10 lg:max-w-sm ml-auto max-w-[200px] pr-2">
+				<h2 className="text-2xl md:text-5xl font-bold mb-4">
+					{heading}
+				</h2>
+				<p className="text-base md:text-lg mb-6">{description}</p>
+				<a
+					href={"https://calendly.com/shu-empower4u"}
+					target="_blank"
+					className="inline-block px-6 py-2 bg-primary rounded-full font-semibold hover:bg-maintext"
+				>
+					Book Now
+				</a>
+			</div>
+		</div>
+	);
 };
 
 export default Slide;
