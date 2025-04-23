@@ -6,6 +6,7 @@ import Loader from "@/components/Loader";
 import Carousel from '@/components/Carousel';
 import Services from '@/components/Services';
 import VisionMission from '@/components/VisionMission';
+import ServiceCarousel from '@/components/ServiceCarousel';
 
 const HomePage = () => {
   const slides = [
@@ -55,6 +56,8 @@ const HomePage = () => {
         </div>
          {/*<Services />*/ }
          <VisionMission />
+        
+         <ServiceCarousel/>
       </main>
     </div>
   );
