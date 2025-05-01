@@ -7,6 +7,7 @@ import Carousel from '@/components/Carousel';
 import Services from '@/components/Services';
 import VisionMission from '@/components/VisionMission';
 import ServiceCarousel from '@/components/ServiceCarousel';
+import BookNowCTA from '@/components/BookNowCTA';
 
 const HomePage = () => {
   const slides = [
@@ -57,7 +58,8 @@ const HomePage = () => {
          {/*<Services />*/ }
          <VisionMission />
         
-         <ServiceCarousel/>
+         <ServiceCarousel />
+         <BookNowCTA/>
       </main>
     </div>
   );
