@@ -1,92 +1,102 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Loader from "@/components/Loader";
-import Image from 'next/image';
-import Link from 'next/link';
-import SpecialtyCircle from '@/components/SpecialtyCircle';
-import { specialtiesData } from '@/config/allspeciality';
-import { specialtiesData2 } from '@/config/allspeciality2';
-import CallToActionSection from '@/components/CallToActionSection';
+import Image from "next/image";
+import Link from "next/link";
+import SpecialtyCircle from "@/components/SpecialtyCircle";
+import { specialtiesData } from "@/config/allspeciality";
+import { specialtiesData2 } from "@/config/allspeciality2";
+import CallToActionSection from "@/components/CallToActionSection";
+import NewServicesList from "@/components/NewServicesList";
 
 const SpecialtyPage = () => {
-  const [isLoading, setIsLoading] = useState(true);
+	const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setIsLoading(false);
+		}, 1000);
 
-    return () => clearTimeout(timer);
-  }, []);
+		return () => clearTimeout(timer);
+	}, []);
 
-  // if (isLoading) {
-  //   return <Loader />;
-  // }
-  return (
-    <section className="bg-[#f9f5f1] py-16 px-4 text-maintext">
-      <div className="container mx-auto text-center">
-        <div className="mb-10">
-        <motion.div className='bg-maintext p-3 shadow-lg border-4 border-primary mb-8 max-w-6xl mx-auto'
-        initial={{ opacity: 0, y: -80 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 80 }}
-          transition={{
-            duration: 0.5,
-            delay: 0.2,
-            scale: {
-              type: "spring",
-              damping: 14,
-              stiffness: 200,
-              restDelta: 0.001,
-            },
-          }}>
-            <div className="bg-maintext text-white p-8 shadow-lg border-2 border-primary">
-                <div className="flex justify-center mb-6"><Image src="/icons/top_border.svg" alt="Top Border" width={600} height={400} /></div>
-          <h1 className="text-4xl font-bold text-center uppercase font-inter my-4"> Specialty  </h1>
-          <div className="flex justify-center mb-12"><Image src="/icons/bottom_border.svg" alt="Bottom Border" width={600} height={400} /></div>
-            </div>
-        </motion.div>
-          
-          <motion.div className="flex justify-center my-4 text-[#af9457] text-base"
-          initial={{ opacity: 0, x: -60 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: 60 }}
-        transition={{
-          duration: 0.5,
-          delay: 0.2,
-          scale: {
-            type: "spring",
-            damping: 14,
-            stiffness: 200,
-            restDelta: 0.001,
-          },
-        }}
-          >
-            ★ <span className='mx-2 text-xl'>★ </span> ★
-          </motion.div>
-        </div>
+	// if (isLoading) {
+	//   return <Loader />;
+	// }
+	return (
+		<section className="bg-[#f9f5f1] py-16 px-4 text-maintext">
+			<div className="container mx-auto text-center">
+				<div className="mb-10">
+					<motion.div
+						className="bg-maintext p-3 shadow-lg border-4 border-primary mb-8 max-w-6xl mx-auto"
+						initial={{ opacity: 0, y: -80 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						exit={{ opacity: 0, y: 80 }}
+						transition={{
+							duration: 0.5,
+							delay: 0.2,
+							scale: {
+								type: "spring",
+								damping: 14,
+								stiffness: 200,
+								restDelta: 0.001,
+							},
+						}}
+					>
+						<div className="bg-maintext text-white p-8 shadow-lg border-2 border-primary">
+							<div className="flex justify-center mb-6">
+								<Image
+									src="/icons/top_border.svg"
+									alt="Top Border"
+									width={600}
+									height={400}
+								/>
+							</div>
+							<h1 className="text-4xl font-bold text-center uppercase font-inter my-4">
+								{" "}
+								Specialty{" "}
+							</h1>
+							<div className="flex justify-center mb-12">
+								<Image
+									src="/icons/bottom_border.svg"
+									alt="Bottom Border"
+									width={600}
+									height={400}
+								/>
+							</div>
+						</div>
+					</motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-16 max-w-5xl container mx-auto justify-items-center">
-          {specialtiesData.map((item, index) => (
-            <SpecialtyCircle key={index} title={item.title} link={item.link} />
-          ))}
-        </div>
-        <div className='mx-auto justify-items-center lg:mt-10 mt-6'>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-16 max-w-5xl justify-items-center">
-          {specialtiesData2.map((item, index) => (
-            <SpecialtyCircle key={index} title={item.title} link={item.link} />
-          ))}
-        </div>
-        </div>
-        <CallToActionSection
-            title="We'd love to treat you"
-            link="/enquiry"
-            buttonText="Make an Online Enquiry"
-        />
-      </div>
-    </section>
-  );
+					<motion.div
+						className="flex justify-center my-4 text-[#af9457] text-base"
+						initial={{ opacity: 0, x: -60 }}
+						whileInView={{ opacity: 1, x: 0 }}
+						exit={{ opacity: 0, x: 60 }}
+						transition={{
+							duration: 0.5,
+							delay: 0.2,
+							scale: {
+								type: "spring",
+								damping: 14,
+								stiffness: 200,
+								restDelta: 0.001,
+							},
+						}}
+					>
+						★ <span className="mx-2 text-xl">★ </span> ★
+					</motion.div>
+				</div>
+
+				<NewServicesList />
+				<CallToActionSection
+					title="We'd love to treat you"
+					link="/enquiry"
+					buttonText="Make an Online Enquiry"
+				/>
+			</div>
+		</section>
+	);
 };
 
 export default SpecialtyPage;

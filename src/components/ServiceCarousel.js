@@ -6,9 +6,9 @@ import { ChevronLeft, ChevronRight, CircleArrowLeft } from "lucide-react";
 
 const services = [
 	{
-		title: "Joint health and surgery",
+		title: "Spasticity Management",
 		desc:
-			"Our expert team is here to help you achieve the best quality of life. We offer tailored rehabilitation programs designed to reduce pain, improve mobility, and restore strength so you can get back to doing what you love.",
+			"Easing stiffness, restoring movement, and improving your daily life — our unique approach helps you move better and feel stronger. With our intensive therapy model, you can accelerate your progress and achieve in weeks what traditional methods often take months to deliver.",
 		img: "/images/services/joint-health.avif",
 	},
 	{
