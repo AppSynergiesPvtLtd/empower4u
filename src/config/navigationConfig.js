@@ -6,17 +6,14 @@ export const navItems = [
     hasDropdown: true,
     options: [
       { title: "Explore All", href: "/specialty/explore-all" },
+      { title: "Spasticity Management", href: "/specialty/spasticity-management" },
+      
+      { title: "Falls & Balance", href: "/specialty/falls-balance" },
+      { title: "Rare neurological conditions", href: "/specialty/rare-neurological-conditions" },
+      { title: "Other neurological conditions", href: "/specialty/other-neurological-conditions" },
       { title: "Stroke Rehab", href: "/specialty/stroke-rehab" },
       { title: "Vestibular disorder", href: "/specialty/vestibular-disorder" },
-      { title: "Parkinson’s disease", href: "/specialty/parkinsons-disease" },
-      { title: "Spinal cord injury", href: "/specialty/spinal-cord-injury" },
-      { title: "Multiple sclerosis", href: "/specialty/multiple-sclerosis" },
-      { title: "Guillain-Barre Syndrome", href: "/specialty/guillain-barrie-syndrome" },
-      { title: "Rare neurological conditions", href: "/specialty/rare-neurological-conditions" },
-      { title: "Falls & Balance", href: "/specialty/falls-balance" },
-      { title: "Fracture/Joint health", href: "/specialty/fracture-joint-health" },
-      { title: "Surgery Prehab/Rehab", href: "/specialty/surgery-rehab" },
-      { title: "Mental health", href: "/specialty/mental-health" },
+      
     ],
   },
   {

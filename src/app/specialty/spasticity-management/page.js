@@ -94,10 +94,10 @@ const SpasticityManagementPage = () => {
 					<div
 						className="relative w-full h-[500px] lg:h-[560px] lg:rounded-3xl overflow-hidden bg-cover bg-center bg-no-repeat flex items-center"
 						style={{
-							backgroundImage: `url("/images/specialty/spasticity.png")`,
+							backgroundImage: `url("/images/specialty/spasticity.jpg")`,
 						}}
 					>
-						<div className="absolute inset-0 bg-gradient-to-r from-black/20 to-black/90 z-10" />
+					
 
 						<div className="relative z-20 text-white lg:ml-auto lg:mr-10 lg:max-w-md ml-auto max-w-[200px] pr-2">
 							<h2 className="text-2xl md:text-5xl font-bold mb-4">
