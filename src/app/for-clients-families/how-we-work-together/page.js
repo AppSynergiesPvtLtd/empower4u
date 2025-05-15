@@ -150,23 +150,23 @@ const ClientsWorkTogether = () => {
 					<img src="/home-work.png" className="py-16" />
 					<img
 						src="/home-work-1.png"
-						className="pb-4 h-full w-auto "
+						className="pb-4 lg:h-[280px] w-auto "
                     />
                     <img
 						src="/home-work-2.png"
-						className="pb-4 h-full w-auto "
+						className="pb-4 lg:h-[280px] w-auto "
                     />
                     <img
                     src="/home-work-3.png"
-                    className="pb-4 h-full w-auto "
+                    className="pb-4 lg:h-[280px] w-auto "
                     />
                     <img
                     src="/home-work-4.png"
-                    className="pb-4 h-full w-auto "
+                    className="pb-4 lg:h-[280px] w-auto "
                     />
                     <img
                     src="/home-work-5.png"
-                    className="pb-4 h-full w-auto "
+                    className="pb-4 lg:h-[280px] w-auto "
                 />
 				</div>
 			</section>
