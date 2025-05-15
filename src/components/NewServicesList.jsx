@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useRouter } from 'next/navigation';
 
 const services = [
 	{
@@ -6,47 +7,55 @@ const services = [
 		desc:
 			"Easing stiffness, restoring movement, and improving your daily life — our unique approach helps you move better and feel stronger. With our intensive therapy model, you can accelerate your progress and achieve in weeks what traditional methods often take months to deliver.",
 		img: "/images/services/joint-health.avif",
+		url:"/specialty/spasticity-management"
 	},
 	{
 		title: "Falls and balance",
 		desc:
 			"Our experienced team conducts thorough assessments to identify the causes of falls and develops personalized strategies to improve balance and walking stability. ",
 		img: "/images/home-page/tech.png",
+		url:"/specialty/spasticity-management"
 	},
 	{
 		title: "Rare neurological conditions",
 		desc:
 			"We understand the unique challenges faced by individuals with rare neurological conditions such as neuromuscular diseases, Huntington’s disease, ataxia, ALS, cerebral palsy, and others. Our therapists use the latest approaches to deliver specialized care that meets your specific needs and goals.",
 		img: "/images/services/rare.avif",
+		url:"/specialty/spasticity-management"
 	},
 	{
 		title: "Other neurological conditions",
 		desc:
 			"Our dedicated team provides tailored therapy for individuals with conditions such as Parkinson's disease, multiple sclerosis, spinal cord injuries, and Guillain-Barre Syndrome. ",
 		img: "/images/services/other.avif",
+		url:"/specialty/spasticity-management"
 	},
 	{
 		title: "Stroke Rehab",
 		desc:
 			"Our experienced therapists and assistants can support you to regain strength, mobility and functions.",
 		img: "/images/services/stroke.avif",
+		url:"/specialty/spasticity-management"
 	},
 	{
 		title: "Vestibular Rehab",
 		desc:
 			"Our vestibular rehabilitation program is designed to help you regain your stability, confidence in walking, and ability to return to daily activities. ",
 		img: "/images/services/vestibular-rehab.avif",
+		url:"/specialty/spasticity-management"
 	},
 ];
 
 export default function NewServicesList() {
+	const router = useRouter();
 	return (
 		<div className="px-4 lg:px-16 max-w-7xl container mx-auto pt-10 pb-20">
 			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 				{services.map((service, index) => (
 					<div
 						key={index}
-						className="bg-white rounded-2xl shadow-lg overflow-hidden min-h-[460px]"
+						className="bg-white rounded-2xl shadow-lg overflow-hidden min-h-[460px] cursor-pointer"
+						onClick={()=>router.push(service.url)}
 					>
 						<div className="h-60 relative">
 							<Image
