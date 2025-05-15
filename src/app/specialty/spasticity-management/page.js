@@ -329,7 +329,12 @@ const SpasticityManagementPage = () => {
             
              </motion.div>
            </div>
-        </section>
+            </section>
+            <CallToActionSection
+                                title="We'd love to treat you"
+                                link="/enquiry"
+                                buttonText="Make an Online Enquiry"
+                            />
 		</div>
 	);
 };
