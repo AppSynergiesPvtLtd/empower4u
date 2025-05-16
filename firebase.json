@@ -1,7 +1,7 @@
 {
   "hosting": {
     "source": ".",
-    
+    "site":"test-empower4u",
     "ignore": [
       "firebase.json",
       "/.*",
@@ -9,7 +9,7 @@
     ],
     "frameworksBackend": {
       "region": "us-central1",
-      "maxInstances":2
+      "maxInstances":10
     }
   }
 }
