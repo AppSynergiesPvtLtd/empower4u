@@ -62,7 +62,7 @@ const StrokeRehabPage = () => {
     "Spasticity: Muscle stiffness or tightness that can limit range of motion and impair movement.",
     "Ataxia: Difficulty with balance and coordination, making walking and daily activities challenging.",
     "Fatigue: Persistent exhaustion that can hinder daily activities and reduce overall energy levels, often exacerbated by physical or cognitive exertion.",
-    "Cognitive impairments: Issues with memory, attention, and problem-solving that impact daily functioning."
+    "Cognitive impairments: Issues with memory, attention, and problem-solving that impact daily functioning.",
   ];
 
   const strategies = [
@@ -71,8 +71,7 @@ const StrokeRehabPage = () => {
     "Upper limb rehabilitation: Intensive trainings to enhance upper limb functions.",
     "Cognitive rehabilitation: Mental exercises to improve memory, attention, and problem-solving abilities. ",
     "Functional training: Task-specific exercises designed to help patients regain the ability to perform daily activities such as dressing, eating, and transferring between positions independently.",
-    "24 hour seating and posture management: Strategies to optimize seating and posture throughout the day prevent discomfort and support proper alignment, reducing the risk of complications."
-    
+    "24 hour seating and posture management: Strategies to optimize seating and posture throughout the day prevent discomfort and support proper alignment, reducing the risk of complications.",
   ];
 
   const benefits = [
@@ -84,7 +83,7 @@ const StrokeRehabPage = () => {
     "Becoming stronger: Strength training helps regain muscle power and overall body strength.",
     "Prevent complications (such as deconditioning): Early physiotherapy helps prevent issues like muscle wasting, joint stiffness, and loss of cardiovascular fitness.",
     "Better arm functions: Task-specific exercises enhance arm strength and coordination, improving function in daily tasks.",
-    "Enhanced mental well-being: Regular progress and goal setting foster motivation, supporting positive mental health during recovery."
+    "Enhanced mental well-being: Regular progress and goal setting foster motivation, supporting positive mental health during recovery.",
   ];
   return (
     <div>
@@ -98,13 +97,16 @@ const StrokeRehabPage = () => {
           >
             <div className="relative z-20 text-white lg:ml-auto lg:mr-10 lg:max-w-md ml-auto max-w-[200px] pr-2">
               <h2 className="text-2xl md:text-5xl font-bold mb-4">
-              Stroke Rehabilitation
+                Stroke Rehabilitation
               </h2>
               <p className="text-base font-semibold md:text-lg mb-6">
-              Our experienced therapists and assistants can support you to regain strength, mobility and functions.
+                Our experienced therapists and assistants can support you to
+                regain strength, mobility and functions.
               </p>
               <a
-                href={"https://calendly.com/shu-empower4u"}
+                href={
+                  "https://wa.me/4407427170325?text=Hello%2C%20I%27m%20interested%20in%20your%20services"
+                }
                 target="_blank"
                 className="inline-block px-6 py-2 bg-primary rounded-full font-semibold hover:bg-maintext"
               >
@@ -137,8 +139,8 @@ const StrokeRehabPage = () => {
           </motion.h2>
 
           <p className="text-lg text-maintext text-center">
-            Our evidence-based, tech-enhanced, home-based intensive
-            therapy program delivers: 
+            Our evidence-based, tech-enhanced, home-based intensive therapy
+            program delivers: 
           </p>
           <div className="flex flex-wrap justify-center gap-8 my-8">
             {features.map((feature, index) => (
@@ -147,11 +149,7 @@ const StrokeRehabPage = () => {
                 className="bg-[#D1B7A0] rounded-xl shadow-md px-6 py-10 flex flex-col items-center w-full sm:w-[calc(50%-1rem)] md:w-[calc(33.33%-1rem)] lg:w-[calc(30%-1rem)] hover:shadow-lg transition-shadow"
               >
                 <div className="mb-4 flex items-center justify-center w-16 h-16">
-                  <img
-                    src={feature.icon}
-                    alt={feature.title}
-                    className=""
-                  />
+                  <img src={feature.icon} alt={feature.title} className="" />
                 </div>
                 <h3 className="text-xl font-semibold text-maintext mb-2">
                   {feature.title}
@@ -186,7 +184,7 @@ const StrokeRehabPage = () => {
             What We Can Help With 
           </motion.h2>
           <p className="pb-5 text-maintext font-semibold text-lg">
-          Here are some common stroke-related challenges we address: 
+            Here are some common stroke-related challenges we address:
           </p>
           <motion.div
             initial={{ opacity: 0, x: -60 }}
@@ -209,18 +207,14 @@ const StrokeRehabPage = () => {
                 const normalPart = rest.join(":").trim();
 
                 return (
-                  <li
-                    key={index}
-                    className="flex items-start space-x-2"
-                  >
+                  <li key={index} className="flex items-start space-x-2">
                     <img
                       src="/icons/Ikon.svg"
                       alt="Check Icon"
                       className="w-4 max-w-full h-auto text-maintext mr-4 mt-2"
                     />
                     <span className="text-maintext">
-                      <strong>{boldPart.trim()}:</strong>{" "}
-                      {normalPart}
+                      <strong>{boldPart.trim()}:</strong> {normalPart}
                     </span>
                   </li>
                 );
@@ -270,18 +264,14 @@ const StrokeRehabPage = () => {
                 const normalPart = rest.join(":").trim();
 
                 return (
-                  <li
-                    key={index}
-                    className="flex items-start space-x-2"
-                  >
+                  <li key={index} className="flex items-start space-x-2">
                     <img
                       src="/icons/Ikon.svg"
                       alt="Check Icon"
                       className="w-4 max-w-full h-auto text-maintext mr-4 mt-2"
                     />
                     <span className="text-maintext">
-                      <strong>{boldPart.trim()}:</strong>{" "}
-                      {normalPart}
+                      <strong>{boldPart.trim()}:</strong> {normalPart}
                     </span>
                   </li>
                 );
@@ -332,18 +322,14 @@ const StrokeRehabPage = () => {
                 const normalPart = rest.join(":").trim();
 
                 return (
-                  <li
-                    key={index}
-                    className="flex items-start space-x-2"
-                  >
+                  <li key={index} className="flex items-start space-x-2">
                     <img
                       src="/icons/Ikon.svg"
                       alt="Check Icon"
                       className="w-4 max-w-full h-auto text-maintext mr-4 mt-2"
                     />
                     <span className="text-maintext">
-                      <strong>{boldPart.trim()}:</strong>{" "}
-                      {normalPart}
+                      <strong>{boldPart.trim()}:</strong> {normalPart}
                     </span>
                   </li>
                 );

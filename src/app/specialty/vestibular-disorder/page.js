@@ -62,7 +62,7 @@ const VestibularPage = () => {
     "Vestibular Neuritis: Inflammation of the vestibular nerve, leading to severe vertigo, balance issues, and nausea.",
     "Meniere’s Disease: A chronic condition characterized by episodes of vertigo, ringing in the ears (tinnitus), hearing loss, and a feeling of fullness in the ear.",
     "Vestibular Migraine: Dizziness or vertigo that occurs with migraine headaches, often accompanied by light sensitivity and nausea.",
-    "Unilateral Vestibular Hypofunction: Reduced function of one vestibular system, resulting in imbalance and dizziness."
+    "Unilateral Vestibular Hypofunction: Reduced function of one vestibular system, resulting in imbalance and dizziness.",
   ];
 
   const strategies = [
@@ -70,9 +70,7 @@ const VestibularPage = () => {
     "Canalith repositioning maneuvers: Specific techniques to reposition displaced crystals in the inner ear for conditions like BPPV.",
     "Balance training: Activities to enhance stability and coordination, reducing the risk of falls.",
     "Habituation exercises: Gradual exposure to movements and environments that provoke symptoms to decrease sensitivity.",
-    "Education and lifestyle modifications: Guidance on managing symptoms and making adjustments to daily activities to improve quality of life."
-   
-    
+    "Education and lifestyle modifications: Guidance on managing symptoms and making adjustments to daily activities to improve quality of life.",
   ];
 
   const benefits = [
@@ -82,7 +80,6 @@ const VestibularPage = () => {
     "Enhances daily function: Improved balance and reduced dizziness facilitate a return to everyday tasks and activities.",
     "Prevents complications: Early intervention can prevent issues related to prolonged dizziness, such as anxiety and avoidance of physical activities.",
     "Psychosocial benefits: Support and encouragement from physiotherapy promote a positive mindset and motivation throughout the recovery process.",
-    
   ];
   return (
     <div>
@@ -94,16 +91,20 @@ const VestibularPage = () => {
               backgroundImage: `url("/images/specialty/vestibular.jpg")`,
             }}
           >
-          <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-black/70 z-10" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-black/70 z-10" />
             <div className="relative z-20 text-white lg:ml-auto lg:mr-10 lg:max-w-md ml-auto max-w-[200px] pr-2">
               <h2 className="text-2xl md:text-5xl font-bold mb-4">
-              Vestibular Rehabilitation 
+                Vestibular Rehabilitation
               </h2>
               <p className="text-base font-semibold md:text-lg mb-6">
-              Our vestibular rehabilitation program is designed to help you regain your stability, confidence in walking, and ability to return to daily activities.
+                Our vestibular rehabilitation program is designed to help you
+                regain your stability, confidence in walking, and ability to
+                return to daily activities.
               </p>
               <a
-                href={"https://calendly.com/shu-empower4u"}
+                href={
+                  "https://wa.me/4407427170325?text=Hello%2C%20I%27m%20interested%20in%20your%20services"
+                }
                 target="_blank"
                 className="inline-block px-6 py-2 bg-primary rounded-full font-semibold hover:bg-maintext"
               >
@@ -136,8 +137,8 @@ const VestibularPage = () => {
           </motion.h2>
 
           <p className="text-lg text-maintext text-center">
-            Our evidence-based, tech-enhanced, home-based intensive
-            therapy program delivers: 
+            Our evidence-based, tech-enhanced, home-based intensive therapy
+            program delivers: 
           </p>
           <div className="flex flex-wrap justify-center gap-8 my-8">
             {features.map((feature, index) => (
@@ -146,11 +147,7 @@ const VestibularPage = () => {
                 className="bg-[#D1B7A0] rounded-xl shadow-md px-6 py-10 flex flex-col items-center w-full sm:w-[calc(50%-1rem)] md:w-[calc(33.33%-1rem)] lg:w-[calc(30%-1rem)] hover:shadow-lg transition-shadow"
               >
                 <div className="mb-4 flex items-center justify-center w-16 h-16">
-                  <img
-                    src={feature.icon}
-                    alt={feature.title}
-                    className=""
-                  />
+                  <img src={feature.icon} alt={feature.title} className="" />
                 </div>
                 <h3 className="text-xl font-semibold text-maintext mb-2">
                   {feature.title}
@@ -185,7 +182,7 @@ const VestibularPage = () => {
             What We Can Help With 
           </motion.h2>
           <p className="pb-5 text-maintext font-semibold text-lg">
-          Here are some common vestibular disorders: 
+            Here are some common vestibular disorders:
           </p>
           <motion.div
             initial={{ opacity: 0, x: -60 }}
@@ -208,18 +205,14 @@ const VestibularPage = () => {
                 const normalPart = rest.join(":").trim();
 
                 return (
-                  <li
-                    key={index}
-                    className="flex items-start space-x-2"
-                  >
+                  <li key={index} className="flex items-start space-x-2">
                     <img
                       src="/icons/Ikon.svg"
                       alt="Check Icon"
                       className="w-4 max-w-full h-auto text-maintext mr-4 mt-2"
                     />
                     <span className="text-maintext">
-                      <strong>{boldPart.trim()}:</strong>{" "}
-                      {normalPart}
+                      <strong>{boldPart.trim()}:</strong> {normalPart}
                     </span>
                   </li>
                 );
@@ -269,18 +262,14 @@ const VestibularPage = () => {
                 const normalPart = rest.join(":").trim();
 
                 return (
-                  <li
-                    key={index}
-                    className="flex items-start space-x-2"
-                  >
+                  <li key={index} className="flex items-start space-x-2">
                     <img
                       src="/icons/Ikon.svg"
                       alt="Check Icon"
                       className="w-4 max-w-full h-auto text-maintext mr-4 mt-2"
                     />
                     <span className="text-maintext">
-                      <strong>{boldPart.trim()}:</strong>{" "}
-                      {normalPart}
+                      <strong>{boldPart.trim()}:</strong> {normalPart}
                     </span>
                   </li>
                 );
@@ -331,18 +320,14 @@ const VestibularPage = () => {
                 const normalPart = rest.join(":").trim();
 
                 return (
-                  <li
-                    key={index}
-                    className="flex items-start space-x-2"
-                  >
+                  <li key={index} className="flex items-start space-x-2">
                     <img
                       src="/icons/Ikon.svg"
                       alt="Check Icon"
                       className="w-4 max-w-full h-auto text-maintext mr-4 mt-2"
                     />
                     <span className="text-maintext">
-                      <strong>{boldPart.trim()}:</strong>{" "}
-                      {normalPart}
+                      <strong>{boldPart.trim()}:</strong> {normalPart}
                     </span>
                   </li>
                 );
